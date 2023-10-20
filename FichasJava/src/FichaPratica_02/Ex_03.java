@@ -10,7 +10,7 @@ public class Ex_03 {
 
         //Ler num1
         System.out.print("Insira salário anual: ");
-        salAnual = input.nextInt();
+        salAnual = input.nextDouble();
 
 
         //calculos

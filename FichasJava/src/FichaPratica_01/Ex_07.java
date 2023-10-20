@@ -12,15 +12,15 @@ public class Ex_07 {
 
         //Ler valor1
         System.out.print("Insira o preco1: ");
-        preco1 = input.nextInt();
+        preco1 = input.nextDouble();
 
         //Ler valor2
         System.out.print("Insira o preco2: ");
-        preco2 = input.nextInt();
+        preco2 = input.nextDouble();
 
         //Ler valor3
         System.out.print("Insira o preco3: ");
-        preco3 = input.nextInt();
+        preco3 = input.nextDouble();
 
         //Calcular total
         total = (preco1 + preco2 + preco3) * (1-desconto);

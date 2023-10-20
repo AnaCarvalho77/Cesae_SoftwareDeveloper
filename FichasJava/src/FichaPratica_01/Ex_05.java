@@ -12,15 +12,15 @@ public class Ex_05 {
 
         //Ler valor1
         System.out.print("Insira o valor1: ");
-        valor1 = input.nextInt();
+        valor1 = input.nextDouble();
 
         //Ler valor2
         System.out.print("Insira o valor2: ");
-        valor2 = input.nextInt();
+        valor2 = input.nextDouble();
 
         //Ler valor3
         System.out.print("Insira o valor3: ");
-        valor3 = input.nextInt();
+        valor3 = input.nextDouble();
 
         //Calcular media
         media = (valor1 + valor2 + valor3) / 3;
