@@ -8,7 +8,7 @@ public class Ex_08 {
         Scanner input = new Scanner (System.in);
 
         //Declarar variáveis
-        int aux = 0, min, seg, horas, totalmin, totalseg, totalhoras;
+        int min, seg, horas;
 
         //Ler tempos música 1
         System.out.print("Introduza minutos da música 1: ");
@@ -39,14 +39,12 @@ public class Ex_08 {
         min += input.nextInt();
         System.out.print("Introduza segundos da música 5: ");
         seg += input.nextInt();
+        seg += min * 60;
 
         //Calcular total
-        horas = ((seg/60) + min) / 60;
-        min = ((seg/60) + min) % 60;
-        seg = seg / 60;
-
-
-
+        horas = seg/3600;
+        min = (seg - 3600) / 60;
+        seg = (seg -3600) % 60;
 
 
         //Apresentar resultados
