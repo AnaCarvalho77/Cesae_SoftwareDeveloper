@@ -39,16 +39,14 @@ public class Ex_11 {
 
         //verificar se operação válida
 
-        if (saldo){
-            System.out.println(num1);
-        }else if (num2 < num1 && num2 < num3){
-            System.out.println(num2);
-        } else{
-            System.out.println(num3);
-        }
+        if (saldo >= 0)
+            System.out.println("Saldo: " + saldo);
+        else
+            System.out.println("Inválido, saldo insuficiente");
+
 
         //Fechar objeto scanner
         input.close();
     }
-    }
+
 }
