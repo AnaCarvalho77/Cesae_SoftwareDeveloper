@@ -19,13 +19,13 @@ public class Ex_06 {
         valor2 = input.nextInt();
 
         //Permutar os valores
-        perm = valor1;
-        valor1 = valor2;
-        valor2 = perm;
+//        perm = valor1;
+//        valor1 = valor2;
+//        valor2 = perm;
 
 
         //Apresentar resultados
-        System.out.println("Valor 1:" + valor1);
-        System.out.println("Valor 2:" + valor2);
+        System.out.println("Valor 1:" + valor2);
+        System.out.println("Valor 2:" + valor1);
     }
 }

@@ -1,8 +1,7 @@
 package FichaPratica_02;
 import java.util.Scanner;
-public class Ex_01 {
+public class Ex_06 {
     public static void main(String[] args) {
-
         //Instanciar o Scanner
         Scanner input = new Scanner (System.in);
 
@@ -19,12 +18,11 @@ public class Ex_01 {
 
         //Ver qual o maior
         if (num1 > num2)
-            System.out.println("Maior: " + num1);
+            System.out.println(num1 + "   " + num2);
         else
-            System.out.println("Maior: " + num2);
+            System.out.println(num2 + "   " + num1);
 
         //Fechar objeto scanner
         input.close();
     }
-
 }

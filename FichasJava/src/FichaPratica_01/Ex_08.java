@@ -8,7 +8,7 @@ public class Ex_08 {
         Scanner input = new Scanner (System.in);
 
         //Declarar variáveis
-        int min1, min2, min3, seg1, seg2, seg3, min4, seg4, min5, seg5, totalmin, totalseg, totalhoras, total;
+        int aux = 0, min1, min2, min3, seg1, seg2, seg3, min4, seg4, min5, seg5, totalmin, totalseg, totalhoras;
 
         //Ler tempos música 1
         System.out.print("Introduza minutos da música 1: ");
@@ -41,9 +41,15 @@ public class Ex_08 {
         seg5 = input.nextInt();
 
         //Calcular total
-        totalseg = 
+        totalseg = (seg1 + seg2 + seg3 + seg4 + seg5) % 60;
+        aux = (seg1 + seg2 + seg3 + seg4 + seg5) / 60;
+        totalmin = (aux + min1 + min2 + min3 + min4 + min5) % 60;
+        totalhoras = (aux + min1 + min2 + min3 + min4 + min5) / 60;
+
+
+
 
         //Apresentar resultados
-        System.out.println("Total:" + total);
+        System.out.println("Total do Álbum: " + totalhoras + "h " + totalmin + "m " + totalseg + "s");
     }
 }
