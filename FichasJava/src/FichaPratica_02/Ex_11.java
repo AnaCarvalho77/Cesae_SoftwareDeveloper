@@ -7,7 +7,7 @@ public class Ex_11 {
 
         //Declarar variáveis
         double saldo, montante;
-        String opcao;
+        int opcao;
 
         //Ler saldo
         System.out.print("Insira saldo: ");
@@ -19,16 +19,16 @@ public class Ex_11 {
 
 
         //Recolher opcao utilizador
-        System.out.print("Insira operação a realizar escrevendo 'creditar' ou 'debitar': ");
-        opcao = input.next();
+        System.out.print("Insira operação a realizar:\n1.creditar\n2.debitar\n ");
+        opcao = input.nextInt();
 
 
         //escolha
         switch (opcao) {
-            case "creditar":
+            case 1:
                 saldo += montante;
                 break;
-            case "debitar":
+            case 2:
                 saldo -= montante;
                 break;
 

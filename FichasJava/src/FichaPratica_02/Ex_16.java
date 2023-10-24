@@ -22,7 +22,7 @@ public class Ex_16 {
             if(notas != 0)
                 System.out.print("\n" + notas + " notas de 200" );
 
-            valor -= (notas * 200);
+            valor = valor % 200;
             notas = valor / 100;
             if(notas != 0)
                 System.out.print("\n" + notas + " notas de 100" );
