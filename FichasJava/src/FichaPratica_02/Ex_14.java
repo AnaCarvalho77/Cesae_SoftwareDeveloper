@@ -19,31 +19,32 @@ public class Ex_14 {
         num2 = input.nextInt();
 
         //Ler num3
-        System.out.print("Insira número 2: ");
+        System.out.print("Insira número 3: ");
         num3 = input.nextInt();
 
         //Colocar ordem crescente
         if (num1 > num2 && num1 > num3){
             if(num2 > num3){
-                System.out.println(num1 num2, num3);
+                System.out.println(num3 + " " + num2 + " " + num1);
             }else{
-                System.out.println(num1 + num3 + num2);
+                System.out.println(num2 + " " + num3 + " " + num1);
             }
         }
         if (num2 > num1 && num2 > num3){
             if(num1 > num3){
-                System.out.println("num2" + "num1" + "num3");
+                System.out.println(num3 + " " + num1 + " " + num2);
             }else{
-                System.out.println(num2 + num3 + num1);
+                System.out.println(num1 + " " + num3 + " " + num2);
             }
         }
         if (num3 > num1 && num3 > num2){
             if(num1 > num2){
-                System.out.println(num3 + num1 + num2);
+                System.out.println(num2 + " " + num1 + " " + num3);
             }else{
-                System.out.println(num3 + num2 + num1);
+                System.out.println(num1 + " " + num2 + " " + num3);
             }
         }
+
 
         //Fechar objeto scanner
         input.close();
