@@ -1,0 +1,53 @@
+/* p{
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 15%;
+    background-color: aqua;
+    color: black;
+    text-align: center;
+    padding: 40px;
+} */
+
+header, footer {
+    text-align: center;
+}
+header img {
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
+}
+
+footer {
+    color: blue;
+}
+
+
+footer img {
+    width: 30px;
+    max-width: 30px;
+    min-width: 30px;
+}
+
+
+
+
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA HOME */
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA ABOUT */
+
+#noUnderLine {
+    text-decoration: none;
+}
+
+.about {
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 1.7em;
+        padding: 15px;
+}
