@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" modified="2023-10-26T15:27:37.270Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="g6hkGhZOOEnj3e1Ylld2" version="22.0.8" type="device">
+  <diagram name="Página-1" id="kV-Lrt2cp4OkjXztvkxY">
+    <mxGraphModel dx="1194" dy="641" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="YHbP35V-Cucy-SEhRMw--1" value="cliente" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--3" value="produto" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="595" y="188" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--4" value="compra" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="188" width="90" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--8" value="faz" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="181" y="180" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--9" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YHbP35V-Cucy-SEhRMw--8" target="YHbP35V-Cucy-SEhRMw--1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="110" as="sourcePoint" />
+            <mxPoint x="470" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--10" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="YHbP35V-Cucy-SEhRMw--8" target="YHbP35V-Cucy-SEhRMw--4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="220" as="sourcePoint" />
+            <mxPoint x="240" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--11" value="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="157" y="188" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--12" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="261" y="190" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--13" value="ID_cliente" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="260" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--14" value="Nome" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="280" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--15" value="ID_Compra" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="250" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--16" value="forma_pagamento" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="270" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--17" value="Prazo_pagamento" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="310" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--19" value="tem" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="178" width="90" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--20" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YHbP35V-Cucy-SEhRMw--19" target="YHbP35V-Cucy-SEhRMw--3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="610" y="110" as="sourcePoint" />
+            <mxPoint x="640" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--21" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YHbP35V-Cucy-SEhRMw--19" target="YHbP35V-Cucy-SEhRMw--4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="610" y="110" as="sourcePoint" />
+            <mxPoint x="490" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--23" value="Descrição" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="613" y="120" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--24" value="valor" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="613" y="140" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--25" value="ID_produto" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="613" y="100" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--32" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="399" y="188" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--33" value="N" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="555" y="188" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--40" value="NIF" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="300" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--41" value="Morada" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YHbP35V-Cucy-SEhRMw--42" value="Telefone" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="30" y="340" width="70" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
