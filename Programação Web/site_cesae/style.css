@@ -1,0 +1,91 @@
+/* p{
+    font-size: 150%;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 15%;
+    background-color: aqua;
+    color: black;
+    text-align: center;
+    padding: 40px;
+} */
+
+header, footer {
+    text-align: center;
+}
+header img {
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
+}
+
+footer {
+    color: blue;
+}
+
+
+footer img {
+    width: 30px;
+    max-width: 30px;
+    min-width: 30px;
+}
+
+
+
+
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA HOME */
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA ABOUT */
+
+#noUnderLine {
+    text-decoration: none;
+}
+@import url('https://fonts.googleapis.com/css2? family= Roboto:wght@100 & display=swap');
+.about {
+    
+    color: black;
+    margin-left: 2%;
+    margin-right: 5%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7em;
+    padding: 15px;
+    word-spacing: 0.2em;
+    font-family:'Roboto:wght@100 & display=swap';
+    
+
+}
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA SoftDev */
+table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+}
+
+table{
+    width: 80%;
+}
+.area { 
+    text-align: left;
+    font-weight: bold;
+    column-span: all;
+    background-color: grey;
+    color: white;
+
+}
+th {
+    background-color: bisque;
+    
+}
+.UFCD {
+    text-align: left;
+}
+th :hover, tr :hover, td :hover{ background-color: orange;}
