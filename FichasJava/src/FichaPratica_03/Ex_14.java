@@ -38,7 +38,7 @@ public class Ex_14 {
         num = numIni;
         aux = num -1;
         i = numIni - 2;
-        j = numIni - 2;
+        j = numIni - 1;
 
         //Pedir números
 
@@ -56,6 +56,8 @@ public class Ex_14 {
                     num = num + numSoma;
                     i--;
                 }
+                numSoma = num;
+                j--;
                 i = j - 1;
                 aux++;
             }
