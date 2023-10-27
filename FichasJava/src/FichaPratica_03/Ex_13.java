@@ -8,7 +8,7 @@ public class Ex_13 {
         Scanner input = new Scanner (System.in);
 
         //Declarar variáveis
-        int max, cont = 0, numero, aux = 0, check = 0;
+        int max, cont = 0, numero, aux, check = 0;
 
         //Ler numero
         System.out.print("Quantos números deseja imprimir: ");
@@ -19,7 +19,8 @@ public class Ex_13 {
         while (cont != max){
             System.out.print("Introduza um número: ");
             numero = input.nextInt();
-            if (numero < aux){
+            aux = numero;
+            if (numero <= aux){
                 check++ ;
             }
             aux = numero;
