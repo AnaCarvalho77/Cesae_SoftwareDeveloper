@@ -21,13 +21,10 @@ public class Ex_11 {
         }
         for (i = 0; i < 3; i++) {
             for (j = 0; j < 3; j++) {
-                for (z = i + 1; z < 3; z++) {
-                    for (w = j + 1; w < 3; w++) {
+                for (z = i; z < 3; z++) {
+                    for (w = 0; w < 3; w++) {
                         if (num[z][w] > num[i][j]) {
                             maior = num[z][w];
-                        }
-                        if (num[w][z] > num[i][j]) {
-                            maior = num[w][z];
                         }
                     }
                 }
