@@ -30,28 +30,30 @@ public class Ex_01 {
             switch (opcao) {
                 case "+":
                     resultado = num1 + num2;
-                    System.out.println(resultado);
+                    System.out.println("Soma: "+ resultado);
                     break;
                 case "-":
                     resultado = num1 - num2;
-                    System.out.println(resultado);
+                    System.out.println("Subtração: "+resultado);
                     break;
                 case "/":
                     resultado = num1 / num2;
-                    System.out.println(resultado);
+                    System.out.println("Divisão: "+resultado);
                     break;
                 case "*":
                     resultado = num1 * num2;
-                    System.out.println(resultado);
+                    System.out.println("Multiplicação: "+resultado);
                     break;
 
                 default:
                     System.out.println("Erro!operação não contemplada ou mal escrita");
             }
-            System.out.println("Deseja continuar : ");
-            System.out.println("s - para sim");
-            System.out.println("n - para não");
-            opcao = input.next();
+            do {
+                System.out.println("Deseja continuar : ");
+                System.out.println("s - para sim");
+                System.out.println("n - para não");
+                opcao = input.next();
+            }while(!opcao.equals("s") && !opcao.equals("n"));
         } while (!opcao.equals("n"));
 
 
