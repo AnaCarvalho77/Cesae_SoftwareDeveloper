@@ -12,26 +12,25 @@ public class Ex_03 {
         String opcao;
 
             //Ler num1
+        do{
             System.out.print("Jogador 1, insira um número entre 0 e 100:  ");
             num1 = input.nextDouble();
-            if (num1 > 0 && num1 < 100) {
+        }while (num1 < 0 || num1 > 100);
+
                 //Ler num2
                 do {
                     System.out.print("Jogador 2, insira um número: ");
                     num2 = input.nextDouble();
                     if (num2 > num1) {
-                        System.out.println("é superior");
-                    } else if (num1 > num2) {
                         System.out.println("é inferior");
+                    } else if (num1 > num2) {
+                        System.out.println("é superior");
                     }
                     i++;
                 } while (num2 != num1);
 
                 System.out.println("precisou de " + i + " tentativas");
 
-            } else {
-                System.out.println("número não está entre 0 e 100");
-            }
         //Fechar objeto scanner
         input.close();
     }
