@@ -1,0 +1,131 @@
+header, footer {
+    text-align: center;
+
+}
+header img {
+    width: 70%;
+    max-width: 600px;
+    min-width: 400px;
+}
+
+footer {
+    color: blue;
+}
+
+body img {
+  width: 65%;
+  max-width: 600px;
+  min-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.imgfooter {
+    
+    float: center;
+    display: flex;
+    max-width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Formatação NAV BAR */
+/* Classe hiperligações sem sublinhado */
+
+li a {
+    text-decoration: none;
+    background-color: grey;
+    text-align: center;
+    display: block;
+    padding: 14px 16px;
+    color: black;
+    font-weight: bold;
+}
+
+nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: grey;
+  
+
+}
+
+li{
+  float:left
+}
+
+li a:hover {
+  background-color: blue;
+}
+
+
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA HOME */
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
+
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA ABOUT */
+
+
+.about {
+    
+    color:black;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 3%;
+    margin-bottom: 2%;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7em;
+    padding: 15px;
+    word-spacing: 0.2em;
+    font-family: 'Roboto', sans-serif;
+
+}
+.about h2 {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'Roboto:wght@300;900&display=swap', sans-serif;
+
+
+
+}
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA SoftDev */
+table, th, td {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 5px;
+    font-size: 15px;
+}
+
+table{
+    width: 80%;
+}
+.area { 
+    text-align: left;
+    font-weight: bold;
+    column-span: all;
+    background-color: grey;
+    color: white;
+
+}
+th {
+    background-color: bisque;
+    
+}
+.UFCD {
+    text-align: left;
+}
+th :hover, tr :hover, td :hover{ background-color: orange;}
