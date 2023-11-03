@@ -9,16 +9,16 @@ public class Ex_01 {
 
         //Declarar variáveis
         int  i;
-        int[] num =new int[10];
+        int[] vetor =new int[10];
 
         for(i = 0 ; i < 10; i++ ){
             System.out.printf("insira um número [%d]: ",i);
-            num [i] = input.nextInt();
+            vetor [i] = input.nextInt();
 
         }
         System.out.println();
         for(i = 0; i < 10; i++){
-            System.out.println(num[i]);
+            System.out.print("|" + vetor[i] + "| ");
         }
 
         //Fechar objeto scanner
