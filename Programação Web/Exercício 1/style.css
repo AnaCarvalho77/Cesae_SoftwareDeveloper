@@ -1,4 +1,8 @@
-header, footer {
+header{
+  text-align: left;
+}
+
+footer {
     text-align: center;
 
 }
@@ -10,9 +14,11 @@ header img {
 
 footer {
     color: blue;
+    background-color: grey;
+    
 }
 
-body img {
+.imagembody img{
   width: 65%;
   max-width: 600px;
   min-width: 400px;
@@ -22,13 +28,10 @@ body img {
 }
 
 
-.imgfooter {
-    
-    float: center;
-    display: flex;
-    max-width: 25%;
-    margin-left: auto;
-    margin-right: auto;
+footer img {
+  width: 20%;
+  max-width: 40px;
+  min-width: 40px;
 }
 
 
