@@ -9,7 +9,7 @@ public class Ex_11 {
 
 
         //Declarar variáveis
-        int i, j, maior = 0, menor = 0;
+        int i, j, maior, menor;
         int[][] num = new int[3][3];
 
 
@@ -25,32 +25,32 @@ public class Ex_11 {
 
         for (i = 0; i < 3; i++) {
             for (j = 0; j < 3; j++) {
-                        if(maior < num[i][j]){
-                            maior = num[i][j];
-                        }
-                        if(menor > num[i][j]) {
-                            menor = num[i][j];
-                        }
-                    }
-            }
-
-
-            for (i = 0; i < 3; i++) {
-                System.out.println();
-                for (j = 0; j < 3; j++) {
-                    System.out.print(num[i][j] + " ");
-
+                if (maior < num[i][j]) {
+                    maior = num[i][j];
+                }
+                if (menor > num[i][j]) {
+                    menor = num[i][j];
                 }
             }
+        }
 
+
+        for (i = 0; i < 3; i++) {
             System.out.println();
+            for (j = 0; j < 3; j++) {
+                System.out.print(num[i][j] + " ");
 
-            System.out.println("o maior número na matriz é o: " + maior);
+            }
+        }
+
+        System.out.println();
+
+        System.out.println("o maior número na matriz é o: " + maior);
         System.out.println("o menor número na matriz é o: " + menor);
 
 
-            //Fechar objeto scanner
-            input.close();
-        }
+        //Fechar objeto scanner
+        input.close();
     }
+}
 
