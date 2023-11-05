@@ -13,7 +13,7 @@
 
     <!-- cabeçalho site -->
     <header>
-         <!-- logotipo do do cabeçalho -->
+        <!-- logotipo do do cabeçalho -->
         <img src="/Imagens/logo.png" alt="logotipo Cesae">
         <br>
         <!-- barra de navegação com hiperligações -->
@@ -28,7 +28,7 @@
     </header>
     <br>
     <hr>
-    <h1 style="text-align: center;background-color: aqua;">Formulário de Contacto</h1>
+    <h1 class="tituloForm">Formulário de Contacto</h1>
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nisi, voluptatum quae facere repudiandae
         doloribus quo deserunt vero, consequuntur eum nulla sequi! Vitae quaerat magnam vero dignissimos, assumenda
@@ -45,17 +45,19 @@
         <fieldset>
             <legend>Formulário de Contacto do CESAE</legend>
 
-            
+            <!-- Campo para inserir o nome -->
             <div>
                 <label for="form-nome">Nome:</label>
                 <input type="text" name="form-nome" id="form-nome" placeholder="Insira o seu nome" required>
             </div>
             <br>
+            <!-- campo para inserir o email -->
             <div>
                 <label for="form-email">Email:</label>
                 <input type="text" name="form-email" id="form-email" value="@gmail.com">
             </div>
             <br>
+            <!-- Botões de opção para género -->
             <div>
                 <label for="form-genero">Género:</label>
                 <br>
@@ -69,11 +71,13 @@
                 <label for="form-genero-without">Sem género</label>
             </div>
             <br>
+            <!-- Campo de data com limites de data -->
             <div>
                 <label for="form-dn">Data de Nascimento</label>
                 <input type="date" name="form-dn" min="2023-10-01" max="2023-11-15" id="form-dn">
             </div>
             <br>
+            <!-- Caixa de selação para turma -->
             <div>
                 <label for="form-turma">Turma:</label>
                 <br>
@@ -85,27 +89,26 @@
                 </select>
             </div>
             <br>
+            <!-- área de texto para mensagem -->
             <div>
                 <label for="form-mensagem">Mensagem:</label>
                 <br>
-                <textarea name="form-mensagem" id="form-mensagem" cols="100" rows="5"></textarea>
+                <textarea name="form-mensagem" id="form-mensagem" cols="40" rows="4"></textarea>
             </div>
             <br>
+            <!-- botão para anexar um ficheiro -->
             <div>
                 <label for="myfile">Select a file</label>
                 <input type="file" id="myfile" name="myfile">
             </div>
             <br>
-
+            <!-- botões para limpar e enviar a mensagem -->
             <div>
-                <input type="reset" value="limpar">
+                <input type="reset" value="Limpar">
                 <input type="submit" value="Enviar">
             </div>
-
-
         </fieldset>
     </form>
-
 
     <br>
 

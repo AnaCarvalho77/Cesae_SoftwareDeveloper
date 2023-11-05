@@ -1,34 +1,23 @@
+/* formatação do cabeçalho */
 header {
   text-align: left;
 }
 
-footer {
-  text-align: center;
-
-}
-
+/* formatação logotipo cabeçalho */
 header img {
   width: 70%;
   max-width: 600px;
   min-width: 400px;
 }
 
+/* formatação rodapé */
 footer {
+  text-align: center;
   color: blue;
-  background-color: grey;
-
+  background-color: rgb(128,128,128,0.2);
 }
 
-.imagembody img {
-  width: 65%;
-  max-width: 600px;
-  min-width: 400px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
+/* formatação imagens rodapé */
 footer img {
   width: 20%;
   max-width: 40px;
@@ -40,51 +29,52 @@ footer img {
   text-decoration: none;
 }
 
+
 /* Formatação NAV BAR */
-
-
-/* Hiperligações da lista da nav bar sem sublinhado */
+/* Hiperligações da lista da NAV BAR sem sublinhado */
 li a {
   text-decoration: none;
-  background-color: grey;
   text-align: center;
   display: block;
   padding: 14px 16px;
-  color: black;
+  color: white;
   font-weight: bold;
 }
 
-/* formatação da nav bar */
+/* formatação da NAV BAR */
 nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: grey;
+  background-image: linear-gradient( to right, rgb(53,0,53,0.8),rgb(105,10,105,0.6), rgb(212,33,140,0.6), rgb(128, 128, 128,0.5), rgb(0,201,238,0.5));
 }
 
-/* formataçao da lista da nav bar */
+/* formataçao da lista da NAV BAR */
 li {
   float: left
 }
 
-/* formatação de hiperlagação quando cursor em cima */
+/* formatação de hiperlagação quando cursor em cima na NAV BAR */
 li a:hover {
-  background-color: white;
+  background-color: #2cb5e8;
 }
-
-
 
 
 /* SEÇÃO ESPECÍFICA PARA A PÁGINA HOME */
 
-
-/* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
-
+/* formatação imagem do corpo */
+.imagembody img {
+  width: 65%;
+  max-width: 600px;
+  min-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 /* SEÇÃO ESPECÍFICA PARA A PÁGINA ABOUT */
-
 
 .about {
   color: black;
@@ -95,22 +85,50 @@ li a:hover {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.7em;
-  padding: 15 px;
+  padding: 15px;
   word-spacing: 0.2em;
   font-family: 'Roboto', sans-serif;
 }
 
 .about h2 {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
   text-align: left;
   font-family: 'Roboto:wght@300;900&display=swap', sans-serif;
   margin-bottom: 20px;
 }
 
+.about h3{
+  font-size: 25px;
+}
+
+.about img{
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
 
-/* SEÇÃO ESPECÍFICA PARA A PÁGINA SoftDev */
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA SOFTDEV */
+/* formatação título h1 */
+.tituloSoftDev {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* formatação parágrafo */
+.gradientText{
+  text-align: center;
+  background-image: linear-gradient( to bottom, black 0%,rgb(93, 93, 93) 41%,rgb(147, 145, 145) 75%, black 85%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+
+/* formatação tabela, coluna cabeçalho tabela, colunas */
 table,
 th,
 td {
@@ -122,10 +140,12 @@ td {
   font-size: 15px;
 }
 
+/* formatação tabela */
 table {
   width: 80%;
 }
 
+/* formatação linha de area da formação */
 .area {
   text-align: left;
   font-weight: bold;
@@ -136,12 +156,13 @@ table {
 
 }
 
+/* formatação coluna cabeçalho tabela */
 th {
-  background-color: bisque;
+  background-color:azure;
 
 }
 
-/* classe para colocar texto da segunda coluna alinhado à esquerda */
+/* formatação texto da segunda coluna alinhado à esquerda */
 .UFCD {
   text-align: left;
 }
@@ -150,7 +171,7 @@ th {
 th :hover,
 tr :hover,
 td :hover {
-  background-color: orange;
+  background-color:rgb(6, 6, 142, 0.6);
 }
 
 /* formatação específica para a coluna de horas na linha da área */
@@ -160,4 +181,12 @@ td :hover {
   column-span: all;
   background-color: grey;
   color: white;
+}
+
+
+
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
+.tituloForm{
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
 }
