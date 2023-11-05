@@ -190,3 +190,9 @@ td :hover {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.1);
 }
+
+input:required {
+  border-color: #940606;
+  border-width: 3px;
+}
+
