@@ -196,3 +196,7 @@ input:required {
   border-width: 3px;
 }
 
+legend{
+  background-color: #9be7a9;
+  font-weight: bold;
+}
