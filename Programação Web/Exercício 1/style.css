@@ -1,24 +1,25 @@
-header{
+header {
   text-align: left;
 }
 
 footer {
-    text-align: center;
+  text-align: center;
 
 }
+
 header img {
-    width: 70%;
-    max-width: 600px;
-    min-width: 400px;
+  width: 70%;
+  max-width: 600px;
+  min-width: 400px;
 }
 
 footer {
-    color: blue;
-    background-color: grey;
-    
+  color: blue;
+  background-color: grey;
+
 }
 
-.imagembody img{
+.imagembody img {
   width: 65%;
   max-width: 600px;
   min-width: 400px;
@@ -34,36 +35,42 @@ footer img {
   min-width: 40px;
 }
 
-
-/* Formatação NAV BAR */
-/* Classe hiperligações sem sublinhado */
-
-li a {
-    text-decoration: none;
-    background-color: grey;
-    text-align: center;
-    display: block;
-    padding: 14px 16px;
-    color: black;
-    font-weight: bold;
+/* remover sublinhado de links */
+.noUnderLine {
+  text-decoration: none;
 }
 
-nav{
+/* Formatação NAV BAR */
+
+
+/* Hiperligações da lista da nav bar sem sublinhado */
+li a {
+  text-decoration: none;
+  background-color: grey;
+  text-align: center;
+  display: block;
+  padding: 14px 16px;
+  color: black;
+  font-weight: bold;
+}
+
+/* formatação da nav bar */
+nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: grey;
-  
-
 }
 
-li{
-  float:left
+/* formataçao da lista da nav bar */
+li {
+  float: left
 }
 
+/* formatação de hiperlagação quando cursor em cima */
 li a:hover {
-  background-color: blue;
+  background-color: white;
 }
 
 
@@ -80,55 +87,77 @@ li a:hover {
 
 
 .about {
-    
-    color:black;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-top: 3%;
-    margin-bottom: 2%;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.7em;
-    padding: 15px;
-    word-spacing: 0.2em;
-    font-family: 'Roboto', sans-serif;
-
+  color: black;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 3%;
+  margin-bottom: 2%;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7em;
+  padding: 15 px;
+  word-spacing: 0.2em;
+  font-family: 'Roboto', sans-serif;
 }
+
 .about h2 {
   font-size: 35px;
   font-weight: bold;
   text-align: left;
   font-family: 'Roboto:wght@300;900&display=swap', sans-serif;
-
-
-
+  margin-bottom: 20px;
 }
+
+
+
 /* SEÇÃO ESPECÍFICA PARA A PÁGINA SoftDev */
-table, th, td {
-    margin-left: auto;
-    margin-right: auto;
-    border: 1px solid;
-    text-align: center;
-    padding: 5px;
-    font-size: 15px;
+table,
+th,
+td {
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
 }
 
-table{
-    width: 80%;
+table {
+  width: 80%;
 }
-.area { 
-    text-align: left;
-    font-weight: bold;
-    column-span: all;
-    background-color: grey;
-    color: white;
+
+.area {
+  text-align: left;
+  font-weight: bold;
+  column-span: all;
+  background-color: grey;
+  color: white;
+  letter-spacing: 1px;
 
 }
+
 th {
-    background-color: bisque;
-    
+  background-color: bisque;
+
 }
+
+/* classe para colocar texto da segunda coluna alinhado à esquerda */
 .UFCD {
-    text-align: left;
+  text-align: left;
 }
-th :hover, tr :hover, td :hover{ background-color: orange;}
+
+/* mudar cor  quando o cursor está em cima */
+th :hover,
+tr :hover,
+td :hover {
+  background-color: orange;
+}
+
+/* formatação específica para a coluna de horas na linha da área */
+.HorasTotal {
+  text-align: center;
+  font-weight: bold;
+  column-span: all;
+  background-color: grey;
+  color: white;
+}
