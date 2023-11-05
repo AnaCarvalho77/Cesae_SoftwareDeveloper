@@ -11,9 +11,12 @@
 
 <body>
 
+    <!-- cabeçalho site -->
     <header>
+         <!-- logotipo do do cabeçalho -->
         <img src="/Imagens/logo.png" alt="logotipo Cesae">
         <br>
+        <!-- barra de navegação com hiperligações -->
         <nav>
             <li><a href="https://www.cesae.pt" target="_blank">Ir página Cesae</a></li>
             <li><a href="/index.html">Home</a></li>
@@ -37,10 +40,12 @@
     </p>
     <br><br>
 
+    <!-- criação do formulário de contactp -->
     <form action="">
         <fieldset>
-            <legend>Formulário de Contacto</legend>
+            <legend>Formulário de Contacto do CESAE</legend>
 
+            
             <div>
                 <label for="form-nome">Nome:</label>
                 <input type="text" name="form-nome" id="form-nome" placeholder="Insira o seu nome" required>
@@ -52,13 +57,16 @@
             </div>
             <br>
             <div>
-                <label for="form-tel">Tefone:</label>
-                <input type="tel" name="form-tel" id="form-tel" value="+351">
-            </div>
-            <br>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <label for="form-genero">Género:</label>
+                <br>
+                <input type="radio" name="form-genero" id="form-genero-masculino">
+                <label for="form-genero-masculino">Masculino</label>
+                <br>
+                <input type="radio" name="form-genero" id="form-genero-feminino">
+                <label for="form-genero-feminino">Feminino</label>
+                <br>
+                <input type="radio" name="form-genero" id="form-genero-without">
+                <label for="form-genero-without">Sem género</label>
             </div>
             <br>
             <div>
@@ -67,48 +75,18 @@
             </div>
             <br>
             <div>
-                <label for="form-operadora">Qual a sua operadira de telecom</label>
-                <br>
-                <input type="radio" name="form-operadora" id="form-operadora-meo">
-                <label for="form-operadora-meo">Meo</label>
-                <br>
-                <input type="radio" name="form-operadora" id="form-operadora-nos">
-                <label for="form-operadora-nos">NOS</label>
-                <br>
-                <input type="radio" name="form-operadora" id="form-operadora-vodafone">
-                <label for="form-operadora-vodafone">Vodafone</label>
-            </div>
-            <br>
-            <div>
-                <label for="form-equipamentos">Selecione os seus equipamentos</label>
-                <br>
-                <input type="checkbox" id="equip1" name="equip" value="TV">
-                <label for="equip1">SmartTV</label>
-                <br>
-                <input type="checkbox" id="equip2" name="equip" value="PC">
-                <label for="equip2">PC</label>
-                <br>
-                <input type="checkbox" id="equip3" name="equip" value="DVD">
-                <label for="equip3">Leitor DVD</label>
-                <br>
-                <input type="checkbox" id="equip4" name="equip" value="Consola Jogos">
-                <label for="equip4">Consola Jogos</label>
-            </div>
-            <br>
-            <div>
-                <label for="form-curso">Selecione o seu curso</label>
+                <label for="form-turma">Turma:</label>
                 <br>
                 <select name="form-curso" id="form-curso">
-                    <option value="" disable selected>Escolha um dos cursos</option>
-                    <option value="form-curso-wdm">SoftDev</option>
-                    <option value="Culinária">Culinária</option>
-                    <option value="Barman">Barman</option>
-                    <option value="Pastelaria">Pastelaria</option>
+                    <option value="" disable selected>Escolha um opção</option>
+                    <option value="SoftDev">Software Develor</option>
+                    <option value="Redes">Redes</option>
+                    <option value="Marketing">Marketing</option>
                 </select>
             </div>
             <br>
             <div>
-                <label for="form-mensagem">Deixe o seu comentário</label>
+                <label for="form-mensagem">Mensagem:</label>
                 <br>
                 <textarea name="form-mensagem" id="form-mensagem" cols="100" rows="5"></textarea>
             </div>
