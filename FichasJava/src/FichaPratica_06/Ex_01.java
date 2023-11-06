@@ -3,53 +3,53 @@ package FichaPratica_06;
 import java.util.Scanner;
 
 public class Ex_01 {
+
+public static String fazerBarulho(String animal){
+    String resultado;
+
+            //escolha
+    return switch (animal) {
+        case "Cão" -> {
+            resultado = "Au au au";
+            yield resultado;
+        }
+        case "Gato" -> {
+            resultado = "Miau";
+            yield resultado;
+        }
+        case "Peixe" -> {
+            resultado = "Glub Glub";
+            yield resultado;
+        }
+        case "Vaca" -> {
+            resultado = "Muuuu";
+            yield resultado;
+        }
+        case "Porco" -> {
+            resultado = "Oinc Oinc";
+            yield resultado;
+        }
+        default -> {
+            resultado = "Erro!operação não contemplada ou mal escrita";
+            yield resultado;
+        }
+    };
+        }
+
     public static void main(String[] args) {
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
-        //Declarar variáveis
-        int i, j, soma = 0;
-        int[][] matriz = new int[4][4];
+    String animal, barulho;
 
-void fazerBarulho(){
-    String animal, resultado;
-
-            System.out.printf("insira o animal: ");
-            animal = input.next();
-
-            //escolha
-            switch (animal.equalsIgnoreCase()) {
-                case "Cão":
-                    resultado = "Au au au";
-                    System.out.println(resultado);
-                    break;
-                case "Gato":
-                    resultado = "Miau";
-                    System.out.println(resultado);
-                    break;
-                case "Peixe":
-                    resultado = "Glub Glub";
-                    System.out.println(resultado);
-                    break;
-                case "Vaca":
-                    resultado = "Muuuu";
-                    System.out.println(resultado);
-                    break;
-
-                case "Porco":
-                    resultado = "Oinc Oinc";
-                    System.out.println(resultado);
-                    break;
-
-                default:
-                    System.out.println("Erro!operação não contemplada ou mal escrita");
-            }
-        }
-
-        System.out.println("a soma da diagonal principal é: " + soma);
+        System.out.print("insira o animal: ");
+        animal = input.next();
 
 
-        //Fechar objeto scanner
-        input.close();
+    barulho = fazerBarulho(animal);
+        System.out.println(barulho);
+
+
+
     }
 }

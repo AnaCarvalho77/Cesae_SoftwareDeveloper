@@ -1,5 +1,7 @@
 package FichaPratica_01;
 
+import FichaPratica_06.Ex_02;
+
 import java.util.Scanner;
 
 public class Ex_03 {
