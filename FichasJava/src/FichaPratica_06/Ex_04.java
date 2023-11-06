@@ -24,7 +24,7 @@ public class Ex_04 {
             case 6: //Trocar de número
                 System.out.println("Introduza um número");
                 numero = input.nextInt();
-                
+
             case 1: // Par ou impar
                 if (par(numero)){
                     System.out.println("número par");
