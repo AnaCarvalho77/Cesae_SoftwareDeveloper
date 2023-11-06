@@ -7,15 +7,25 @@ public class teste {
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
-        int numAst, i;
-        String ast;
-        ast = "*";
+        int num;
+
 
         System.out.println("introduza um número: ");
-        numAst = input.nextInt();
+        num = input.nextInt();
 
-        for(i= 0; i < numAst; i++){
-            System.out.print(ast);
+        int resultado = 0, triangular = 0;
+
+
+            for(int i = 1; i <= num && num!= resultado; i++){
+                resultado +=i;
+                if(num == resultado) {
+                    System.out.println("triangular");
+                }
+            }
+            if (num!=resultado)
+                System.out.println("não triangular");
+
         }
-    }
+
+
 }
