@@ -9,26 +9,24 @@ public class Ex_07 {
         Scanner input = new Scanner(System.in);
 
         //Declarar variáveis
-        int i, j, maior = 0;
+        int i, j, maior;
         int[] num = new int[10];
+        maior = -1;
 
 
-        for (i = 0; i < 10; i++) {
+        for (i = 0; i < num.length; i++) {
             System.out.printf("insira um número [%d]: ", i);
             num[i] = input.nextInt();
         }
 
-        for (i = 0; i < 10; i++) {
-            for (j = i + 1; j < 10; j++) {
-                if (num[j] > num[i] && num[j] % 2 == 0) {
-                    maior = num[j];
+
+        for (i = 0; i < num.length; i++) {
+                if ((num[i] > maior || maior ==-1) && num[i] % 2 == 0) {
+                    maior = num[i];
                 }
-            }
         }
-        if(num[0] > maior && num[0]%2==0){
-            maior = num[0];
-        }
-        if (maior > 0) {
+
+        if (maior % 2 == 0) {
             System.out.println(maior);
         } else {
             System.out.println("Não existem números pares!!");
