@@ -3,6 +3,13 @@ package FichaPratica_06;
 import java.util.Scanner;
 
 public class Ex_08 {
+
+    /**
+     * Método para somar duas matrizes
+     * @param matriz1 - primeira matriz para adicionar
+     * @param matriz2 - segunda matriz para adicionar
+     */
+
     static void somarMatrizes(int[][]matriz1, int [][] matriz2){
         int i, j;
         int[][]soma = new int[matriz1.length][matriz1[0].length];
@@ -20,6 +27,12 @@ public class Ex_08 {
         }
     }
 
+    /**
+     * Método para somar todos os elementos de duas matrizes
+     * @param matriz1 - primeira matriz a ser somada
+     * @param matriz2 - segunda matriz a ser somada
+     * @return total - número do somatório de todos os elementos das matrizes
+     */
     static int somatorioMatrizes(int[][]matriz1, int [][] matriz2){
         int i, j, total = 0;
         int[][]somatorio = new int[matriz1.length][matriz1[0].length];

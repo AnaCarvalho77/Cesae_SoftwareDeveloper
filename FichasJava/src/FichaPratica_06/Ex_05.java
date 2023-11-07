@@ -2,6 +2,11 @@ package FichaPratica_06;
 
 
 public class Ex_05 {
+    /**
+     * Método para verificar qual o maior número de um vetor
+     * @param vetor - vetor a ser avaliado
+     * @return maior - o número maior do vetor avaliado
+     */
     static int maior(int[] vetor){
 
 //Declarar variáveis
@@ -17,6 +22,12 @@ public class Ex_05 {
         }
         return maior;
     }
+
+    /**
+     * Método para verificar qual o menor número de um vetor
+     * @param vetor - vetor a ser avaliado
+     * @return menor - o número menor do vetor avaliado
+     */
     static int menor(int[] vetor){
 
 //Declarar variáveis
@@ -33,6 +44,11 @@ public class Ex_05 {
         return menor;
     }
 
+    /**
+     * Método para verificar se um vetor é crescente
+     * @param vetor - vetor a ser analisado
+     * @return true - se o vetor é crescente || false - se o vetor não é crescente
+     */
     static boolean crescente(int[] vetor){
         int  i;
         boolean crescente = true;

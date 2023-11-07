@@ -3,6 +3,13 @@ package FichaPratica_06;
 import java.util.Scanner;
 
 public class Ex_07 {
+
+    /**
+     * Método para imprimir um quadro com uma letra
+     * @param letra - letra a ser impressa no vetor
+     * @param linhas - numero de linha do vetor (quadrado)
+     * @param colunas - numero de colunas do vetor(quadrado)
+     */
     static void quadrado(String letra, int linhas, int colunas) {
         int i, j;
         String[][] vetor = new String[linhas][colunas];
