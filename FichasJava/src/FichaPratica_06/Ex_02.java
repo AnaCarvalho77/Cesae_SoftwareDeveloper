@@ -28,7 +28,7 @@ public class Ex_02 {
      * imprime um numero de asteriscos passado por parametro
      * @param numAst Numero de ast a imprimir
      */
-    public static void Asteriscos(int numAst) {
+    public static void asteriscos(int numAst) {
         int i;
         String ast;
         ast = "*";
@@ -41,7 +41,7 @@ public class Ex_02 {
         int num, resultado;
 
         num = IntPositivo();
-        Asteriscos(num);
+        asteriscos(num);
 
     }
 }
