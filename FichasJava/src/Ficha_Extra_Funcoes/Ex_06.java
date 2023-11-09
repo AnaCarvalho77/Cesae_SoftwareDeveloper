@@ -3,9 +3,9 @@ package Ficha_Extra_Funcoes;
 import java.util.Scanner;
 
 public class Ex_06 {
-    static double somatorio(int num){
+    static double somatorio(int num) {
 
-        int soma = 0, i,cont = 0, numVetor, numAtual;
+        int soma = 0, i, cont = 0, numVetor, numAtual;
 
 
         numAtual = num;
@@ -25,55 +25,89 @@ public class Ex_06 {
         while (numAtual >= 10) {
             if (numAtual % 10 != 0) {
                 numVetor = num % 10;
-                numAtual = num - numVetor;
-                num = numAtual;
+                numAtual = numAtual - numVetor;
+                if(numAtual % 10 ==0){
+                    numAtual = numAtual/10;
+                    if (numAtual < 10){
+                        cont++;
+                    }
+                }
                 cont++;
 
             } else {
                 while (numAtual >= 10 || numAtual <= -10) {
-                     numAtual = numAtual / 10;
-                    if(numAtual < 10){
-                        numVetor = numAtual;
+                    if (numAtual % 10 == 0) {
                         cont++;
-                    }else {
-                        numVetor = numAtual % 10;
-                        if (numVetor == 0) {
-                            numAtual = 0;
+                        numAtual = numAtual / 10;
+                        if (numAtual < 10) {
+                            cont++;
+                        }
+                    } else {
+                        numAtual = numAtual / 10;
+                        if (numAtual < 10) {
+                            numVetor = numAtual;
                             cont++;
                         } else {
-                            numAtual = numAtual - numVetor;
-                            cont++;
+                            numVetor = numAtual % 10;
+                            if (numVetor == 0) {
+                                cont++;
+                            } else {
+                                numAtual = numAtual - numVetor;
+                                cont++;
+                            }
                         }
                     }
                 }
             }
         }
 
+
+        numAtual = num;
         int [] vetor = new int[cont];
 
-        for(i = 0; i < vetor.length; i++) {
+        for(i = (vetor. length-1); i >= 0; i--) {
             if (numAtual % 10 != 0) {
-                numVetor = num % 10;
+                numVetor = numAtual % 10;
+                numAtual = numAtual - numVetor;
                 vetor[i] = numVetor;
-                numAtual = num - numVetor;
+                while(numAtual % 10 ==0 && numAtual>100) {
+                        numAtual = numAtual / 10;
+                    }
+                    if (numAtual < 10){
+                        cont++;
+                    }
 
             } else {
-                numAtual = numAtual / 10;
-
                 if (numAtual >= 10 || numAtual <= -10) {
-                    numVetor = numAtual % 10;
-                    vetor[i] = numVetor;
-                    numAtual = numVetor * 10;
-                }else{
-                    vetor [i] = numAtual;
+                    if (numAtual % 10 == 0) {
+                        vetor[i] = 0;
+                        numAtual = numAtual / 10;
+                        if (numAtual < 10) {
+                            vetor[i] = numAtual;
+                        }
+                    } else {
+                        if (numAtual < 10) {
+                            numVetor = numAtual;
+                            vetor[i] = numVetor;
+                        } else {
+                            numVetor = numAtual % 10;
+                            if (numVetor == 0) {
+                                vetor[i] = numVetor;
+                            } else {
+                                numAtual = numAtual - numVetor;
+                                vetor[i] = numVetor;
+                            }
+                        }
+                    }
+                }
                 }
             }
-        }
+
 
         for(i = 0; i < vetor.length; i++){
-           soma +=  vetor[i];
+           soma  +=  vetor[i];
         }
-        
+
         return soma;
     }
 
@@ -86,7 +120,9 @@ public class Ex_06 {
         System.out.print("Introduza um número: ");
         num = input.nextInt();
 
-        System.out.println(somatorio(num));
+
+
+        System.out.println("somatório: " + somatorio(num));
 
 
     }
