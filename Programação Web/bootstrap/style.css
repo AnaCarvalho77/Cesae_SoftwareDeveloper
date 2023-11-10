@@ -37,13 +37,13 @@
 .nav-item a:hover{
     color: black;
 }
-
+/* 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     z-index: -1;
-}
+} */
 
 /* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
 .tituloForm{
