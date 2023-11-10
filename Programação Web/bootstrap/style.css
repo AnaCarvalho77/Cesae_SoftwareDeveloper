@@ -21,11 +21,6 @@
     width: 20%;
 }
 
-
-element.style {
-}
-
-
 .container-fluid{
     background-color: blueviolet;
 }
@@ -47,7 +42,6 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-
-   
-
+    z-index: -1;
 }
+
