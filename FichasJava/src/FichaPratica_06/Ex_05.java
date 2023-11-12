@@ -10,7 +10,7 @@ public class Ex_05 {
     static int maior(int[] vetor){
 
 //Declarar variáveis
-        int maior = 0, i;
+        int maior, i;
 
         maior = vetor[0];
 
@@ -49,21 +49,15 @@ public class Ex_05 {
      * @param vetor - vetor a ser analisado
      * @return true - se o vetor é crescente || false - se o vetor não é crescente
      */
-    static boolean crescente(int[] vetor){
+    public static boolean crescente(int[] vetor){
         int  i;
-        boolean crescente = true;
 
         for(i= 1; i < vetor.length; i++){
             if(vetor[i] <= vetor[i-1]){
-                crescente = false;
+                return false;
             }
         }
-
-        if(crescente){
-            return true;
-        }else{
-            return false;
-        }
+        return true;
     }
 
 }

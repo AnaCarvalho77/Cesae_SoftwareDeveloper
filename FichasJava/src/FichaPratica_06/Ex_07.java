@@ -10,7 +10,7 @@ public class Ex_07 {
      * @param linhas - numero de linha do vetor (quadrado)
      * @param colunas - numero de colunas do vetor(quadrado)
      */
-    static void quadrado(String letra, int linhas, int colunas) {
+    public static void quadrado(String letra, int linhas, int colunas) {
         int i, j;
         String[][] vetor = new String[linhas][colunas];
 

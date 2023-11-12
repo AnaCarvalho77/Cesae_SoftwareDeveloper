@@ -34,17 +34,15 @@ public class Ex_08 {
      * @return total - número do somatório de todos os elementos das matrizes
      */
     static int somatorioMatrizes(int[][]matriz1, int [][] matriz2){
-        int i, j, total = 0;
-        int[][]somatorio = new int[matriz1.length][matriz1[0].length];
+        int i, j, somatorio = 0;
 
         for (i = 0; i < matriz1.length; i++){
             for(j = 0; j < matriz1[0].length; j++){
-                somatorio[i][j] = matriz1[i][j] + matriz2[i][j];
-                total  +=  somatorio[i][j];
+                somatorio = somatorio + matriz1[i][j] + matriz2[i][j];
             }
         }
 
-        return total;
+        return somatorio;
 
     }
 

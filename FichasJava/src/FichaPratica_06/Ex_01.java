@@ -30,7 +30,7 @@ public static String fazerBarulho(String animal){
             yield resultado;
         }
         default -> {
-            resultado = "Erro!operação não contemplada ou mal escrita";
+            resultado = "Brulho Desconhecido";
             yield resultado;
         }
     };
