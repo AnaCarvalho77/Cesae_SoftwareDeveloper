@@ -5,11 +5,11 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import static FichaPratica_07.*;
+import static FichaPratica_07.BibliotecaFicheiros.*;
 
 
 public class Ex_01 {
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException {
 //        Scanner fileScanner = new Scanner(new File("Ficheiros/exercicio_01.txt"));
 //
 //        String linha;
@@ -18,8 +18,9 @@ public class Ex_01 {
 //            linha = fileScanner.nextLine();
 //            System.out.println(linha);
 //        }
-imprimirFicheiros("Ficheiros/exercicio_01.txt");
-
+        imprimirFicheiro("Ficheiros/exercicio_01.txt");
+        imprimirFicheiro("Ficheiros/exercicio_01_Alternativa01.txt");
+        imprimirFicheiro("Ficheiros/exercicio_01_Alternativa02.txt");
     }
 
 }
