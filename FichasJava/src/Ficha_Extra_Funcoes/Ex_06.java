@@ -5,107 +5,18 @@ import java.util.Scanner;
 public class Ex_06 {
     static double somatorio(int num) {
 
-        int soma = 0, i, cont = 0, numVetor, numAtual;
+        int soma = 0, i, digito = 0, numVetor, numAtual;
 
 
-        numAtual = num;
+        while (num != 0) {
+            // Obtém o último dígito
+            digito = num % 10;
 
-//        String numero = Integer.toString(num);
-//        char[]  arrayNumero = numero.toCharArray();
-//        int [] array = new int[arrayNumero.length];
-//
-//        for(i=0; i< arrayNumero.length; i++ ){
-//            array[i] = Integer.parseInt(String.valueOf(arrayNumero[i]));
-//        }
-//
-//        for(i=0; i< arrayNumero.length;i++){
-//            soma += array[i];
-//        }
+            // Adiciona o dígito à soma
+            soma += digito;
 
-        while (numAtual >= 10) {
-            if (numAtual % 10 != 0) {
-                numVetor = num % 10;
-                numAtual = numAtual - numVetor;
-                if(numAtual % 10 ==0){
-                    numAtual = numAtual/10;
-                    if (numAtual < 10){
-                        cont++;
-                    }
-                }
-                cont++;
-
-            } else {
-                while (numAtual >= 10 || numAtual <= -10) {
-                    if (numAtual % 10 == 0) {
-                        cont++;
-                        numAtual = numAtual / 10;
-                        if (numAtual < 10) {
-                            cont++;
-                        }
-                    } else {
-                        numAtual = numAtual / 10;
-                        if (numAtual < 10) {
-                            numVetor = numAtual;
-                            cont++;
-                        } else {
-                            numVetor = numAtual % 10;
-                            if (numVetor == 0) {
-                                cont++;
-                            } else {
-                                numAtual = numAtual - numVetor;
-                                cont++;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-
-        numAtual = num;
-        int [] vetor = new int[cont];
-
-        for(i = (vetor. length-1); i >= 0; i--) {
-            if (numAtual % 10 != 0) {
-                numVetor = numAtual % 10;
-                numAtual = numAtual - numVetor;
-                vetor[i] = numVetor;
-                while(numAtual % 10 ==0 && numAtual>100) {
-                        numAtual = numAtual / 10;
-                    }
-                    if (numAtual < 10){
-                        cont++;
-                    }
-
-            } else {
-                if (numAtual >= 10 || numAtual <= -10) {
-                    if (numAtual % 10 == 0) {
-                        vetor[i] = 0;
-                        numAtual = numAtual / 10;
-                        if (numAtual < 10) {
-                            vetor[i] = numAtual;
-                        }
-                    } else {
-                        if (numAtual < 10) {
-                            numVetor = numAtual;
-                            vetor[i] = numVetor;
-                        } else {
-                            numVetor = numAtual % 10;
-                            if (numVetor == 0) {
-                                vetor[i] = numVetor;
-                            } else {
-                                numAtual = numAtual - numVetor;
-                                vetor[i] = numVetor;
-                            }
-                        }
-                    }
-                }
-                }
-            }
-
-
-        for(i = 0; i < vetor.length; i++){
-           soma  +=  vetor[i];
+            // Remove o último dígito do número
+            num /= 10;
         }
 
         return soma;
