@@ -7,20 +7,35 @@ import java.util.Scanner;
 
 public class Ex_08 {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner ficheiroOrigem = new Scanner(new File("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/exercicio_08.txt"));
 
-        String conteudo;
+        //Instanciar o Scanner
+        Scanner input = new Scanner(System.in);
+        System.out.print("Introduza uma palavra: ");
+        String palavraPedida = input.next();
+        //Fechar objeto scanner
+        input.close();
 
-        File novoFicheiro = new File("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/exercicio_08teste.txt");
+        Scanner fichOrigem = new Scanner(new File("Ficheiros/exercicio_08.txt"));
+
+        File novoFicheiro = new File("Ficheiros/exercicio_08teste.txt");
 
         // Criar um maquina de escrever naquele ficheiro
         PrintWriter escritaNoFicheiro = new PrintWriter(novoFicheiro);
 
 
 
-        while (ficheiroOrigem.hasNextLine()) {
-            conteudo = ficheiroOrigem.nextLine();
-            escritaNoFicheiro.println(conteudo);
+
+        while (fichOrigem.hasNextLine()) {
+            String linha = fichOrigem.nextLine();
+            linha = linha.replace(",", "");
+            linha = linha.replace(".", "");
+            String[] palavras = linha.split(" ");
+            for (int i = 0; i < palavras.length; i++) {
+                if (palavraPedida.equals(palavras[i])) {
+                  escritaNoFicheiro.println(linha);
+                }
+            }
+
         }
 
         escritaNoFicheiro.close();
@@ -28,3 +43,4 @@ public class Ex_08 {
 
     }
 }
+

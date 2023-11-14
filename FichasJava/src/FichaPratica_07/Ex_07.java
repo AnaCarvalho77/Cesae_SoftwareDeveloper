@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Ex_07 {
     public static void main(String[] args) throws FileNotFoundException {
+
         Scanner in = new Scanner(new File("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/exercicio_07.txt"));
 
         int contLinhas = 0, contPalavras = 0, cont= 0;
