@@ -13,7 +13,7 @@ public class Ex_09 {
         // Criar um maquina de escrever naquele ficheiro
         PrintWriter escritaNoFicheiro = new PrintWriter(novoFicheiro);
 
-        int contPalavras= 0;
+        int contPalavras = 0;
 
         while (fichOrigem.hasNextLine()) {
             String linha = fichOrigem.nextLine();
@@ -21,35 +21,35 @@ public class Ex_09 {
             contPalavras += palavras.length;
 
         }
-
+        fichOrigem.close();
         String[] palavrasTodas = new String[contPalavras];
-        int cont=0;
 
-        while (fichOrigem.hasNextLine()) {
-            String linha = fichOrigem.next();
+        int cont = 0, contMaior = 0;
+
+        Scanner fichOrigem2 = new Scanner(new File("Ficheiros/exercicio_09.txt"));
+        while (fichOrigem2.hasNextLine()) {
+            String linha = fichOrigem2.nextLine();
             String[] palavra = linha.split(" ");
-            for(int i = cont; i < contPalavras; i++){
-                for(int j = 0; j <palavra.length; j++){
-                    palavra[j] = palavrasTodas[i];
-                    cont += i;
+            for (int i = 0; i < palavra.length; i++) {
+                palavrasTodas[cont] = palavra[i] ;
+                cont += 1;
 
-                }
-            }
             }
 
-
-        while (fichNovo.hasNext()) {
-            String[] palavra = new String[]{fichNovo.next()};
-            for(int i=1; i< palavra.length;i++){
-                for(int j=0; j<= i; j++){
-                    if(palavra[j].equals(palavra[i]))
-                }
         }
+        String maisVezes = palavrasTodas[0];
 
-
-
-
-
-    }
+        for (int i = 0; i < palavrasTodas.length; i++) {
+            for (int j = i + 1; j < palavrasTodas.length; j++) {
+                if (palavrasTodas[i].equals(palavrasTodas[j])) {
+                    cont++;
+                    if (cont > contMaior) {
+                        contMaior = cont;
+                        maisVezes = palavrasTodas[i];
+                    }
+                }
+            }
+        }
+        System.out.println(maisVezes);
     }
 }
