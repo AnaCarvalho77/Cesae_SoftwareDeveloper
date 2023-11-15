@@ -312,6 +312,8 @@ public class Sofia_Carvalho {
                                     break;
                             }
                         }while(!menuAdmin.equals("0"));
+                    }else{
+                        System.out.println("\nPassword Incorreta!!\n");
                     }
                     break;
                 case "2":
