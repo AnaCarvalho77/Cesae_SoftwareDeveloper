@@ -161,19 +161,25 @@ public class Sofia_Carvalho {
 
     /**
      * Método para imprimir dados de um cliente que o utilizador dá o número
-     * @param numCliente - numero do cliente que recebido
-     * @return - vetor de strings com os dados do cliente
+     * @param matriz - matriz recebida para analisar dados
+     * @param codCliente - string com codigo cliente que queremos os dados
      */
-    public static void imprimirDadosCliente(String [][] matriz, String numCliente){
-        int tamVetor = 4, linhaCliente = 0;
-        String[] dadosCliente = new String[tamVetor];
-        for(int i = 0; i < matriz.length;i++ ){
-            if(numCliente.equals((matriz[i][1]))){
-                for(int j=1;j<=4;j++){
-                    dadosCliente[linhaCliente]=matriz[i][j];
-                    linhaCliente++;
-                    System.out.print(dadosCliente[j]);
+    public static void imprimirDadosCliente(String [][] matriz, String codCliente){
+        //declaração das variáveis
+        int contCliente = 0;//para contar a posição no vetor de dados cliente
+
+        //declarar vetor de strings para dados cliente
+        String[] dadosCliente = new String[3];
+
+        //para cada linha da matriz
+        for(int i = 0; i < matriz.length; i++ ){
+            if(codCliente.equals((matriz[i][1]))){//vai verificar se a String codCliente é igual à string na coluna indice 1 da matriz
+                for(int j=2; j <= 4; j++){//se sim vai copiar os dados da coluna indice 2 até 4 para o vetor de strings
+                    dadosCliente[contCliente]=matriz[i][j];
+                    System.out.print(dadosCliente[contCliente]);
+                    contCliente++;//incremento da posição no vetor dados cliente
                 }
+                break;//tive de quebrar porque se houvesse outra linha do mesmo cliente ele ia preencher o vetor outra vez
             }
         }
     }
@@ -205,7 +211,8 @@ public class Sofia_Carvalho {
                         System.out.println("1. Imprimir conteúdo ficheiro.");
                         System.out.println("2. Imprimir quantas vendas foram executadas e o seu valor total");
                         System.out.println("3. Calcule o lucro total");
-                        System.out.println("4. Qual o jogo mais caro e quais os clientes que o compraram?");
+                        System.out.println("4. Imprimir informações associadas a um cliente?");
+                        System.out.println("5. Qual o jogo mais caro e quais os clientes que o compraram?");
                         System.out.println("0. Sair");
                         menuAdmin = input.next();//opcao do utilizador no menu admin
                             switch (menuAdmin) {  //execucao da escolha do menu admin
@@ -225,6 +232,7 @@ public class Sofia_Carvalho {
                                     imprimirDadosCliente(matriz,numCliente);
                                     break;
                                 case "5":
+                                    
                                     break;
                                 case "0":
                                     break;
