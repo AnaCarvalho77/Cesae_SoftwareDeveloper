@@ -143,13 +143,48 @@ public class Sofia_Carvalho {
 
     }
 
+    /**
+     * Método para calcular o lucro total das vendas
+     * @param matriz - a matriz de strings para trabalhar com o valor de cada jogo
+     * @return lucroTotal - valor do lucro total
+     */
+    public static Double lucroTotal(String [][] matriz){
+        //declarar e inicializar a variável total que vai retornar o lucro total das vendas
+        double lucroTotal=0;
+
+        //ciclo que a cada linha da matriz vai converter o conteudo da coluna indice 8 em inteiro e somar o lucro de cada jogo
+        for(int i= 0; i< matriz.length; i++){
+            lucroTotal += (Double.parseDouble(matriz[i][8]))-((Double.parseDouble(matriz[i][8]))/1.20);//lucroTotal = (valor venda)-(valor venda/1.20);
+        }
+        return lucroTotal;
+    }
+
+    /**
+     * Método para imprimir dados de um cliente que o utilizador dá o número
+     * @param numCliente - numero do cliente que recebido
+     * @return - vetor de strings com os dados do cliente
+     */
+    public static void imprimirDadosCliente(String [][] matriz, String numCliente){
+        int tamVetor = 4, linhaCliente = 0;
+        String[] dadosCliente = new String[tamVetor];
+        for(int i = 0; i < matriz.length;i++ ){
+            if(numCliente.equals((matriz[i][1]))){
+                for(int j=1;j<=4;j++){
+                    dadosCliente[linhaCliente]=matriz[i][j];
+                    linhaCliente++;
+                    System.out.print(dadosCliente[j]);
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
 //        Declaração de variáveis
-        String tipoUtilizador, password = "senha", senha = "", menuAdmin;
+        String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente ;
         int linhas, colunas;
         String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
         String[][] matriz = lerFicheiroParaMatriz(caminhoFicheiro);
@@ -163,7 +198,7 @@ public class Sofia_Carvalho {
 
             switch (tipoUtilizador) { //consoante o tipo de utilizador vai ser apresentado o seu menu
                 case "1":
-                    System.out.println("qual a password?");
+                    System.out.print("qual a password?");
                     senha = input.next();
                     if (senha.equals(password)) {//se admin com password correcta vai questionar opcao menu admin
                         System.out.println("escolha uma opcao:");
@@ -182,8 +217,12 @@ public class Sofia_Carvalho {
                                     vendasValorTotal(matriz);
                                     break;
                                 case "3":
+                                    System.out.println(lucroTotal(matriz));
                                     break;
                                 case "4":
+                                    System.out.print("qual o número do cliente?");
+                                    numCliente = input.next();
+                                    imprimirDadosCliente(matriz,numCliente);
                                     break;
                                 case "5":
                                     break;
