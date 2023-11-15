@@ -277,39 +277,41 @@ public class Sofia_Carvalho {
                     System.out.print("qual a password? ");
                     senha = input.next();
                     if (senha.equals(password)) {//se admin com password correcta vai questionar opcao menu admin
-                        System.out.println("escolha uma opcao:");
-                        System.out.println("1. Imprimir conteúdo ficheiro.");
-                        System.out.println("2. Imprimir quantas vendas foram executadas e o seu valor total");
-                        System.out.println("3. Calcule o lucro total");
-                        System.out.println("4. Imprimir informações associadas a um cliente?");
-                        System.out.println("5. Qual o jogo mais caro e quais os clientes que o compraram?");
-                        System.out.println("0. Sair");
-                        menuAdmin = input.next();//opcao do utilizador no menu admin
-                        switch (menuAdmin) {  //execucao da escolha do menu admin
-                            case "1":
-                                imprimirConteudo(caminhoFicheiro);
-                                break;
-                            case "2":
-                                System.out.println("a quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
-                                vendasValorTotal(matriz);
-                                break;
-                            case "3":
-                                System.out.println(lucroTotal(matriz));
-                                break;
-                            case "4":
-                                System.out.print("qual o número do cliente?");
-                                numCliente = input.next();
-                                imprimirDadosCliente(matriz, numCliente);
-                                break;
-                            case "5":
-                                jogoCaro = jogoMaisCaro(matriz);
-                                System.out.println("o jogo mais caro é o: " + jogoCaro);
-                                System.out.println("\nOs clientes que compraram o jogo mais caro são:");
-                                clienteJogo(matriz, jogoCaro);
-                                break;
-                            case "0":
-                                break;
-                        }
+                        do {
+                            System.out.println("\n\nescolha uma opcao:");
+                            System.out.println("1. Imprimir conteúdo ficheiro.");
+                            System.out.println("2. Imprimir quantas vendas foram executadas e o seu valor total");
+                            System.out.println("3. Calcule o lucro total");
+                            System.out.println("4. Imprimir informações associadas a um cliente?");
+                            System.out.println("5. Qual o jogo mais caro e quais os clientes que o compraram?");
+                            System.out.println("0. Sair");
+                            menuAdmin = input.next();//opcao do utilizador no menu admin
+                            switch (menuAdmin) {  //execucao da escolha do menu admin
+                                case "1":
+                                    imprimirConteudo(caminhoFicheiro);
+                                    break;
+                                case "2":
+                                    System.out.println("a quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
+                                    vendasValorTotal(matriz);
+                                    break;
+                                case "3":
+                                    System.out.println(lucroTotal(matriz));
+                                    break;
+                                case "4":
+                                    System.out.print("qual o número do cliente?");
+                                    numCliente = input.next();
+                                    imprimirDadosCliente(matriz, numCliente);
+                                    break;
+                                case "5":
+                                    jogoCaro = jogoMaisCaro(matriz);
+                                    System.out.println("o jogo mais caro é o: " + jogoCaro);
+                                    System.out.println("\nOs clientes que compraram o jogo mais caro são:");
+                                    clienteJogo(matriz, jogoCaro);
+                                    break;
+                                case "0":
+                                    break;
+                            }
+                        }while(!menuAdmin.equals("0"));
                     }
                     break;
                 case "2":
