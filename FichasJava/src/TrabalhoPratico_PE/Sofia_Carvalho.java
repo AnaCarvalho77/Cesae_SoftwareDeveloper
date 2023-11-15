@@ -6,11 +6,15 @@ import java.util.Scanner;
 
 public class Sofia_Carvalho {
 
-
-    public static void imprimirConteudo() throws FileNotFoundException {
+    /**
+     * Método para imprimir o conteúdo de um ficheiro
+     * @param caminhoFicheiro - string com o caminho do ficheiro
+     * @throws FileNotFoundException - exceção
+     */
+    public static void imprimirConteudo(String caminhoFicheiro) throws FileNotFoundException {
 
         //Trazer o ficheiro para o programa
-        Scanner fichOrigem = new Scanner(new File("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv"));
+        Scanner fichOrigem = new Scanner(new File(caminhoFicheiro));
 
         //declarar variável
         String linha;
@@ -22,57 +26,99 @@ public class Sofia_Carvalho {
         }
     }
 
+    /**
+     * Método para contar as linhas de um ficheiro excluindo o cabeçalho
+     * @param caminhoFicheiro vai receber uma string que é o caminho do ficheiro
+     * @return contagemLinhas - com o número de linhas
+     * @throws FileNotFoundException - exceção
+     */
     public static int contarLinhasFicheiro(String caminhoFicheiro) throws FileNotFoundException {
-        Scanner fichOrigem = new Scanner(new File(caminhoFicheiro));
 
+        //trazer o ficheiro
+        Scanner fichOrigem = new Scanner(new File(caminhoFicheiro));
+        //declaração de variáveis
         int contagemLinhas = 0;
+
+        //excluir a linha de cabeçalho
+        fichOrigem.nextLine();
+
+        //enquanto houver linha ele vai contar
         while (fichOrigem.hasNextLine()) {
             fichOrigem.nextLine();
             contagemLinhas++;
         }
+
+        //vai retornar o número de linhas
         return contagemLinhas;
     }
 
+    /**
+     * Método para contar as colunas de um ficheiro
+     * @param caminhoFicheiro - string com o caminho do ficheiro
+     * @param delimitador - delimitador que separa as colunas no ficheiro
+     * @return contagemColunas com o número de colunas
+     * @throws FileNotFoundException . exceção
+     */
     public static int contarColunasFicheiro(String caminhoFicheiro, String delimitador) throws FileNotFoundException {
+        //trazer ficheiro
         Scanner fichOrigem = new Scanner(new File(caminhoFicheiro));
 
-        int contagemColunas = 0;
+        //declaração de variáveis
+        int contagemColunas;
 
+        //na linha vai fazer o split para um vetor de strings, para separar dados por colunas
         String linha = fichOrigem.nextLine();
         String[] itensLinha = linha.split(delimitador);
+        //o número de colunas é o tamanho do vetor de strings da linha
         contagemColunas = itensLinha.length;
 
         return contagemColunas;
     }
 
+    /**
+     * Método para ler ficheiro e tranformar dados numa matriz
+     * @param caminhoFicheiro - string com o caminho do ficheiro
+     * @return matriz com dados do ficheiro
+     * @throws FileNotFoundException exceção
+     */
     public static String[][] lerFicheiroParaMatriz(String caminhoFicheiro) throws FileNotFoundException {
         //Trazer ficheiro
         Scanner fichOrigem = new Scanner(new File(caminhoFicheiro));
 
-        //Contar numero de linhas
-        int linhas = (contarLinhasFicheiro(caminhoFicheiro)) - 1;
+        //Declarar e Contar numero de linhas
+        int linhas = contarLinhasFicheiro(caminhoFicheiro);
 
+        //declarar e contar numero de colunas
         int colunas = (contarColunasFicheiro(caminhoFicheiro, ";"));
 
+        //declarar e inicializar a matriz de strings que vai receber informação ficheiro
         String[][] matriz = new String[linhas][colunas];
 
+        //declarar a linha atual que é inicializada no cabeçalho do ficheiro
         String linhaAtual = fichOrigem.nextLine();
+
+        //Declarar um contador para a linha da matriz e inicializamos no indice 0
         int linhaMatriz = 0;
 
         while (fichOrigem.hasNextLine()) {
-            linhaAtual = fichOrigem.nextLine();
-            String[] itensLinha = linhaAtual.split(";");
+            linhaAtual = fichOrigem.nextLine();//linha atual , dentro do ciclo, começa na primeira linha porque cabeçalho ja foi excluido
+            String[] itensLinha = linhaAtual.split(";");//itens da linha é um vetor da linhaAtual
 
-            for (int i = 0; i < itensLinha.length; i++) {
+            for (int i = 0; i < itensLinha.length; i++) {// cada item da linha vai ser a coluna da linha da matriz
                 matriz[linhaMatriz][i] = itensLinha[i];
             }
-            linhaMatriz++;
+            linhaMatriz++;//incrementamos para a linha da matriz
         }
         return matriz;
 
     }
 
+    /**
+     * Método para imprimir a matriz na consola
+     * @param matriz - matriz de strings qua vai receber para imprimir
+     */
     public static void imprimirMatrizConsola(String [][] matriz){
+        //vai percorrer para cada linha as colunas da matriz e imprimir
         for (int linha = 0; linha < matriz.length; linha++){
             System.out.println();
             for (int coluna = 0; coluna< matriz[0].length;coluna++){
@@ -81,11 +127,19 @@ public class Sofia_Carvalho {
         }
     }
 
-    public static void VendasValorTotal (String [][] matriz){
-        int total=0;
+    /**
+     * Método para calcular o total das vendas
+     * @param matriz - matriz de strings que vai receber
+     */
+    public static void vendasValorTotal (String [][] matriz){
+        //declarar e inicializar a variável total que vai retornar o total das vendas
+        double total=0;
+
+        //ciclo que a cada linha da matriz vai converter o conteudo da coluna indice 8 em inteiro e somar
         for(int i= 0; i< matriz.length; i++){
-            total += Integer.parseInt(matriz[i][8]);
+            total += Double.parseDouble(matriz[i][8]);
         }
+        System.out.printf("o valor total das vendas é: %.2f " , total); //arredondar para duas casas decimais como tinha apendido em linguagem c
 
     }
 
@@ -121,12 +175,11 @@ public class Sofia_Carvalho {
                         menuAdmin = input.next();//opcao do utilizador no menu admin
                             switch (menuAdmin) {  //execucao da escolha do menu admin
                                 case "1":
-                                    imprimirConteudo();
+                                    imprimirConteudo(caminhoFicheiro);
                                     break;
                                 case "2":
-                                    System.out.println("a quantodade de colunas é: " + contarColunasFicheiro(caminhoFicheiro,";"));
                                     System.out.println("a quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
-                                    imprimirMatrizConsola(matriz);
+                                    vendasValorTotal(matriz);
                                     break;
                                 case "3":
                                     break;
