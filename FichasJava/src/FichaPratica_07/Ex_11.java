@@ -39,21 +39,21 @@ public class Ex_11 {
         }
     }
 
-    public static void musicaMaior(String[][] matriz) {
-        String maior,linha;
-        int indexAtual = 0;
-        for (int i = 0; i < matriz.length; i++) {
-                linha = matriz[i][3];
-                indexAtual++;
-            }
-        }
-        for (int i = 0; i < musicasArtista.length; i++) {
-            if (!musicasArtista[i].equals(null)) {
-                System.out.println(musicasArtista[i]);
-            }
-
-        }
-    }
+//    public static void musicaMaior(String[][] matriz) {
+//        String maior,linha;
+//        int indexAtual = 0;
+//        for (int i = 0; i < matriz.length; i++) {
+//                linha = matriz[i][3];
+//                indexAtual++;
+//            }
+//        }
+//        for (int i = 0; i < musicasArtista.length; i++) {
+//            if (!musicasArtista[i].equals(null)) {
+//                System.out.println(musicasArtista[i]);
+//            }
+//
+//        }
+//    }
 
     public static void main(String[] args) throws FileNotFoundException {
 
