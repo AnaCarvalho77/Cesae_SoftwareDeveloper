@@ -8,6 +8,7 @@ public class Sofia_Carvalho {
 
     /**
      * Método para imprimir o conteúdo de um ficheiro
+     *
      * @param caminhoFicheiro - string com o caminho do ficheiro
      * @throws FileNotFoundException - exceção
      */
@@ -28,6 +29,7 @@ public class Sofia_Carvalho {
 
     /**
      * Método para contar as linhas de um ficheiro excluindo o cabeçalho
+     *
      * @param caminhoFicheiro vai receber uma string que é o caminho do ficheiro
      * @return contagemLinhas - com o número de linhas
      * @throws FileNotFoundException - exceção
@@ -54,8 +56,9 @@ public class Sofia_Carvalho {
 
     /**
      * Método para contar as colunas de um ficheiro
+     *
      * @param caminhoFicheiro - string com o caminho do ficheiro
-     * @param delimitador - delimitador que separa as colunas no ficheiro
+     * @param delimitador     - delimitador que separa as colunas no ficheiro
      * @return contagemColunas com o número de colunas
      * @throws FileNotFoundException . exceção
      */
@@ -77,6 +80,7 @@ public class Sofia_Carvalho {
 
     /**
      * Método para ler ficheiro e tranformar dados numa matriz
+     *
      * @param caminhoFicheiro - string com o caminho do ficheiro
      * @return matriz com dados do ficheiro
      * @throws FileNotFoundException exceção
@@ -115,13 +119,14 @@ public class Sofia_Carvalho {
 
     /**
      * Método para imprimir a matriz na consola
+     *
      * @param matriz - matriz de strings qua vai receber para imprimir
      */
-    public static void imprimirMatrizConsola(String [][] matriz){
+    public static void imprimirMatrizConsola(String[][] matriz) {
         //vai percorrer para cada linha as colunas da matriz e imprimir
-        for (int linha = 0; linha < matriz.length; linha++){
+        for (int linha = 0; linha < matriz.length; linha++) {
             System.out.println();
-            for (int coluna = 0; coluna< matriz[0].length;coluna++){
+            for (int coluna = 0; coluna < matriz[0].length; coluna++) {
                 System.out.print(matriz[linha][coluna] + "\t|\t");
             }
         }
@@ -129,42 +134,45 @@ public class Sofia_Carvalho {
 
     /**
      * Método para calcular o total das vendas
+     *
      * @param matriz - matriz de strings que vai receber
      */
-    public static void vendasValorTotal (String [][] matriz){
+    public static void vendasValorTotal(String[][] matriz) {
         //declarar e inicializar a variável total que vai retornar o total das vendas
-        double total=0;
+        double total = 0;
 
         //ciclo que a cada linha da matriz vai converter o conteudo da coluna indice 8 em inteiro e somar
-        for(int i= 0; i< matriz.length; i++){
+        for (int i = 0; i < matriz.length; i++) {
             total += Double.parseDouble(matriz[i][8]);
         }
-        System.out.printf("o valor total das vendas é: %.2f " , total); //arredondar para duas casas decimais como tinha apendido em linguagem c
+        System.out.printf("o valor total das vendas é: %.2f ", total); //arredondar para duas casas decimais como tinha apendido em linguagem c
 
     }
 
     /**
      * Método para calcular o lucro total das vendas
+     *
      * @param matriz - a matriz de strings para trabalhar com o valor de cada jogo
      * @return lucroTotal - valor do lucro total
      */
-    public static Double lucroTotal(String [][] matriz){
+    public static Double lucroTotal(String[][] matriz) {
         //declarar e inicializar a variável total que vai retornar o lucro total das vendas
-        double lucroTotal=0;
+        double lucroTotal = 0;
 
         //ciclo que a cada linha da matriz vai converter o conteudo da coluna indice 8 em inteiro e somar o lucro de cada jogo
-        for(int i= 0; i< matriz.length; i++){
-            lucroTotal += (Double.parseDouble(matriz[i][8]))-((Double.parseDouble(matriz[i][8]))/1.20);//lucroTotal = (valor venda)-(valor venda/1.20);
+        for (int i = 0; i < matriz.length; i++) {
+            lucroTotal += (Double.parseDouble(matriz[i][8])) - ((Double.parseDouble(matriz[i][8])) / 1.20);//lucroTotal = (valor venda)-(valor venda/1.20);
         }
         return lucroTotal;
     }
 
     /**
      * Método para imprimir dados de um cliente que o utilizador dá o número
-     * @param matriz - matriz recebida para analisar dados
+     *
+     * @param matriz     - matriz recebida para analisar dados
      * @param codCliente - string com codigo cliente que queremos os dados
      */
-    public static void imprimirDadosCliente(String [][] matriz, String codCliente){
+    public static void imprimirDadosCliente(String[][] matriz, String codCliente) {
         //declaração das variáveis
         int contCliente = 0;//para contar a posição no vetor de dados cliente
 
@@ -172,15 +180,77 @@ public class Sofia_Carvalho {
         String[] dadosCliente = new String[3];
 
         //para cada linha da matriz
-        for(int i = 0; i < matriz.length; i++ ){
-            if(codCliente.equals((matriz[i][1]))){//vai verificar se a String codCliente é igual à string na coluna indice 1 da matriz
-                for(int j=2; j <= 4; j++){//se sim vai copiar os dados da coluna indice 2 até 4 para o vetor de strings
-                    dadosCliente[contCliente]=matriz[i][j];
+        for (int i = 0; i < matriz.length; i++) {
+            if (codCliente.equals((matriz[i][1]))) {//vai verificar se a String codCliente é igual à string na coluna indice 1 da matriz
+                for (int j = 2; j <= 4; j++) {//se sim vai copiar os dados da coluna indice 2 até 4 para o vetor de strings
+                    dadosCliente[contCliente] = matriz[i][j];
                     System.out.print(dadosCliente[contCliente]);
                     contCliente++;//incremento da posição no vetor dados cliente
                 }
                 break;//tive de quebrar porque se houvesse outra linha do mesmo cliente ele ia preencher o vetor outra vez
             }
+        }
+    }
+
+    /**
+     * Método para encontrar o jogo mais caro
+     *
+     * @param matriz - matriz de strings para analisar os dados
+     * @return - jogoMaisCaro - nome do jogo mais caro
+     */
+    public static String jogoMaisCaro(String[][] matriz) {
+        //declaração de variáveis
+        double maior = Double.parseDouble(matriz[0][8]);//iniciei com o valor do primeiro jogo
+        String jogoMaisCaro = matriz[0][7];//Iniciei com o nome do primeiro jogo
+
+        //para cada linha da matriz vou verificar se o valor do jogo é maior que o "maior"
+        for (int i = 1; i < matriz.length; i++) {
+            if (Double.parseDouble(matriz[i][8]) > maior) {
+                maior = Double.parseDouble(matriz[i][8]);//se sim guardar o valor desse jogo
+                jogoMaisCaro = matriz[i][7];//e guardar o nome desse jogo
+            }
+        }
+        return jogoMaisCaro;
+    }
+
+    /**
+     * Método para enquantrar quantidade de jogoMaisCaro vendidas
+     * @param matriz - matriz de strings com os dados  a analisar
+     * @param jogoCaro - o nome do jogo mais caro
+     * @return contJogoMaisCaro - retorna a quantidade de jogo mais caro vendidas
+     */
+    public static int quantJogoMaisCaro(String[][] matriz, String jogoCaro) {
+        //declaração de variáveis
+        int contJogoMaisCaro = 0;//contador de jogo mais caro
+
+        //verificar a cada linha quantas vezes encontra nome jogo mais caro
+        for (int i = 0; i < matriz.length; i++) {
+            if (jogoCaro.equals(matriz[i][7]))
+                contJogoMaisCaro++;
+        }
+        return contJogoMaisCaro;
+    }
+
+    /**
+     * Método para saber o nome dos clientes que compraram o jogo mais caro
+     * @param matriz - matriz de strings que vamos analisar
+     * @param jogoCaro - nome do jogo mais caro para analisar
+     */
+    public static void clienteJogo(String[][] matriz, String jogoCaro) {
+        //declaração das variáveis
+        int contCliente = 0;//para contar a posição no vetor de dados cliente
+
+        //declarar vetor de strings para dados cliente
+        String[] clienteJogoMaisCaro = new String[quantJogoMaisCaro(matriz, jogoCaro)];
+
+        //para cada linha da matriz
+        for (int i = 0; i < matriz.length; i++) {
+            if (jogoCaro.equals((matriz[i][7]))) {//vai verificar se o nome do jogo é igual ao da coluna indice 7 da matriz
+                clienteJogoMaisCaro[contCliente] = matriz[i][2]; //guardar nome cliente no vetor
+                System.out.println(clienteJogoMaisCaro[contCliente]);
+                contCliente++;//incremento da posição no vetor  com nome clientes
+            }
+
         }
     }
 
@@ -190,7 +260,7 @@ public class Sofia_Carvalho {
         Scanner input = new Scanner(System.in);
 
 //        Declaração de variáveis
-        String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente ;
+        String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente, jogoCaro;
         int linhas, colunas;
         String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
         String[][] matriz = lerFicheiroParaMatriz(caminhoFicheiro);
@@ -204,7 +274,7 @@ public class Sofia_Carvalho {
 
             switch (tipoUtilizador) { //consoante o tipo de utilizador vai ser apresentado o seu menu
                 case "1":
-                    System.out.print("qual a password?");
+                    System.out.print("qual a password? ");
                     senha = input.next();
                     if (senha.equals(password)) {//se admin com password correcta vai questionar opcao menu admin
                         System.out.println("escolha uma opcao:");
@@ -215,29 +285,31 @@ public class Sofia_Carvalho {
                         System.out.println("5. Qual o jogo mais caro e quais os clientes que o compraram?");
                         System.out.println("0. Sair");
                         menuAdmin = input.next();//opcao do utilizador no menu admin
-                            switch (menuAdmin) {  //execucao da escolha do menu admin
-                                case "1":
-                                    imprimirConteudo(caminhoFicheiro);
-                                    break;
-                                case "2":
-                                    System.out.println("a quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
-                                    vendasValorTotal(matriz);
-                                    break;
-                                case "3":
-                                    System.out.println(lucroTotal(matriz));
-                                    break;
-                                case "4":
-                                    System.out.print("qual o número do cliente?");
-                                    numCliente = input.next();
-                                    imprimirDadosCliente(matriz,numCliente);
-                                    break;
-                                case "5":
-                                    
-                                    break;
-                                case "0":
-                                    break;
-                            }
-
+                        switch (menuAdmin) {  //execucao da escolha do menu admin
+                            case "1":
+                                imprimirConteudo(caminhoFicheiro);
+                                break;
+                            case "2":
+                                System.out.println("a quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
+                                vendasValorTotal(matriz);
+                                break;
+                            case "3":
+                                System.out.println(lucroTotal(matriz));
+                                break;
+                            case "4":
+                                System.out.print("qual o número do cliente?");
+                                numCliente = input.next();
+                                imprimirDadosCliente(matriz, numCliente);
+                                break;
+                            case "5":
+                                jogoCaro = jogoMaisCaro(matriz);
+                                System.out.println("o jogo mais caro é o: " + jogoCaro);
+                                System.out.println("\nOs clientes que compraram o jogo mais caro são:");
+                                clienteJogo(matriz, jogoCaro);
+                                break;
+                            case "0":
+                                break;
+                        }
                     }
                     break;
                 case "2":
