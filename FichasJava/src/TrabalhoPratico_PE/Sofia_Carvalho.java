@@ -362,95 +362,59 @@ public class Sofia_Carvalho {
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
-        String editora, verificar;
+        String editora;
         int cont = 0;
 
+        boolean existe = false;
+
         String[] categoria = new String[matriz.length];
-        int contCat = 0;
-        String[] jogosImpr = new String[matriz.length];
-        int contJogos = 0;
+        int posicaoVetorCategoria = 0;
+        String[] jogosImp = new String[matriz.length];
+        int posicaoJogosImp = 0;
 
         System.out.println("Qual o nome da editora: ");
-        editora = input.next();
-        System.out.println("****" + editora + "****");
+        editora = input.nextLine();
+        System.out.println("\n****" + editora + "****");
 
         for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
             if (matriz[linhaMatriz][5].equals(editora)) {
                 for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {
-                    if (categoria[contCat] != null) {
-                        if (categoria[contCat].equals(matriz[linhaMatriz][6])) {
-                            cont++;
-                        }
+                    if (categoria[colCategoria] != null && categoria[colCategoria].equals(matriz[linhaMatriz][6])) {
+                        existe = true;
+                        break;
                     }
 
                 }
-                if (cont == 0) {
-                    categoria[contCat] = matriz[linhaMatriz][6];
-                    contCat++;
+                if (!existe) {
+                    categoria[posicaoVetorCategoria] = matriz[linhaMatriz][6];
+                    posicaoVetorCategoria++;
                 }
-                cont = 0;
-
+                existe = false;
             }
         }
 
-        for (int i = 0; i < categoria.length; i++) {
-            if (categoria[i] != null)
-                System.out.println(categoria[i]);
+
+        for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {
+            if (categoria[colCategoria] != null) {
+                System.out.println("\n--" + categoria[colCategoria] + "--");
+                for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
+                    if (matriz[linhaMatriz][5].equals(editora) && matriz[linhaMatriz][6].equals(categoria[colCategoria])) {
+                        for (int colJogoImp = 0; colJogoImp < jogosImp.length; colJogoImp++) {
+                            if (jogosImp[colJogoImp] != null && jogosImp[colJogoImp].equals(matriz[linhaMatriz][7])) {
+                                existe = true;
+                                break;
+                            }
+                        }
+                        if (!existe) {
+                            System.out.println(matriz[linhaMatriz][7]);
+                            jogosImp[posicaoJogosImp] = matriz[linhaMatriz][7];
+                            posicaoJogosImp++;
+                        }
+                        existe = false;
+                    }
+                }
+            }
         }
-
-//                for(int colCategoria = 0; colCategoria < categoria.length;colCategoria++){
-//                    if(categoria[contCat].equals(matriz[linhaMatriz][6])){
-//                        cont++;
-//                    }
-//                }
-//                if(cont == 0){
-//                    categoria[contCat]=matriz[linhaMatriz][6];
-//                    contCat++;
-//                }
-//                cont=0;
-//
-//            }
-//        }
-//
-//        for(int i = 0; i< categoria.length; i++){
-//            System.out.println(categoria[i]);
-//        }
-
-//        for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
-//            if (matriz[linhaMatriz][5].equals(editora)) {
-//                cat[contCat] = matriz[linhaMatriz][6];
-//                contCat++;
-//                for (int colunasCat = 0; colunasCat < matriz.length; colunasCat++) {
-//                    if (matriz[linhaMatriz][6].equals(cat[colunasCat])) {
-//                        cont++;
-//                    }
-//                }
-//                if (cont == 0) {
-//                    System.out.println("--" + matriz[linhaMatriz][6] + "--");
-//                }else {
-//                    cont = 0;
-//                }
-//                    for (int j = 0; j < matriz.length; j++) {
-//                        if (matriz[j][7].equals(matriz[linhaMatriz][6])) {
-//                            jogosImpr[contJogos] = matriz[j][7];
-//                            contJogos++;
-//                            for (int z = 0; z < jogosImpr.length; z++) {
-//                                if (matriz[linhaMatriz][7].equals(jogosImpr[z])) {
-//                                    cont++;
-//                                }
-//                            }
-//                            if (cont == 0) {
-//                                System.out.println(matriz[linhaMatriz][7]);
-//                            }
-//                            cont = 0;
-//                        }
-//
-//                    }
-//
-//                }
-//            }
-
-
     }
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -461,7 +425,7 @@ public class Sofia_Carvalho {
 //        Declaração de variáveis
         String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente, jogoCaro, menuCliente;
         int linhas, colunas;
-        String caminhoFicheiro = "Ficheiros/GameStart_V2.csv";
+        String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
         String[][] matriz = lerFicheiroParaMatriz(caminhoFicheiro);
 
         //Questionar o tipo de utilizador
@@ -518,28 +482,34 @@ public class Sofia_Carvalho {
                     }
                     break;
                 case "2":
-                    System.out.println("\n\nescolha uma opcao:");
-                    System.out.println("1. Registar Cliente.");
-                    System.out.println("2. Procurar Estacionamento");
-                    System.out.println("3. Imprimir todos os títulos de jogos");
-                    System.out.println("4. Imprimir todos os jogos de uma editora por categoria");
-                    System.out.println("0. Sair");
+                    do {
+                        System.out.println("\n\nescolha uma opcao:");
+                        System.out.println("1. Registar Cliente.");
+                        System.out.println("2. Procurar Estacionamento");
+                        System.out.println("3. Imprimir todos os títulos de jogos");
+                        System.out.println("4. Imprimir todos os jogos de uma editora por categoria");
+                        System.out.println("0. Sair");
 
-                    menuCliente = input.next();//opcao do utilizador no menu admin
+                        menuCliente = input.next();//opcao do utilizador no menu admin
 
-                    switch (menuCliente) {
-                        case "1":
-                            registarCliente();
-                            break;
-                        case "2":
-                            estacionamentosVagos(contarNumerosTriangularesMultiplos5());
-                            break;
-                        case "3":
-                            imprimirTitulosJogos(matriz);
-                            break;
-                        case "4":
-                            imprimirCategoriasJogosEditora(matriz);
-                    }
+                        switch (menuCliente) {
+                            case "1":
+                                registarCliente();
+                                break;
+                            case "2":
+                                estacionamentosVagos(contarNumerosTriangularesMultiplos5());
+                                break;
+                            case "3":
+                                imprimirTitulosJogos(matriz);
+                                break;
+                            case "4":
+                                imprimirCategoriasJogosEditora(matriz);
+                            case "0":
+                                break;
+                            default:
+                                System.out.println("Erro! opção não contemplado.");
+                        }
+                    } while (!menuCliente.equals("0"));
                     break;
             }
         } while (!senha.equals(password) && !tipoUtilizador.equals("2"));
