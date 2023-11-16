@@ -254,15 +254,70 @@ public class Sofia_Carvalho {
         }
     }
 
+    /**
+     * Método para registar cliente e imprimir informação do registo
+     */
+    public static void registarCliente(){
+        //Instanciar o Scanner
+        Scanner input = new Scanner(System.in);
+
+        //Declaração de variáveis
+        String nome,contato,email;
+
+        //inputs do cliente
+        System.out.println("\nInserir Cliente");
+        System.out.print("Insira Nome: ");
+        nome = input.next();
+        System.out.print("Insira Contato: ");
+        contato = input.next();
+        System.out.print("Insira Email: ");
+        email = input.next();
+
+        System.out.println("\nCliente inserido com Sucesso: " + nome + "|" + contato + "|" + email +"\n");
+
+    }
+
+    public static int contarNumerosTriangularesMultiplos5() {
+        int resultado = 0, contNumeros = 0;
+
+        for (int i = 1; i <= 121; i++) {
+            resultado +=i ;
+            if (resultado <= 121 && resultado%5==0) {
+                contNumeros++;
+            }
+
+        }
+        return contNumeros;
+    }
+
+
+    public static void estacionamentosVagos(int contNumeros){
+
+            int[] numerosTriangulares = new int[contNumeros];
+
+            int resultado = 0, posicaoVetor = 0;
+
+        System.out.println("Estacionamentos Disponíveis: ");
+            for (int i = 1; i <= 121; i++) {
+                resultado += i;
+                if ( resultado <= 121 && resultado % 5 ==0) {
+                   numerosTriangulares[posicaoVetor] = resultado;
+                    System.out.print(numerosTriangulares[posicaoVetor]+ "|");
+                   posicaoVetor++;
+                }
+
+            }
+        }
+
     public static void main(String[] args) throws FileNotFoundException {
 
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
 //        Declaração de variáveis
-        String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente, jogoCaro;
+        String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente, jogoCaro, menuCliente;
         int linhas, colunas;
-        String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
+        String caminhoFicheiro = "Ficheiros/GameStart_V2.csv";
         String[][] matriz = lerFicheiroParaMatriz(caminhoFicheiro);
 
         //Questionar o tipo de utilizador
@@ -310,6 +365,8 @@ public class Sofia_Carvalho {
                                     break;
                                 case "0":
                                     break;
+                                default:
+                                    System.out.println("Erro! opção não contemplado.");
                             }
                         }while(!menuAdmin.equals("0"));
                     }else{
@@ -317,10 +374,26 @@ public class Sofia_Carvalho {
                     }
                     break;
                 case "2":
+                    System.out.println("\n\nescolha uma opcao:");
+                    System.out.println("1. Registar Cliente.");
+                    System.out.println("2. Procurar Estacionamento");
+                    System.out.println("3. Imprimir todos os títulos de jogos");
+                    System.out.println("4. Imprimir todos os jogos de uma editora por categoria");
+                    System.out.println("0. Sair");
 
+                    menuCliente = input.next();//opcao do utilizador no menu admin
+
+                    switch (menuCliente){
+                        case"1":
+                            registarCliente();
+                            break;
+                        case"2":
+                            estacionamentosVagos(contarNumerosTriangularesMultiplos5());
+                            break;
+                    }
                     break;
             }
-        } while (!senha.equals(password));
+        } while (!senha.equals(password) &&  !tipoUtilizador.equals("2") );
 
     }
 }

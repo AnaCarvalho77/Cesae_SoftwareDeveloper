@@ -80,7 +80,7 @@ public class Ex_03 {
      */
     static boolean triangular(int num) {
         int resultado = 0;
-        for(int i = 1; i <= num; i++){
+        for(int i = 2; i <= num; i++){
             resultado +=i;// resultado = resultado + i
             if(num == resultado) {
                 return true;
