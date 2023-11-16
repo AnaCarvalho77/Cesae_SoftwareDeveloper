@@ -215,7 +215,8 @@ public class Sofia_Carvalho {
 
     /**
      * Método para enquantrar quantidade de jogoMaisCaro vendidas
-     * @param matriz - matriz de strings com os dados  a analisar
+     *
+     * @param matriz   - matriz de strings com os dados  a analisar
      * @param jogoCaro - o nome do jogo mais caro
      * @return contJogoMaisCaro - retorna a quantidade de jogo mais caro vendidas
      */
@@ -233,7 +234,8 @@ public class Sofia_Carvalho {
 
     /**
      * Método para saber o nome dos clientes que compraram o jogo mais caro
-     * @param matriz - matriz de strings que vamos analisar
+     *
+     * @param matriz   - matriz de strings que vamos analisar
      * @param jogoCaro - nome do jogo mais caro para analisar
      */
     public static void clienteJogo(String[][] matriz, String jogoCaro) {
@@ -257,12 +259,12 @@ public class Sofia_Carvalho {
     /**
      * Método para registar cliente e imprimir informação do registo
      */
-    public static void registarCliente(){
+    public static void registarCliente() {
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
         //Declaração de variáveis
-        String nome,contato,email;
+        String nome, contato, email;
 
         //inputs do cliente
         System.out.println("\nInserir Cliente");
@@ -273,16 +275,23 @@ public class Sofia_Carvalho {
         System.out.print("Insira Email: ");
         email = input.next();
 
-        System.out.println("\nCliente inserido com Sucesso: " + nome + "|" + contato + "|" + email +"\n");
+        System.out.println("\nCliente inserido com Sucesso: " + nome + "|" + contato + "|" + email + "\n");
 
     }
 
+    /**
+     * Método para saber quantos números triangulares multiplos de 5 existem até 121
+     *
+     * @return contNumeros - quantidade
+     */
     public static int contarNumerosTriangularesMultiplos5() {
+        //Declaração Variáveis
         int resultado = 0, contNumeros = 0;
 
-        for (int i = 1; i <= 121; i++) {
-            resultado +=i ;
-            if (resultado <= 121 && resultado%5==0) {
+        //Ciclo que vai analisar quai os numeros triangulares multiplos de 5 até 121
+        for (int i = 1; i < (121 / 2); i++) {//limite de metado do numero máximo porque quero que o resultado seja menor que 121
+            resultado += i;
+            if (resultado <= 121 && resultado % 5 == 0) {
                 contNumeros++;
             }
 
@@ -290,24 +299,56 @@ public class Sofia_Carvalho {
         return contNumeros;
     }
 
+    /**
+     * Método para verificar quais os estacionamentos vagos atraves do numeros triangulares multiplos de 5
+     *
+     * @param contNumeros - quantidade de numeros traingulares multiplos de 5
+     */
+    public static void estacionamentosVagos(int contNumeros) {
+        //Declaração de variáveis
+        int[] numerosTriangulares = new int[contNumeros];//vetor que vai receber os numeros triangulares multiplos de 5
 
-    public static void estacionamentosVagos(int contNumeros){
-
-            int[] numerosTriangulares = new int[contNumeros];
-
-            int resultado = 0, posicaoVetor = 0;
+        int resultado = 0, posicaoVetor = 0;
 
         System.out.println("Estacionamentos Disponíveis: ");
-            for (int i = 1; i <= 121; i++) {
-                resultado += i;
-                if ( resultado <= 121 && resultado % 5 ==0) {
-                   numerosTriangulares[posicaoVetor] = resultado;
-                    System.out.print(numerosTriangulares[posicaoVetor]+ "|");
-                   posicaoVetor++;
-                }
-
+        //ciclo que vai imprimir os numeros triangulares multiplos de 5
+        for (int i = 1; i <= 121; i++) {
+            resultado += i;
+            if (resultado <= 121 && resultado % 5 == 0) {
+                numerosTriangulares[posicaoVetor] = resultado;
+                System.out.print(numerosTriangulares[posicaoVetor] + "|");
+                posicaoVetor++;
             }
+
         }
+    }
+
+
+    public static void imprimirTitulosJogos(String[][] matriz) {
+        int posicaoVetor = 1;
+        int contIgual = 0;
+        String[] nomeJogos = new String[matriz.length];
+        nomeJogos[0] = matriz[0][7];
+        for (int i = 1; i < matriz.length; i++) {//percorrer linhas matriz
+            for (int j = i - 1; j >= 0; j--) {
+                if (matriz[i][7].equals(nomeJogos[j])) {
+                    contIgual++;
+                }
+            }
+            if (contIgual == 0) {
+                nomeJogos[posicaoVetor] = matriz[i][7];
+                posicaoVetor++;
+            }
+            contIgual = 0;
+        }
+
+
+        for (int i = 0; i < nomeJogos.length; i++) {
+            if (nomeJogos[i] != null)
+                System.out.println(nomeJogos[i]);
+        }
+
+    }
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -368,8 +409,8 @@ public class Sofia_Carvalho {
                                 default:
                                     System.out.println("Erro! opção não contemplado.");
                             }
-                        }while(!menuAdmin.equals("0"));
-                    }else{
+                        } while (!menuAdmin.equals("0"));
+                    } else {
                         System.out.println("\nPassword Incorreta!!\n");
                     }
                     break;
@@ -383,17 +424,20 @@ public class Sofia_Carvalho {
 
                     menuCliente = input.next();//opcao do utilizador no menu admin
 
-                    switch (menuCliente){
-                        case"1":
+                    switch (menuCliente) {
+                        case "1":
                             registarCliente();
                             break;
-                        case"2":
+                        case "2":
                             estacionamentosVagos(contarNumerosTriangularesMultiplos5());
+                            break;
+                        case "3":
+                            imprimirTitulosJogos(matriz);
                             break;
                     }
                     break;
             }
-        } while (!senha.equals(password) &&  !tipoUtilizador.equals("2") );
+        } while (!senha.equals(password) && !tipoUtilizador.equals("2"));
 
     }
 }
