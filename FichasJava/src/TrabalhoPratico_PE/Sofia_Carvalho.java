@@ -331,7 +331,7 @@ public class Sofia_Carvalho {
     public static void imprimirTitulosJogos(String[][] matriz) {
         //declaração de variáveis
         int posicaoVetor = 1; //posição do vetor de nome jogos iniciada em 1 porque a posição 0 vai iniciar com valor
-        int contIgual = 0;//contador para ver se há nome de jogos iguais
+        boolean existe=false;
 
         String[] nomeJogos = new String[matriz.length];
         nomeJogos[0] = matriz[0][7];
@@ -340,31 +340,33 @@ public class Sofia_Carvalho {
         for (int i = 1; i < matriz.length; i++) {
             for (int j = posicaoVetor - 1; j >= 0; j--) {//ciclo pra percorrer vetor nos dados anteriores ao atual
                 if (matriz[i][7].equals(nomeJogos[j])) {//verificar se valor linha matriz tem igual nas posições anteriores do vetor
-                    contIgual++;//se tem igual incrementa o contador
+                    existe = true;
                 }
             }
-            if (contIgual == 0) { // se o contador for igual a 0 quer dizer que não havia igual no vetor
-                nomeJogos[posicaoVetor] = matriz[i][7];//se não havia igual então o vetor na posição atual vai ser igual ao valor da matriz
+            if (!existe) { // se não havia igual no vetor
+                nomeJogos[posicaoVetor] = matriz[i][7];// o vetor na posição atual vai ser igual ao valor da matriz
                 posicaoVetor++;//passa para a posição a seguir do vetor
             }
-            contIgual = 0;//iniciamos o contador
+            existe = false;//iniciamos o existe com false novamente
         }
-
         //imprimir o vetor de nomes dos jogos
-        for (int i = 0; i < nomeJogos.length; i++) {
+        for ( int i = 0; i < nomeJogos.length; i++) {
             if (nomeJogos[i] != null)
                 System.out.println(nomeJogos[i]);
         }
 
     }
 
+    /**
+     * Método para imprimir de uma editora por categoria
+     * @param matriz - matriz de strings com dados para analisar
+     */
     public static void imprimirCategoriasJogosEditora(String[][] matriz) {
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
+        //declaração de variáveis
         String editora;
-        int cont = 0;
-
         boolean existe = false;
 
         String[] categoria = new String[matriz.length];
@@ -372,45 +374,44 @@ public class Sofia_Carvalho {
         String[] jogosImp = new String[matriz.length];
         int posicaoJogosImp = 0;
 
+        //obter qual a editora do utilizador
         System.out.println("Qual o nome da editora: ");
         editora = input.nextLine();
         System.out.println("\n****" + editora + "****");
 
-        for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
-            if (matriz[linhaMatriz][5].equals(editora)) {
-                for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {
-                    if (categoria[colCategoria] != null && categoria[colCategoria].equals(matriz[linhaMatriz][6])) {
+        for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {//percorrer linhas da matriz
+            if (matriz[linhaMatriz][5].equals(editora)) {//ver se a coluna 5 de cada linha da matriz é igual ao valor da variável editora
+                for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {//percorrer vetor com categorias
+                    if (categoria[colCategoria] != null && categoria[colCategoria].equals(matriz[linhaMatriz][6])) {//verificar se categoria existe no vetor das categorias
                         existe = true;
-                        break;
                     }
 
                 }
-                if (!existe) {
+                if (!existe) {// senão existir vamos guardar a categoria no vetor de categorias
                     categoria[posicaoVetorCategoria] = matriz[linhaMatriz][6];
-                    posicaoVetorCategoria++;
+                    posicaoVetorCategoria++;//incrementamos a posição do vetor de categorias para a posição seguinte
                 }
-                existe = false;
+                existe = false;//voltamos a iniciar o existe com false
             }
         }
 
 
-        for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {
-            if (categoria[colCategoria] != null) {
+        for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {//percorrer os elementos do vetor de categorias
+            if (categoria[colCategoria] != null) {//se a categoria for diferente de null imprimir a categoria
                 System.out.println("\n--" + categoria[colCategoria] + "--");
-                for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
-                    if (matriz[linhaMatriz][5].equals(editora) && matriz[linhaMatriz][6].equals(categoria[colCategoria])) {
-                        for (int colJogoImp = 0; colJogoImp < jogosImp.length; colJogoImp++) {
-                            if (jogosImp[colJogoImp] != null && jogosImp[colJogoImp].equals(matriz[linhaMatriz][7])) {
+                for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {//percorrer as linhas da matriz
+                    if (matriz[linhaMatriz][5].equals(editora) && matriz[linhaMatriz][6].equals(categoria[colCategoria])) {//verificar se valor coluna 5 é igual à editora e se valor coluna 6 igual a valor vetor categoria na posição atual
+                        for (int colJogoImp = 0; colJogoImp < jogosImp.length; colJogoImp++) {//se é igual vamos percorrer vetor de jogos impressos
+                            if (jogosImp[colJogoImp] != null && jogosImp[colJogoImp].equals(matriz[linhaMatriz][7])) {// verificar se o jogo da linha atual existe no vetor de jogos
                                 existe = true;
-                                break;
                             }
                         }
-                        if (!existe) {
+                        if (!existe) {//se não existir vamos imprimir e guardar no vetor de jogos impressos
                             System.out.println(matriz[linhaMatriz][7]);
                             jogosImp[posicaoJogosImp] = matriz[linhaMatriz][7];
-                            posicaoJogosImp++;
+                            posicaoJogosImp++;//incrementar a posição do vetor de jogos impressos para a posição seguinte
                         }
-                        existe = false;
+                        existe = false;////voltamos a iniciar o existe com false
                     }
                 }
             }
