@@ -323,30 +323,133 @@ public class Sofia_Carvalho {
         }
     }
 
-
+    /**
+     * Método para imprimir os titulos dos jogos
+     *
+     * @param matriz -matriz de strings com os dados a ser analisados
+     */
     public static void imprimirTitulosJogos(String[][] matriz) {
-        int posicaoVetor = 1;
-        int contIgual = 0;
+        //declaração de variáveis
+        int posicaoVetor = 1; //posição do vetor de nome jogos iniciada em 1 porque a posição 0 vai iniciar com valor
+        int contIgual = 0;//contador para ver se há nome de jogos iguais
+
         String[] nomeJogos = new String[matriz.length];
         nomeJogos[0] = matriz[0][7];
-        for (int i = 1; i < matriz.length; i++) {//percorrer linhas matriz
-            for (int j = i - 1; j >= 0; j--) {
-                if (matriz[i][7].equals(nomeJogos[j])) {
-                    contIgual++;
+
+        //ciclo para correr linhas da matriz
+        for (int i = 1; i < matriz.length; i++) {
+            for (int j = posicaoVetor - 1; j >= 0; j--) {//ciclo pra percorrer vetor nos dados anteriores ao atual
+                if (matriz[i][7].equals(nomeJogos[j])) {//verificar se valor linha matriz tem igual nas posições anteriores do vetor
+                    contIgual++;//se tem igual incrementa o contador
                 }
             }
-            if (contIgual == 0) {
-                nomeJogos[posicaoVetor] = matriz[i][7];
-                posicaoVetor++;
+            if (contIgual == 0) { // se o contador for igual a 0 quer dizer que não havia igual no vetor
+                nomeJogos[posicaoVetor] = matriz[i][7];//se não havia igual então o vetor na posição atual vai ser igual ao valor da matriz
+                posicaoVetor++;//passa para a posição a seguir do vetor
             }
-            contIgual = 0;
+            contIgual = 0;//iniciamos o contador
         }
 
-
+        //imprimir o vetor de nomes dos jogos
         for (int i = 0; i < nomeJogos.length; i++) {
             if (nomeJogos[i] != null)
                 System.out.println(nomeJogos[i]);
         }
+
+    }
+
+    public static void imprimirCategoriasJogosEditora(String[][] matriz) {
+        //Instanciar o Scanner
+        Scanner input = new Scanner(System.in);
+
+        String editora, verificar;
+        int cont = 0;
+
+        String[] categoria = new String[matriz.length];
+        int contCat = 0;
+        String[] jogosImpr = new String[matriz.length];
+        int contJogos = 0;
+
+        System.out.println("Qual o nome da editora: ");
+        editora = input.next();
+        System.out.println("****" + editora + "****");
+
+        for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
+            if (matriz[linhaMatriz][5].equals(editora)) {
+                for (int colCategoria = 0; colCategoria < categoria.length; colCategoria++) {
+                    if (categoria[contCat] != null) {
+                        if (categoria[contCat].equals(matriz[linhaMatriz][6])) {
+                            cont++;
+                        }
+                    }
+
+                }
+                if (cont == 0) {
+                    categoria[contCat] = matriz[linhaMatriz][6];
+                    contCat++;
+                }
+                cont = 0;
+
+            }
+        }
+
+        for (int i = 0; i < categoria.length; i++) {
+            if (categoria[i] != null)
+                System.out.println(categoria[i]);
+        }
+
+//                for(int colCategoria = 0; colCategoria < categoria.length;colCategoria++){
+//                    if(categoria[contCat].equals(matriz[linhaMatriz][6])){
+//                        cont++;
+//                    }
+//                }
+//                if(cont == 0){
+//                    categoria[contCat]=matriz[linhaMatriz][6];
+//                    contCat++;
+//                }
+//                cont=0;
+//
+//            }
+//        }
+//
+//        for(int i = 0; i< categoria.length; i++){
+//            System.out.println(categoria[i]);
+//        }
+
+//        for (int linhaMatriz = 0; linhaMatriz < matriz.length; linhaMatriz++) {
+//            if (matriz[linhaMatriz][5].equals(editora)) {
+//                cat[contCat] = matriz[linhaMatriz][6];
+//                contCat++;
+//                for (int colunasCat = 0; colunasCat < matriz.length; colunasCat++) {
+//                    if (matriz[linhaMatriz][6].equals(cat[colunasCat])) {
+//                        cont++;
+//                    }
+//                }
+//                if (cont == 0) {
+//                    System.out.println("--" + matriz[linhaMatriz][6] + "--");
+//                }else {
+//                    cont = 0;
+//                }
+//                    for (int j = 0; j < matriz.length; j++) {
+//                        if (matriz[j][7].equals(matriz[linhaMatriz][6])) {
+//                            jogosImpr[contJogos] = matriz[j][7];
+//                            contJogos++;
+//                            for (int z = 0; z < jogosImpr.length; z++) {
+//                                if (matriz[linhaMatriz][7].equals(jogosImpr[z])) {
+//                                    cont++;
+//                                }
+//                            }
+//                            if (cont == 0) {
+//                                System.out.println(matriz[linhaMatriz][7]);
+//                            }
+//                            cont = 0;
+//                        }
+//
+//                    }
+//
+//                }
+//            }
+
 
     }
 
@@ -434,6 +537,8 @@ public class Sofia_Carvalho {
                         case "3":
                             imprimirTitulosJogos(matriz);
                             break;
+                        case "4":
+                            imprimirCategoriasJogosEditora(matriz);
                     }
                     break;
             }
