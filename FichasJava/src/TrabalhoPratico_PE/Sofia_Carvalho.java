@@ -419,6 +419,105 @@ public class Sofia_Carvalho {
         }
     }
 
+    /**
+     * Método para consultar menu cliente
+     * @param matriz - matriz de strings com dados para análise nas funções usadas neste menu
+     */
+    public static void menuCliente(String[][] matriz){
+        //Instanciar o Scanner
+        Scanner input = new Scanner(System.in);
+
+        //Declaração de variáveis
+        String menuCliente;
+
+        do {//imprimir enquanto opção diferente de 0
+            System.out.println("\n\nescolha uma opcao:");
+            System.out.println("1. Registar Cliente.");
+            System.out.println("2. Procurar Estacionamento");
+            System.out.println("3. Imprimir todos os títulos de jogos");
+            System.out.println("4. Imprimir todos os jogos de uma editora por categoria");
+            System.out.println("0. Sair");
+
+            menuCliente = input.next();//opcao do utilizador no menu admin
+
+            switch (menuCliente) {//menu do cliente
+                case "1":
+                    registarCliente();
+                    break;
+                case "2":
+                    estacionamentosVagos(contarNumerosTriangularesMultiplos5());
+                    break;
+                case "3":
+                    imprimirTitulosJogos(matriz);
+                    break;
+                case "4":
+                    imprimirCategoriasJogosEditora(matriz);
+                case "0":
+                    break;
+                default:
+                    System.out.println("\nErro! opção não contemplado.");
+            }
+        } while (!menuCliente.equals("0"));
+    }
+
+    /**
+     * Método para executar menu do admin
+     * @param matriz - matriz de strings com dados para análise nas funções executadas neste menu
+     * @param caminhoFicheiro - ficheiro para funções executadas neste menu
+     * @param password - string para verificação para entrada menu admin
+     * @param senha - senha que o utilizador coloca para verificar se está correta
+     * @throws FileNotFoundException exceção
+     */
+    public static void menuAdmin(String[][] matriz, String caminhoFicheiro, String password, String senha) throws FileNotFoundException {
+        //Instanciar o Scanner
+        Scanner input = new Scanner(System.in);
+
+
+        //Declaração de variáveis
+        String menuAdmin, numCliente;
+
+        if (senha.equals(password)) {//se admin com password correcta vai questionar opcao menu admin
+            do {//imprimir enquanto opcao diferente 0
+                System.out.println("\n\nescolha uma opcao:");
+                System.out.println("1. Imprimir conteúdo ficheiro.");
+                System.out.println("2. Imprimir quantas vendas foram executadas e o seu valor total");
+                System.out.println("3. Calcule o lucro total");
+                System.out.println("4. Imprimir informações associadas a um cliente?");
+                System.out.println("5. Qual o jogo mais caro e quais os clientes que o compraram?");
+                System.out.println("0. Sair");
+                menuAdmin = input.next();//opcao do utilizador no menu admin
+                switch (menuAdmin) {  //execucao da escolha do menu admin
+                    case "1":
+                        imprimirConteudo(caminhoFicheiro);
+                        break;
+                    case "2":
+                        System.out.println("\na quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
+                        vendasValorTotal(matriz);
+                        break;
+                    case "3":
+                        System.out.println("\no lucro total é: "+lucroTotal(matriz));
+                        break;
+                    case "4":
+                        System.out.print("\nqual o número do cliente?");
+                        numCliente = input.next();
+                        imprimirDadosCliente(matriz, numCliente);
+                        break;
+                    case "5":
+                        System.out.println("\no jogo mais caro é o: " + jogoMaisCaro(matriz));
+                        System.out.println("\nOs clientes que compraram o jogo mais caro são:");
+                        clienteJogo(matriz, jogoMaisCaro(matriz));
+                        break;
+                    case "0":
+                        break;
+                    default:
+                        System.out.println("\nErro! opção não contemplado.");
+                }
+            } while (!menuAdmin.equals("0"));
+        } else {
+            System.out.println("\nPassword Incorreta!!\n");
+        }
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         //Definir o caminho do ficheiro
         String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
@@ -430,7 +529,7 @@ public class Sofia_Carvalho {
         Scanner input = new Scanner(System.in);
 
         // Declaração de variáveis
-        String tipoUtilizador, senha = "", menuAdmin, numCliente, menuCliente;
+        String tipoUtilizador, senha = " ";
 
 
         String[][] matriz = lerFicheiroParaMatriz(caminhoFicheiro);
@@ -446,76 +545,10 @@ public class Sofia_Carvalho {
                 case "1":
                     System.out.print("qual a password? ");
                     senha = input.next();
-                    if (senha.equals(password)) {//se admin com password correcta vai questionar opcao menu admin
-                        do {//imprimir enquanto opcao diferente 0
-                            System.out.println("\n\nescolha uma opcao:");
-                            System.out.println("1. Imprimir conteúdo ficheiro.");
-                            System.out.println("2. Imprimir quantas vendas foram executadas e o seu valor total");
-                            System.out.println("3. Calcule o lucro total");
-                            System.out.println("4. Imprimir informações associadas a um cliente?");
-                            System.out.println("5. Qual o jogo mais caro e quais os clientes que o compraram?");
-                            System.out.println("0. Sair");
-                            menuAdmin = input.next();//opcao do utilizador no menu admin
-                            switch (menuAdmin) {  //execucao da escolha do menu admin
-                                case "1":
-                                    imprimirConteudo("\n"+caminhoFicheiro);
-                                    break;
-                                case "2":
-                                    System.out.println("\na quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
-                                    vendasValorTotal(matriz);
-                                    break;
-                                case "3":
-                                    System.out.println("\no lucro total é: "+lucroTotal(matriz));
-                                    break;
-                                case "4":
-                                    System.out.print("\nqual o número do cliente?");
-                                    numCliente = input.next();
-                                    imprimirDadosCliente(matriz, numCliente);
-                                    break;
-                                case "5":
-                                    System.out.println("\no jogo mais caro é o: " + jogoMaisCaro(matriz));
-                                    System.out.println("\nOs clientes que compraram o jogo mais caro são:");
-                                    clienteJogo(matriz, jogoMaisCaro(matriz));
-                                    break;
-                                case "0":
-                                    break;
-                                default:
-                                    System.out.println("\nErro! opção não contemplado.");
-                            }
-                        } while (!menuAdmin.equals("0"));
-                    } else {
-                        System.out.println("\nPassword Incorreta!!\n");
-                    }
+                    menuAdmin(matriz, caminhoFicheiro,password, senha);
                     break;
                 case "2":
-                    do {//imprimir enquanto opção diferente de 0
-                        System.out.println("\n\nescolha uma opcao:");
-                        System.out.println("1. Registar Cliente.");
-                        System.out.println("2. Procurar Estacionamento");
-                        System.out.println("3. Imprimir todos os títulos de jogos");
-                        System.out.println("4. Imprimir todos os jogos de uma editora por categoria");
-                        System.out.println("0. Sair");
-
-                        menuCliente = input.next();//opcao do utilizador no menu admin
-
-                        switch (menuCliente) {//menu do cliente
-                            case "1":
-                                registarCliente();
-                                break;
-                            case "2":
-                                estacionamentosVagos(contarNumerosTriangularesMultiplos5());
-                                break;
-                            case "3":
-                                imprimirTitulosJogos(matriz);
-                                break;
-                            case "4":
-                                imprimirCategoriasJogosEditora(matriz);
-                            case "0":
-                                break;
-                            default:
-                                System.out.println("\nErro! opção não contemplado.");
-                        }
-                    } while (!menuCliente.equals("0"));
+                    menuCliente(matriz);
                     break;
             }
         } while (!senha.equals(password) && !tipoUtilizador.equals("2"));
