@@ -184,7 +184,7 @@ public class Sofia_Carvalho {
             if (codCliente.equals((matriz[i][1]))) {//vai verificar se a String codCliente é igual à string na coluna indice 1 da matriz
                 for (int j = 2; j <= 4; j++) {//se sim vai copiar os dados da coluna indice 2 até 4 para o vetor de strings
                     dadosCliente[contCliente] = matriz[i][j];
-                    System.out.print(dadosCliente[contCliente]);
+                    System.out.print(" | " + dadosCliente[contCliente]);
                     contCliente++;//incremento da posição no vetor dados cliente
                 }
                 break;//tive de quebrar porque se houvesse outra linha do mesmo cliente ele ia preencher o vetor outra vez
@@ -275,7 +275,7 @@ public class Sofia_Carvalho {
         System.out.print("Insira Email: ");
         email = input.next();
 
-        System.out.println("\nCliente inserido com Sucesso: " + nome + "|" + contato + "|" + email + "\n");
+        System.out.println("\nCliente inserido com Sucesso: " + nome + " | " + contato + " | " + email + "\n");
 
     }
 
@@ -316,7 +316,7 @@ public class Sofia_Carvalho {
             resultado += i;
             if (resultado <= 121 && resultado % 5 == 0) {
                 numerosTriangulares[posicaoVetor] = resultado;
-                System.out.print(numerosTriangulares[posicaoVetor] + "|");
+                System.out.print(numerosTriangulares[posicaoVetor] + " | ");
                 posicaoVetor++;
             }
 
@@ -350,6 +350,7 @@ public class Sofia_Carvalho {
             existe = false;//iniciamos o existe com false novamente
         }
         //imprimir o vetor de nomes dos jogos
+        System.out.println();//só para dar espaço do input do utilizador para ser mais facil visualizar na consola
         for ( int i = 0; i < nomeJogos.length; i++) {
             if (nomeJogos[i] != null)
                 System.out.println(nomeJogos[i]);
@@ -419,14 +420,19 @@ public class Sofia_Carvalho {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
+        //Definir o caminho do ficheiro
+        String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
+
+        //Definir a senha
+        String password = "senha";
 
         //Instanciar o Scanner
         Scanner input = new Scanner(System.in);
 
-//        Declaração de variáveis
-        String tipoUtilizador, password = "senha", senha = "", menuAdmin, numCliente, jogoCaro, menuCliente;
-        int linhas, colunas;
-        String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
+        // Declaração de variáveis
+        String tipoUtilizador, senha = "", menuAdmin, numCliente, menuCliente;
+
+
         String[][] matriz = lerFicheiroParaMatriz(caminhoFicheiro);
 
         //Questionar o tipo de utilizador
@@ -441,7 +447,7 @@ public class Sofia_Carvalho {
                     System.out.print("qual a password? ");
                     senha = input.next();
                     if (senha.equals(password)) {//se admin com password correcta vai questionar opcao menu admin
-                        do {
+                        do {//imprimir enquanto opcao diferente 0
                             System.out.println("\n\nescolha uma opcao:");
                             System.out.println("1. Imprimir conteúdo ficheiro.");
                             System.out.println("2. Imprimir quantas vendas foram executadas e o seu valor total");
@@ -452,30 +458,29 @@ public class Sofia_Carvalho {
                             menuAdmin = input.next();//opcao do utilizador no menu admin
                             switch (menuAdmin) {  //execucao da escolha do menu admin
                                 case "1":
-                                    imprimirConteudo(caminhoFicheiro);
+                                    imprimirConteudo("\n"+caminhoFicheiro);
                                     break;
                                 case "2":
-                                    System.out.println("a quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
+                                    System.out.println("\na quantidade de vendas é: " + contarLinhasFicheiro(caminhoFicheiro));
                                     vendasValorTotal(matriz);
                                     break;
                                 case "3":
-                                    System.out.println(lucroTotal(matriz));
+                                    System.out.println("\no lucro total é: "+lucroTotal(matriz));
                                     break;
                                 case "4":
-                                    System.out.print("qual o número do cliente?");
+                                    System.out.print("\nqual o número do cliente?");
                                     numCliente = input.next();
                                     imprimirDadosCliente(matriz, numCliente);
                                     break;
                                 case "5":
-                                    jogoCaro = jogoMaisCaro(matriz);
-                                    System.out.println("o jogo mais caro é o: " + jogoCaro);
+                                    System.out.println("\no jogo mais caro é o: " + jogoMaisCaro(matriz));
                                     System.out.println("\nOs clientes que compraram o jogo mais caro são:");
-                                    clienteJogo(matriz, jogoCaro);
+                                    clienteJogo(matriz, jogoMaisCaro(matriz));
                                     break;
                                 case "0":
                                     break;
                                 default:
-                                    System.out.println("Erro! opção não contemplado.");
+                                    System.out.println("\nErro! opção não contemplado.");
                             }
                         } while (!menuAdmin.equals("0"));
                     } else {
@@ -483,7 +488,7 @@ public class Sofia_Carvalho {
                     }
                     break;
                 case "2":
-                    do {
+                    do {//imprimir enquanto opção diferente de 0
                         System.out.println("\n\nescolha uma opcao:");
                         System.out.println("1. Registar Cliente.");
                         System.out.println("2. Procurar Estacionamento");
@@ -493,7 +498,7 @@ public class Sofia_Carvalho {
 
                         menuCliente = input.next();//opcao do utilizador no menu admin
 
-                        switch (menuCliente) {
+                        switch (menuCliente) {//menu do cliente
                             case "1":
                                 registarCliente();
                                 break;
@@ -508,7 +513,7 @@ public class Sofia_Carvalho {
                             case "0":
                                 break;
                             default:
-                                System.out.println("Erro! opção não contemplado.");
+                                System.out.println("\nErro! opção não contemplado.");
                         }
                     } while (!menuCliente.equals("0"));
                     break;
