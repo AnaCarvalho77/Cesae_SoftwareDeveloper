@@ -17,6 +17,8 @@
 
 }
 
+
+
 .navbar-brand img{
     width: 20%;
 }
@@ -37,6 +39,15 @@
 .nav-item a:hover{
     color: black;
 }
+
+.align{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.videos{
+background-color: white;
+}
 /* 
 footer {
     position: absolute;
@@ -49,7 +60,6 @@ footer {
 .tituloForm{
     text-align: center;
     background-color: rgba(49, 4, 4, 0.1);
-    position: absolute;
     width: 100%;
   }
   
@@ -65,4 +75,8 @@ footer {
 
 .col i{
     padding: 10px;
+}
+
+.form{
+   background-color: aliceblue;
 }
