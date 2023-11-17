@@ -520,7 +520,7 @@ public class Sofia_Carvalho {
 
     public static void main(String[] args) throws FileNotFoundException {
         //Definir o caminho do ficheiro
-        String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/FichasJava/Ficheiros/GameStart_V2.csv";
+        String caminhoFicheiro = "Ficheiros/GameStart_V2.csv";
 
         //Definir a senha
         String password = "senha";
