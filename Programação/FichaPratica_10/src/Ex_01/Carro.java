@@ -20,6 +20,9 @@ public class Carro {
         this.tipoCombustivel = tipoCombustivel;
     }
 
+    public Carro() {
+    }
+
     public void ligar() {
 
         System.out.println("O carro está ligado!");
@@ -69,8 +72,10 @@ public class Carro {
         return marca;
     }
 
+
+
     public double valorConsumido(double distancia){
-        double valorConsumido = (distancia/100) * this.consumo;
+        double valorConsumido = (distancia * this.consumo)/100;
         return valorConsumido;
 
     }
