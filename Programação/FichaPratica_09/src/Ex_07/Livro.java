@@ -15,7 +15,7 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public void exibirDetalhes(Livro livroAtual){
+    public void exibirDetalhes(){
         System.out.println("titulo: " + this.titulo);
         System.out.println("autor: " + this.autor);
         System.out.println("categoria: " + this.categoria);

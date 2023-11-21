@@ -6,8 +6,8 @@ public class main {
             Livro livro2 = new Livro("Fortaleza Digital", "Dan Brown", "Mistério", 448, "7882572867546");
 
 
-            livro1.exibirDetalhes(livro1);
+            livro1.exibirDetalhes();
         System.out.println();
-            livro2.exibirDetalhes(livro2);
+            livro2.exibirDetalhes();
     }
 }
