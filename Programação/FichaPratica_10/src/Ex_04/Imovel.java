@@ -26,9 +26,9 @@ public class Imovel {
 
     public double valorImovel(){
         double valorTotal = 0;
-        if(this.tipo.equals("apartamento")){
+        if(this.tipo.equals(Tipo.apartamento)){
             valorTotal = this.area * 1000;
-        } else if (this.tipo.equals("casa")){
+        } else if (this.tipo.equals(Tipo.casa)){
             valorTotal = this.area * 3000;
         }else{
            valorTotal = this.area * 5000;
@@ -39,11 +39,11 @@ public class Imovel {
         valorTotal += (this.areaPiscina * 1000);
 
 
-        if(this.acabamento.equals("restauro")){
+        if(this.acabamento.equals(Acabamento.restauro)){
             valorTotal *= 0.5;
-        }else if(this.acabamento.equals("usada")){
+        }else if(this.acabamento.equals(Acabamento.usada)){
             valorTotal *= 0.9;
-        }else if(this.acabamento.equals("altoAcabamento")){
+        }else if(this.acabamento.equals(Acabamento.altoAcabamento)){
             valorTotal *= 1.25;
         }
         return valorTotal;
@@ -65,14 +65,13 @@ public class Imovel {
         System.out.println("area a piscinas: " + this.areaPiscina);
     }
 
-    public void compararImoveis(Imovel imovelNovo){
-        System.out.println("o imóvel mais caro é: ");
+    public Imovel compararImoveis(Imovel imovelNovo){
         if(this.valorImovel() > imovelNovo.valorImovel()){
-            this.imprimirDescricao();
+            return this;
         }else if(this.valorImovel() > imovelNovo.valorImovel()){
-            imovelNovo.imprimirDescricao();
+            return imovelNovo;
         }else{
-            System.out.println("os imóveis tem o mesmo valor");
+            return null;
         }
     }
 }
