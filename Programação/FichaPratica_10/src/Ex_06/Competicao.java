@@ -7,6 +7,11 @@ public class Competicao {
     private String localizacao;
     Atleta [] participantes = new Atleta[1000];
 
+    public Competicao(String nomeCompeticao, String localizacao) {
+        this.nomeCompeticao = nomeCompeticao;
+        this.localizacao = localizacao;
+
+    }
 
     public void addAtleta(Atleta novo){
         for(int i = 0; i < participantes.length; i++ ){
