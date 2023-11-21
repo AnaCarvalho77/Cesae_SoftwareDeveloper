@@ -16,6 +16,8 @@ public class main {
 
         minhasmusicas.imprimirRelatorio();
 
+        minhasmusicas.calculoDuracao();
+
 
         }
 

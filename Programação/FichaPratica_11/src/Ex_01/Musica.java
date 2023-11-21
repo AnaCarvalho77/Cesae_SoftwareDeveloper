@@ -16,4 +16,8 @@ public class Musica {
     public void imprimirMusica(){
         System.out.println(titulo + "\t|" + genero + "\t|" + artista +"\t|" + duracao);
     }
+
+    public int getDuracao() {
+        return duracao;
+    }
 }

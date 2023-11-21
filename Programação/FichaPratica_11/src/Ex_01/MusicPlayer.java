@@ -35,4 +35,18 @@ public void imprimirRelatorio(){
        }
 }
 
+
+public void calculoDuracao(){
+        int duracaoTotal = 0;
+    for(int i = 0; i< programacao.size();i++){
+       duracaoTotal += programacao.get(i).getDuracao();
+    }
+    int horas = duracaoTotal/3600;
+    int minutos = (duracaoTotal%3600)/60;
+    int segundos = (duracaoTotal%3600)%60;
+
+    System.out.printf("A duração total é de %02d:%2d:%2d", horas, minutos, segundos);
+
+}
+
 }
