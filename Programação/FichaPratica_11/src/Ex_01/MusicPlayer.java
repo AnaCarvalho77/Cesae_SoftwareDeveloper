@@ -45,7 +45,7 @@ public void calculoDuracao(){
     int minutos = (duracaoTotal%3600)/60;
     int segundos = (duracaoTotal%3600)%60;
 
-    System.out.printf("A duração total é de %02d:%2d:%2d", horas, minutos, segundos);
+    System.out.printf("A duração total é de %02d:%02d:%02d\n", horas, minutos, segundos);
 
 }
 
