@@ -19,7 +19,7 @@ public class Animal {
     public void comer(String alimento, double pesoAlimento){
         for(int i = 0; i < this.alimentacao.length; i++){
             if(alimento.equals(this.alimentacao[i])) {
-                this.peso += pesoAlimento;
+                this.peso += (pesoAlimento/1000);
                 System.out.println("O animal comeu");
                 break;
             }else{

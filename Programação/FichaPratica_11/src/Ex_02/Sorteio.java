@@ -5,7 +5,7 @@ import Ex_01.Musica;
 import java.util.ArrayList;
 
 public class Sorteio {
-    ArrayList<Pessoa> participantes = new ArrayList <Pessoa>();
+    private ArrayList<Pessoa> participantes = new ArrayList <Pessoa>();
 
     public Sorteio() {
     }
