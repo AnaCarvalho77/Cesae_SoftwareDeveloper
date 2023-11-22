@@ -27,11 +27,11 @@ public class Imovel {
     public double valorImovel(){
         double valorTotal = 0;
         if(this.tipo.equals(Tipo.apartamento)){
-            valorTotal = this.area * 1000;
+            valorTotal += this.area * 1000;
         } else if (this.tipo.equals(Tipo.casa)){
-            valorTotal = this.area * 3000;
+            valorTotal += this.area * 3000;
         }else{
-           valorTotal = this.area * 5000;
+           valorTotal += this.area * 5000;
         }
 
         valorTotal += (this.numQuartos * 7500);

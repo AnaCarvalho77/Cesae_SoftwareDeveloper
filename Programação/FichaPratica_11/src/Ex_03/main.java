@@ -25,7 +25,7 @@ public class main {
         System.out.print("A carga atual do barco é: " + meuBarco.capacidadeAtual() + " e a capacidade total é: " + meuBarco.getCapacidadeCarga() + "\n");
         meuBarco.adicionar(pescada);
         System.out.print("A carga atual do barco é: " + meuBarco.capacidadeAtual() + " e a capacidade total é: " + meuBarco.getCapacidadeCarga() + "\n");
-        meuBarco.largarMarisco(1);
+        meuBarco.largarMarisco(0);
         System.out.print("A carga atual do barco é: " + meuBarco.capacidadeAtual() + " e a capacidade total é: " + meuBarco.getCapacidadeCarga() + "\n");
         meuBarco.adicionar(caranguejo);
         System.out.print("A carga atual do barco é: " + meuBarco.capacidadeAtual() + " e a capacidade total é: " + meuBarco.getCapacidadeCarga() + "\n");
