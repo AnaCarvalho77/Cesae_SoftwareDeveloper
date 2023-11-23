@@ -3,6 +3,7 @@ package Ex_02;
 import Ex_01.Musica;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Sorteio {
     private ArrayList<Pessoa> participantes = new ArrayList <Pessoa>();
@@ -19,7 +20,8 @@ public class Sorteio {
     }
 
     public void sortear(){
-        double posicao = Math.random()*participantes.size();
+        Random random = new Random();
+        int posicao = random.nextInt(0,participantes.size());
         System.out.println("**************** O vencedor é *************************");
         participantes.get((int) posicao).dadosPessoa();
 
