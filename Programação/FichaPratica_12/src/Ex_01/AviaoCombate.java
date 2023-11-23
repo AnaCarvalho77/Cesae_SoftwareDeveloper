@@ -8,8 +8,8 @@ public class AviaoCombate extends Avioes{
     ArrayList<Armas> armas = new ArrayList<>(3);
 
 
-    public AviaoCombate(String nSerie, String modelo, double peso, double compFuselagem, double envergaduraAsas, double alturaCauda, double nMotores, double autonomia, double velocidadeMax, double preco, String paisOrigem, boolean camuflagem) {
-        super(nSerie, modelo, peso, compFuselagem, envergaduraAsas, alturaCauda, nMotores, autonomia, velocidadeMax, preco);
+    public AviaoCombate(String nSerie, String modelo,int anoFabrico, double peso, double compFuselagem, double envergaduraAsas, double alturaCauda, int nMotores, double autonomia, double velocidadeMax, double preco, String paisOrigem, boolean camuflagem) {
+        super(nSerie, modelo,anoFabrico, peso, compFuselagem, envergaduraAsas, alturaCauda, nMotores, autonomia, velocidadeMax, preco);
         this.paisOrigem = paisOrigem;
         this.camuflagem = camuflagem;
     }

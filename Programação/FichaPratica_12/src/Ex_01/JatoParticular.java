@@ -10,8 +10,8 @@ public class JatoParticular extends Avioes{
     ArrayList<Instalacoes> instalacoes = new ArrayList<>();
 
 
-    public JatoParticular(String nSerie, String modelo, double peso, double compFuselagem, double envergaduraAsas, double alturaCauda, double nMotores, double autonomia, double velocidadeMax, double preco, int lotacao, double capacidadeBagagem, Categoria categoria) {
-        super(nSerie, modelo, peso, compFuselagem, envergaduraAsas, alturaCauda, nMotores, autonomia, velocidadeMax, preco);
+    public JatoParticular(String nSerie, String modelo,int anoFabrico, double peso, double compFuselagem, double envergaduraAsas, double alturaCauda, int nMotores, double autonomia, double velocidadeMax, double preco, int lotacao, double capacidadeBagagem, Categoria categoria) {
+        super(nSerie, modelo, anoFabrico, peso, compFuselagem, envergaduraAsas, alturaCauda, nMotores, autonomia, velocidadeMax, preco);
         this.lotacao = lotacao;
         this.capacidadeBagagem = capacidadeBagagem;
         this.categoria = categoria;
