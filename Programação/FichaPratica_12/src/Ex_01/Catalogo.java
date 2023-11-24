@@ -24,14 +24,15 @@ public class Catalogo {
     }
 
     public void listarCatalogo(){
+        int j=1;
         for(Avioes i: catalogoAvioes){
             if(i instanceof Avioes){
-                System.out.println("-----------------Aviao " + i + " ----------------");
+                System.out.println("-----------------Aviao " + j + " ----------------");
                 i.dadosAviao();
             }else{
                 System.out.println("obleto não é uma instância de Avioes");
             }
-
+            j++;
         }
 
     }

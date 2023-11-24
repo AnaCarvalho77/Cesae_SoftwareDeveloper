@@ -27,10 +27,26 @@ public class JatoParticular extends Avioes{
 
     }
 
-    public void listarInstalacoesAviao(){
-        for(Instalacoes i: instalacoes){
-            System.out.println(i);
+    public void dadosAviao(){
+        System.out.println("numero de serie: " + this.getnSerie());
+        System.out.println("modelo: " + this.getModelo());
+        System.out.println("peso: " + this.getPeso());
+        System.out.println("comprimento fuselagem: " + this.getCompFuselagem());
+        System.out.println("envergadura asas: " + this.getEnvergaduraAsas());
+        System.out.println("altura cauda: " + this.getAlturaCauda());
+        System.out.println("numero motores: " + this.getnMotores());
+        System.out.println("autonomia: " + this.getAutonomia());
+        System.out.println("velocidade máxima: " + this.getVelocidadeMax());
+        System.out.println("preço: " + this.getPreco());
+
+        System.out.println("loatação avião: " + this.lotacao);
+        System.out.println("capacidade da bagagem: " + this.capacidadeBagagem);
+        System.out.println("categoria avião: " + this.categoria);
+        System.out.print("As instalações que tem são: ");
+        for(Instalacoes i: instalacoes) {
+            System.out.print(i + " | ");
         }
+        System.out.println();
 
     }
 
