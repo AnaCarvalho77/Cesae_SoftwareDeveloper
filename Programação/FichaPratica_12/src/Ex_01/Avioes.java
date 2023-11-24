@@ -36,43 +36,5 @@ public class Avioes {
         return preco;
     }
 
-    public String getnSerie() {
-        return nSerie;
-    }
 
-    public String getModelo() {
-        return modelo;
-    }
-
-    public int getAnoFabrico() {
-        return anoFabrico;
-    }
-
-    public int getnMotores() {
-        return nMotores;
-    }
-
-    public double getPeso() {
-        return peso;
-    }
-
-    public double getCompFuselagem() {
-        return compFuselagem;
-    }
-
-    public double getEnvergaduraAsas() {
-        return envergaduraAsas;
-    }
-
-    public double getAlturaCauda() {
-        return alturaCauda;
-    }
-
-    public double getAutonomia() {
-        return autonomia;
-    }
-
-    public double getVelocidadeMax() {
-        return velocidadeMax;
-    }
 }

@@ -23,18 +23,22 @@ public class Catalogo {
         return total;
     }
 
-    public void listarCatalogo(){
-        int j=1;
-        for(Avioes i: catalogoAvioes){
-            if(i instanceof Avioes){
+    public void listarCatalogo() {
+        int j = 1;
+        int w = 1;
+        for (Avioes i : catalogoAvioes) {
+            if (i instanceof JatoParticular) {
                 System.out.println("-----------------Aviao " + j + " ----------------");
                 i.dadosAviao();
-            }else{
-                System.out.println("obleto não é uma instância de Avioes");
+                j++;
             }
-            j++;
-        }
+            if (i instanceof AviaoCombate) {
+                System.out.println("-----------------Aviao " + w + " ----------------");
+                i.dadosAviao();
+                w++;
 
+            }
+        }
     }
 
 }
