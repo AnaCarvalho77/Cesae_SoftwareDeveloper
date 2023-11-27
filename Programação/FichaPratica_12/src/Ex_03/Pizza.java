@@ -7,35 +7,36 @@ public class Pizza {
     private String nome, descricao;
     private double preco;
     private Tamanho tamanho;
-    private ArrayList<Ingrediente> ingredientes = new ArrayList<>(5);
+    private ArrayList<PizzaIngrediente> ingredientes = new ArrayList<>(5);
 
-    public Pizza(String codigo, String nome, String descricao, double preco, Tamanho tamanho) {
+    public Pizza(String codigo, String nome, String descricao, double preco, Tamanho tamanho, PizzaIngrediente base , PizzaIngrediente topping) {
         this.codigo = codigo;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
         this.tamanho = tamanho;
+        ingredientes.add(base);
+        ingredientes.add(topping);
     }
 
-    public void addIngrediente(Ingrediente ingrediente, double quantidade){
+    public void addIngrediente(PizzaIngrediente ingrediente){
         if(ingredientes.size()<5){
             ingredientes.add(ingrediente);
-            ingrediente.setQuantidade(quantidade);
         }else{
             System.out.println("A pizza já tem os 5 ingredientes!!");
         }
     }
 
-    public void removerIngrediente(Ingrediente ingrediente){
+    public void removerIngrediente(PizzaIngrediente ingrediente){
         int posicao = 0;
         posicao = ingredientes.indexOf(ingrediente);
-        String ingredienteRemovido = ingredientes.remove(posicao).getCodigo();
+        ingredientes.remove(posicao);
     }
 
     public double totalCalorias(){
         double totalCalorias = 0;
-        for (Ingrediente i: ingredientes){
-            totalCalorias += i.getQuantidade()*i.getNumCalorias();
+        for (PizzaIngrediente i: ingredientes){
+            totalCalorias += i.totalCaloriasIngrediente();
         }
         return totalCalorias;
     }
@@ -47,7 +48,7 @@ public void imprimirPizza(){
     System.out.println("Preço: " + this.preco + "€");
     System.out.println("Tamanho: " + this.tamanho);
     int numIngrediente = 1;
-    for (Ingrediente i: ingredientes){
+    for (PizzaIngrediente i: ingredientes){
         System.out.print("\ningrediente " + numIngrediente + ": ");
         i.imprimirIngrediente();
         numIngrediente++;
