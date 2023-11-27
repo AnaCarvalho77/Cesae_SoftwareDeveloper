@@ -9,7 +9,7 @@ public class main {
 
         Carro nissan = new Carro("nissan","qashqai",2016,110,1.6,5.5,TipoCombustivel.DIESEL,5);
         Carro toyota = new Carro("toyota","yaris",2014,90,1.4,5,TipoCombustivel.DIESEL,5);
-        Camiao man = new Camiao("Man","TGX",2021,471,15.2,24,TipoCombustivel.DIESEL,500);
+        Camiao man = new Camiao("Man","TGX",2021,471,15.2,24,500);
         Mota ktm = new Mota("KTM","450 SX-F",2023,63,449.9,3,TipoCombustivel.GASOLINA);
 
 
