@@ -1,7 +1,11 @@
 package Ex_02;
 
+import java.io.FileNotFoundException;
+
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+
+        String caminhoFicheiro = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/FichaPratica_12/src/Ex_02/Mota.txt";
 
         Carro nissan = new Carro("nissan","qashqai",2016,110,1.6,5.5,TipoCombustivel.DIESEL,5);
         Carro toyota = new Carro("toyota","yaris",2014,90,1.4,5,TipoCombustivel.DIESEL,5);
@@ -25,6 +29,12 @@ public class main {
         man.viagem(300,300);
         System.out.println();
         man.viagem(200,550);
+        System.out.println();
+
+
+
+        ktm.imprimirDados();
+        ktm.imagem(caminhoFicheiro);
 
 
 

@@ -26,6 +26,7 @@ public class Mota extends Veiculo {
 
     @Override
     public void imprimirDados() {
+
         super.imprimirDados();
     }
 }
