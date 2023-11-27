@@ -23,4 +23,9 @@ public class Mota extends Veiculo {
             System.out.println(linha);
         }
     }
+
+    @Override
+    public void imprimirDados() {
+        super.imprimirDados();
+    }
 }

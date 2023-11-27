@@ -1,5 +1,7 @@
 package Ex_02;
 
+import java.util.ArrayList;
+
 public class Camiao extends Veiculo{
     private double capacidadeCarga;
 
@@ -13,6 +15,7 @@ public class Camiao extends Veiculo{
         cargaAtual += carga;
         return cargaAtual;
     }
+
 
     public double custoViagem(double distancia, double carga){
         double custo = 0;
@@ -31,6 +34,14 @@ public class Camiao extends Veiculo{
         }
 
     }
+    @Override
+    public void imprimirDados(){
+        super.imprimirDados();
+        System.out.println("capacidade da carga: " + this.capacidadeCarga);
+
+    }
+
+
 
 
 }
