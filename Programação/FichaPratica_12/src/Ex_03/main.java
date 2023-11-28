@@ -6,7 +6,7 @@ public class main {
     public static void main(String[] args) {
 
         Base preferida = new Base("I9999", "MassaAlta",1.5, BasePizza.MassaAlta,"massa alta e fofa");
-        Topping nham = new Topping("I8888", "Mozzarela", UnidadeMedida.Gramas,30, OrigemIngrediente.Nacional);
+        Base tipica = new Base("I1111", "massa normal", 1.2,BasePizza.MassaFina,"massa fina e crocante");
         Queijo chedar = new Queijo("I7777", "Queijo chedar", UnidadeMedida.Gramas,40,OrigemIngrediente.Nacional, TipoQueijo.Cheddar);
         Carne frango = new Carne("I6666", "Carne de Frango", UnidadeMedida.Gramas,35,OrigemIngrediente.Nacional,TipoCarne.Frango);
         Vegetal ananas = new Vegetal("I5555", "Ananás", UnidadeMedida.Gramas,15,OrigemIngrediente.Nacional,TipoVegetal.ananas);
@@ -15,28 +15,37 @@ public class main {
         Vegetal molho = new Vegetal("I2222","molho de tomate", UnidadeMedida.Litros,56,OrigemIngrediente.Nacional,TipoVegetal.molhoTomate);
 
         PizzaIngrediente baseAlta = new PizzaIngrediente(preferida,200);
+        PizzaIngrediente baseFina = new PizzaIngrediente(tipica,200);
 
-        PizzaIngrediente mozzarela = new PizzaIngrediente(nham,75);
-        Ingrediente  chourico = new Ingrediente("I4445", "Rodela Chouriça de Mirandela", UnidadeMedida.Unidades,35);
-        PizzaIngrediente tres = new PizzaIngrediente(chourico,10);
-        Ingrediente molhoTomate = new Ingrediente("I0015", "Molho Tomate",UnidadeMedida.Litros,325);
-        PizzaIngrediente quatro = new PizzaIngrediente(molhoTomate,0.09);
-        Ingrediente pimento = new Ingrediente("I0900","Fatia Pimento Verde", UnidadeMedida.Unidades, 4);
-        PizzaIngrediente cinco = new PizzaIngrediente(pimento,6);
+//        PizzaIngrediente mozzarela = new PizzaIngrediente(chedar,35);
+//        PizzaIngrediente chicken = new PizzaIngrediente(frango,50);
+//        PizzaIngrediente molhoTomate = new PizzaIngrediente(molho,0.09);
+//        PizzaIngrediente abacaxi = new PizzaIngrediente(ananas,50);
+//        PizzaIngrediente tuna = new PizzaIngrediente(atum,25);
 
-        Pizza portugal = new Pizza("P1991", "Pizza Portugal", "Pizza tradicional com ingredientes nacionais que promete levar quem a come numa viagme pela cultura de Portugal", 19.90, Tamanho.Grande, baseAlta, mozzarela);
 
-        portugal.addIngrediente(tres);
-        portugal.addIngrediente(quatro);
-        portugal.addIngrediente(cinco);
 
-        portugal.removerIngrediente(tres);
+        Pizza portugal = new Pizza("P1991", "Pizza Portugal", "Pizza tradicional com ingredientes nacionais que promete levar quem a come numa viagme pela cultura de Portugal", 19.90, Tamanho.Grande);
+
+        portugal.addIngrediente(baseAlta);
+        portugal.addIngrediente(baseFina);
+        portugal.addIngrediente(new PizzaIngrediente(molho,0.1));
+        portugal.addIngrediente(new PizzaIngrediente(chedar,35));
+        portugal.addIngrediente(new PizzaIngrediente(frango,50));
+        portugal.addIngrediente(new PizzaIngrediente(ananas,50));
+        portugal.addIngrediente(new PizzaIngrediente(atum,25));
+        System.out.println();
+
+        portugal.removerIngrediente("I6666");
 
         portugal.imprimirPizza();
 
         System.out.println();
 
-        tres.imprimirIngrediente();
+
+        portugal.addIngrediente(new PizzaIngrediente(atum,25));
+        System.out.println();
+        portugal.imprimirPizza();
 
 
     }
