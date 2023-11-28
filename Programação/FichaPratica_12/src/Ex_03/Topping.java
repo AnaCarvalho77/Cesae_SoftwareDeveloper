@@ -1,5 +1,8 @@
 package Ex_03;
 
+import Ex_03.enums.OrigemIngrediente;
+import Ex_03.enums.UnidadeMedida;
+
 public class Topping extends Ingrediente{
     private OrigemIngrediente origem;
 

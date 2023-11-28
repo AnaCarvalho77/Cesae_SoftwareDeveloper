@@ -1,5 +1,7 @@
 package Ex_03;
 
+import Ex_03.enums.UnidadeMedida;
+
 public class Ingrediente {
     private String codigo;
     private String nome;

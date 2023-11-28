@@ -1,5 +1,7 @@
 package Ex_03;
 
+import Ex_03.enums.UnidadeMedida;
+
 public class PizzaIngrediente {
     Ingrediente ingrediente;
     private double quantidade;
@@ -7,6 +9,10 @@ public class PizzaIngrediente {
     public PizzaIngrediente(Ingrediente ingrediente, double quantidade) {
         this.ingrediente = ingrediente;
         this.quantidade = quantidade;
+    }
+
+    public Ingrediente getIngrediente() {
+        return ingrediente;
     }
 
     public double getQuantidade() {

@@ -1,5 +1,9 @@
 package Ex_03;
 
+import Ex_03.enums.OrigemIngrediente;
+import Ex_03.enums.TipoVegetal;
+import Ex_03.enums.UnidadeMedida;
+
 public class Vegetal extends Topping{
     TipoVegetal tipo;
 
