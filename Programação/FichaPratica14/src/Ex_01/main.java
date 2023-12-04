@@ -16,7 +16,7 @@ public class main {
         gt.addTerreno(terreno3);
         gt.addTerreno(terreno4);
 
-        
+
 
         System.out.println(gt.calcularAreaTerrenos());
 
