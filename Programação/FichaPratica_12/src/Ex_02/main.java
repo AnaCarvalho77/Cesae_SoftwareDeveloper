@@ -31,6 +31,8 @@ public class main {
         man.viagem(200,550);
         System.out.println();
 
+        nissan.valorConsumido()
+
 
 
         ktm.imprimirDados();
