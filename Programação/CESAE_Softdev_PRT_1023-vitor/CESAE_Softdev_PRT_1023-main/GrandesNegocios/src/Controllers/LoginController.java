@@ -3,7 +3,10 @@ package Controllers;
 import Domain.Utilizador;
 import Repository.UtilizadorRepository;
 
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class LoginController {
@@ -25,4 +28,16 @@ public class LoginController {
 
         return false;
     }
+
+    public static void adicionarUtilizador(String tipoUtilizador, String username, String password) throws IOException {
+        File file = new File("Ficheiros/login_grandesNegocios.csv");
+        FileWriter fW = new FileWriter(file,true);
+
+        fW.append("\n" + tipoUtilizador + ";" + username + ";" + password);
+        fW.close();
+    }
+
+
+
+
 }

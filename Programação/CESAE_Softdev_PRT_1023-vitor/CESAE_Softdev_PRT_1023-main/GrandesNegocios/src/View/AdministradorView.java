@@ -1,5 +1,8 @@
 package View;
 
+import Controllers.LoginController;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AdministradorView {
@@ -7,7 +10,7 @@ public class AdministradorView {
     public AdministradorView() {
     }
 
-    public static void menuAdmin() {
+    public static void menuAdmin() throws IOException {
         Scanner input = new Scanner(System.in);
 
         int opcao = 0;
@@ -53,9 +56,38 @@ public class AdministradorView {
                     break;
 
                 case 7:
+                    String tipoUtilizadorString=null;
                     System.out.println("\n*** Adicionar um novo login ***\n");
                     System.out.println("\n Escolha o tipo de utilizador: ");
+                    System.out.println("1. ADMIN");
+                    System.out.println("2. FUNC");
+                    System.out.println("0. Sair");
+                    int tipoUtilizador = input.nextInt();
+                    do{
+                        switch (tipoUtilizador){
+                            case 1:
+                                tipoUtilizadorString="ADMIN";
+                                break;
+                            case 2:
+                                tipoUtilizadorString="FUNC";
+                                break;
+                            case 0:
+                                break;
+                            default:
+                                System.out.println("Utilizador não contemplado");
+                        }
+                    }while(tipoUtilizador < 0 || tipoUtilizador > 2);
+
+
+                    System.out.println("\n Digite o nome do utilizador: ");
+                    String nomeUtilizador = input.next();
+                    System.out.println("\n Digite a password: ");
+                    String password = input.next();
+
+                   LoginController.adicionarUtilizador(tipoUtilizadorString,nomeUtilizador,password);
+
                     break;
+
 
                 case 0:
                     System.out.println("\n*** Voltar... ***\n");
