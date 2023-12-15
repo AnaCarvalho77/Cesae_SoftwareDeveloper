@@ -6,4 +6,6 @@ public class Oficina {
     private ArrayList<Veiculo>garagem;
     private ArrayList<ItemCorrida>stock;
 
+    public Oficina() {
+    }
 }
