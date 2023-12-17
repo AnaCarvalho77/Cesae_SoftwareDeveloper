@@ -1,9 +1,6 @@
 package Tools;
 
-import Domain.Carro;
-import Domain.Mota;
-import Domain.TipoCarro;
-import Domain.Veiculo;
+import Domain.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,7 +23,7 @@ public class CSVVeiculosOficinaReader {
 
         String linha = scanner.nextLine();
 
-        ArrayList<Veiculo> arrayVeiculosOficina = new ArrayList<>();
+        ArrayList<Veiculo> arrayGaragem = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
             linha = scanner.nextLine();
@@ -44,15 +41,15 @@ public class CSVVeiculosOficinaReader {
             if(tipoVeiculo.equals("Carro")){
                 TipoCarro tipoCarro = TipoCarro.valueOf(linhaDividida[6]);
                 Carro carroAtual = new Carro(marca,modelo,potenciaCV,pesoKg,preco);
-                arrayVeiculosOficina.add(carroAtual);
+                arrayGaragem.add(carroAtual);
             }else if (tipoVeiculo.equals("Mota")){
                 Mota motaAtual = new Mota(marca, modelo, potenciaCV, pesoKg, preco);
-                arrayVeiculosOficina.add(motaAtual);
+                arrayGaragem.add(motaAtual);
             }
 
         }
 
-        return arrayVeiculosOficina;
+        return arrayGaragem;
 
     }
 }

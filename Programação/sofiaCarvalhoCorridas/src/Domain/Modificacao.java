@@ -19,4 +19,10 @@ public class Modificacao extends ItemCorrida {
         this.diminuicaoPeso = diminuicaoPeso;
         this.carrosPermitidos = carrosPermitidos;
     }
+
+    @Override
+    public void mostrarDetalhes() {
+        super.mostrarDetalhes();
+        System.out.println("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos);
+    }
 }

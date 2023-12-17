@@ -17,8 +17,6 @@ public class CSVItensCorridaReader {
 
     public ArrayList<ItemCorrida> readCSVToRepository() throws FileNotFoundException {
 
-
-
         File file = new File(this.filePath);
         Scanner scanner = new Scanner(file);
 

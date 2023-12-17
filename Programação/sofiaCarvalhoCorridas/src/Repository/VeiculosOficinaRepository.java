@@ -7,15 +7,15 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class VeiculosOficinaRepository {
-    private ArrayList<Veiculo> veiculosOficina;
+    private ArrayList<Veiculo> garagem;
 
     public VeiculosOficinaRepository(String filePath) throws FileNotFoundException {
         CSVVeiculosOficinaReader csvVeiculosOficinaReader = new CSVVeiculosOficinaReader(filePath);
-        this.veiculosOficina = csvVeiculosOficinaReader.readCSVToRepository();
+        this.garagem = csvVeiculosOficinaReader.readCSVToRepository();
     }
 
 
-    public ArrayList<Veiculo> getVeiculosOficina() {
-        return veiculosOficina;
+    public ArrayList<Veiculo> getGaragem() {
+        return garagem;
     }
 }

@@ -8,4 +8,8 @@ public abstract class ItemCorrida {
         this.nome = nome;
         this.precoFichasCorrida = precoFichasCorrida;
     }
+
+    public void mostrarDetalhes(){
+        System.out.println(this.nome + "\t| " + this.precoFichasCorrida);
+    }
 }
