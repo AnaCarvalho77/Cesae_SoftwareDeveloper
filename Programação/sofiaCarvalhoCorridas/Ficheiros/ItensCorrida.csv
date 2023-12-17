@@ -1,0 +1,13 @@
+tipo;nome;preco;diminuicaoDesgate;diminuicaoPeso;carrosPermitidos;aumentoPotencia
+Modificacao;Remover Tinta;500;0;5;GT,F1,Rally;0
+Modificacao;Pneus XPTO;1000;2;0.5;F1;0
+Modificacao;Penus coiso;500;1;0.25;GT;0
+Modificacao;Pneus maximo;750;1;0.25;Rally;0
+Modificacao;Jantes Maravilha;500;3;0.5;F1;0
+Modificacao;Jantes Fantasticas;400;2;0.3;GT;0
+Habilidade;Kit Potencia 200CV;1000;0;0;0;200
+Habilidade;Kit Potencia 100CV;500;0;0;0;100
+Habilidade;Kit Potencia 300CV;1500;0;0;0;300
+Habilidade;Kit Potencia 250CV;1250;0;0;0;250
+Habilidade;Kit Potencia 150CV;750;0;0;0;150
+Habilidade;Kit Potencia 50CV;250;0;0;0;50

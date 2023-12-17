@@ -11,10 +11,19 @@ import java.util.Scanner;
 public class CSVLoginReader {
     private String filePath;
 
+    /**
+     * Construtor que recebe uma String caminho do ficheiro
+     * @param filePath
+     */
     public CSVLoginReader(String filePath) {
         this.filePath = filePath;
     }
 
+    /**
+     * método para ler ficheiro CSV com utilizadores
+     * @return retorna um arraylist de utilizadores
+     * @throws FileNotFoundException
+     */
     public ArrayList<Utilizador> readCSVToRepository() throws FileNotFoundException {
 
         File file = new File(this.filePath);
@@ -22,6 +31,7 @@ public class CSVLoginReader {
 
         String linha = scanner.nextLine();
 
+        //iniciar uma arraylist de utilizadores vazio
         ArrayList<Utilizador> arrayUsers = new ArrayList<>();
 
         while (scanner.hasNextLine()) {
@@ -32,8 +42,10 @@ public class CSVLoginReader {
             String utilizador = linhaDividida[1];
             String password = linhaDividida[2];
 
+            //criar um objeto de Utilizador com os parametros recolhidos do ficheiro
             Utilizador utilizadorAtual = new Utilizador(tipoConta,utilizador,password);
 
+            //adicionar o utilizador ao arraylist de Utilizadores
             arrayUsers.add(utilizadorAtual);
 
         }

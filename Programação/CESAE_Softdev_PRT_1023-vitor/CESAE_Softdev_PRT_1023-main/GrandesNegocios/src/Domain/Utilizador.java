@@ -6,6 +6,12 @@ public class Utilizador {
     private String username;
     private String password;
 
+    /**
+     * metodo construtor que recebe varios os seguintes parametros:
+     * @param tipoConta
+     * @param username
+     * @param password
+     */
     public Utilizador(String tipoConta, String username, String password) {
         this.tipoConta = tipoConta;
         this.username = username;
