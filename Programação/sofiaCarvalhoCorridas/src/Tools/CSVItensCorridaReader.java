@@ -5,6 +5,7 @@ import Domain.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class CSVItensCorridaReader {
@@ -31,25 +32,35 @@ public class CSVItensCorridaReader {
 
 
 
-            String tipoVeiculo = linhaDividida[0];
+            String tipoItem = linhaDividida[0];
 
-            String marca = linhaDividida[1];
-            String modelo = linhaDividida[2];
-            int potenciaCV = Integer.parseInt(linhaDividida[3]);
-            double pesoKg = Double.parseDouble(linhaDividida[4]);
-            int preco = Integer.parseInt(linhaDividida[5]);
-            if(tipoVeiculo.equals("Carro")){
-                TipoCarro tipoCarro = TipoCarro.valueOf(linhaDividida[6]);
-                Carro carroAtual = new Carro(marca,modelo,potenciaCV,pesoKg,preco);
-                arrayVeiculosOficina.add(carroAtual);
-            }else if (tipoVeiculo.equals("Mota")){
-                Mota motaAtual = new Mota(marca, modelo, potenciaCV, pesoKg, preco);
-                arrayVeiculosOficina.add(motaAtual);
+            String nome = linhaDividida[1];
+            int preco = Integer.parseInt(linhaDividida[2]);
+            int diminuicaoDesgaste = Integer.parseInt(linhaDividida[3]);
+            double diminuicaoPeso = Double.parseDouble(linhaDividida[4]);
+
+            ArrayList<String> carrosPermitidos = new ArrayList<>();
+
+            String [] permitidos = linhaDividida[5].split(",");
+            Collections.addAll(carrosPermitidos, permitidos);
+//            for(int i = 0; i < permitidos.length;i++){
+//                carrosPermitidos.add(permitidos[i]);
+//            }
+
+            int aumentoPotencia = Integer.parseInt(linhaDividida[6]);
+
+
+            if(tipoItem.equals("Modificacao")){
+                Modificacao modificacaoAtual = new Modificacao(nome,preco,diminuicaoDesgaste,diminuicaoPeso,carrosPermitidos);
+                arrayItensCorrida.add(modificacaoAtual);
+            }else if (tipoItem.equals("Habilidade")){
+                Habilidade habilidadeAtual = new Habilidade(nome, preco,aumentoPotencia);
+                arrayItensCorrida.add(habilidadeAtual);
             }
 
         }
 
-        return arrayVeiculosOficina;
+        return arrayItensCorrida;
 
     }
 }

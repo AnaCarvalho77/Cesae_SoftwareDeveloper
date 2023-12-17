@@ -12,4 +12,11 @@ public class Modificacao extends ItemCorrida {
         this.diminuicaoDesgaste = diminuicaoDesgaste;
         this.diminuicaoPeso = diminuicaoPeso;
     }
+
+    public Modificacao(String nome, int precoFichasCorrida, int diminuicaoDesgaste, double diminuicaoPeso, ArrayList<String> carrosPermitidos) {
+        super(nome, precoFichasCorrida);
+        this.diminuicaoDesgaste = diminuicaoDesgaste;
+        this.diminuicaoPeso = diminuicaoPeso;
+        this.carrosPermitidos = carrosPermitidos;
+    }
 }
