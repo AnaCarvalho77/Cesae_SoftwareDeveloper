@@ -14,6 +14,9 @@ public class Base  extends Ingrediente{
         this.descricao = descricao;
     }
 
-
-
+    public Base(String codigo, String nome, UnidadeMedida unidadeMedida, double numCalorias, BasePizza tipoMassa, String descricao) {
+        super(codigo, nome, unidadeMedida, numCalorias);
+        this.tipoMassa = tipoMassa;
+        this.descricao = descricao;
+    }
 }

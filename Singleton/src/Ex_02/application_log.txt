@@ -1,0 +1,5 @@
+2023-12-06T12:20:57.525187: Log 1: Variável x definida para 20
+2023-12-06T12:20:57.538660: Log 2: Objecto 'porshe' da Classe Car criado com sucesso
+2023-12-06T12:20:57.538919: Log 3: Objecto 'mercedes' da Classe Car criado com sucesso
+2023-12-06T12:20:57.539175: Log 4: Método corrida invocado entre porshe e mercedes
+2023-12-06T12:20:57.539354: Log 5: Vencedor da corrida é porsche
