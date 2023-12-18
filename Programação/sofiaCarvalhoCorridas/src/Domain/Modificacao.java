@@ -23,6 +23,6 @@ public class Modificacao extends ItemCorrida {
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.println("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos);
+        System.out.print("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos+ "\n");
     }
 }

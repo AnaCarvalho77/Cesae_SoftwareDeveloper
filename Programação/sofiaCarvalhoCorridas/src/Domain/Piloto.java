@@ -6,4 +6,26 @@ public class Piloto {
     private Veiculo veiculoAtual;
     private int vitorias;
 
+    public Piloto(String nome, int fichasCorrida, Veiculo veiculoAtual, int vitorias) {
+        this.nome = nome;
+        this.fichasCorrida = fichasCorrida;
+        this.veiculoAtual = veiculoAtual;
+        this.vitorias = vitorias;
+    }
+
+    public int getFichasCorrida() {
+        return fichasCorrida;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Veiculo getVeiculoAtual() {
+        return veiculoAtual;
+    }
+
+    public int getVitorias() {
+        return vitorias;
+    }
 }

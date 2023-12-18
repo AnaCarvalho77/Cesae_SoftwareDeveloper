@@ -40,7 +40,7 @@ public class CSVVeiculosOficinaReader {
             int preco = Integer.parseInt(linhaDividida[5]);
             if(tipoVeiculo.equals("Carro")){
                 TipoCarro tipoCarro = TipoCarro.valueOf(linhaDividida[6]);
-                Carro carroAtual = new Carro(marca,modelo,potenciaCV,pesoKg,preco);
+                Carro carroAtual = new Carro(marca,modelo,potenciaCV,pesoKg,preco,tipoCarro);
                 arrayGaragem.add(carroAtual);
             }else if (tipoVeiculo.equals("Mota")){
                 Mota motaAtual = new Mota(marca, modelo, potenciaCV, pesoKg, preco);

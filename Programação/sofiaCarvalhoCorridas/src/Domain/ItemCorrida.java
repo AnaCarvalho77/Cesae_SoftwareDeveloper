@@ -10,6 +10,14 @@ public abstract class ItemCorrida {
     }
 
     public void mostrarDetalhes(){
-        System.out.println(this.nome + "\t| " + this.precoFichasCorrida);
+        System.out.print(this.nome + "\t| " + this.precoFichasCorrida);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public int getPrecoFichasCorrida() {
+        return precoFichasCorrida;
     }
 }

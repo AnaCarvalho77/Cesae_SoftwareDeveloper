@@ -17,6 +17,6 @@ public abstract class Veiculo {
     }
 
     public void mostrarDetalhes(){
-        System.out.println(this.marca + "\t| " + this.modelo + "\t| " + this.potenciaCV + "\t| " + this.pesoKg + "\t| " + this.preco);
+        System.out.print("\n" + this.marca + "\t| " + this.modelo + "\t| " + this.potenciaCV + "\t| " + this.pesoKg + "\t| " + this.preco);
     }
 }
