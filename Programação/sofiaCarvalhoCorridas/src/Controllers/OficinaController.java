@@ -31,6 +31,7 @@ public class OficinaController {
 
 
     public void imprimirStock(Piloto pilotoAtual) {
+
         Random random = new Random();
         Veiculo veiculoPiloto = pilotoAtual.getVeiculoAtual();
         ArrayList<ItemCorrida> stockCopia = new ArrayList<>();
@@ -61,6 +62,7 @@ public class OficinaController {
             }
 
         }
+        System.out.print("Digite o numero da opcao desejada: ");
     }
 
     public void imprimirGaragem(){
@@ -84,17 +86,21 @@ public class OficinaController {
     public void venderItem(Piloto pilotoAtual, int opcaoUtilizador){
         int posicaoItem = opcaoUtilizador-1;
         ItemCorrida itemEscolhido = montraItens.get(posicaoItem);
+        Veiculo veiculoPiloto = pilotoAtual.getVeiculoAtual();
         int fichasPiloto = pilotoAtual.getFichasCorrida();
         int fichasItem = itemEscolhido.getPrecoFichasCorrida();
         if (fichasPiloto >= fichasItem){
-            if (pilotoAtual.getVeiculoAtual()instanceof Carro){
-               ((Carro) pilotoAtual.getVeiculoAtual()).adicionarItensCorrida(itemEscolhido);
-            }else if(pilotoAtual.getVeiculoAtual()instanceof Mota){
-               ((Mota) pilotoAtual.getVeiculoAtual()).adicionarItensCorrida(itemEscolhido);
+            if (veiculoPiloto instanceof Carro && itemEscolhido instanceof Modificacao){
+                   ((Carro) veiculoPiloto).adicionarItensCorrida((Modificacao) itemEscolhido);
+            }else if(pilotoAtual.getVeiculoAtual()instanceof Mota && itemEscolhido instanceof Habilidade){
+                    ((Mota)veiculoPiloto).adicionarItensCorrida((Habilidade) itemEscolhido);
             }else{
                 System.out.println("Não tem fichas suficientes para adicionar este Item!");
             }
         }
+        pilotoAtual.setFichasCorrida(pilotoAtual.getFichasCorrida()-itemEscolhido.getPrecoFichasCorrida());
+        montraItens.remove(itemEscolhido);
+
     }
     public void venderVeiculo(Piloto pilotoAtual, int opcaoUtilizador){
         int posicaoVeiculo = opcaoUtilizador-1;
@@ -106,7 +112,8 @@ public class OficinaController {
             }else{
             System.out.println("Não tem fichas suficientes para coprar este Veículo.");
         }
-
+        pilotoAtual.setFichasCorrida(pilotoAtual.getFichasCorrida()-veiculoEscolhido.getPreco());
+        montraVeiculos.remove(veiculoEscolhido);
     }
 
 
@@ -114,6 +121,8 @@ public class OficinaController {
         Piloto piloto1 = new Piloto(nome,150000,veiculoInicial,0);
         return piloto1;
     }
+
+
 
 
 }

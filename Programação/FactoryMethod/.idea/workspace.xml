@@ -7,9 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2ZOHRWw75eoZYNK65GUfAk19z2z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,7 +19,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/softdev/Desktop/Cesae_SoftwareDeveloper/FichasJava/src/TrabalhoPratico_PE"
+    "last_opened_file_path": "C:/Users/softdev/Desktop/Cesae_SoftwareDeveloper/Programação/CESAE_Softdev_PRT_1023-vitor/CESAE_Softdev_PRT_1023-main/FactoryMethod"
   }
 }]]></component>
   <component name="RecentsManager">

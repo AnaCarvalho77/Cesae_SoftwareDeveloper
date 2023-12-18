@@ -35,10 +35,13 @@ public class Piloto {
         return vitorias;
     }
 
+    public void setFichasCorrida(int fichasCorrida) {
+        this.fichasCorrida = fichasCorrida;
+    }
 
     public void imprimirVeiculoAtual(){
         if(veiculoAtual!=null){
-            System.out.print("\n o veículo é: ");
+            System.out.print("\no veículo é: ");
             veiculoAtual.mostrarDetalhes();
         }else{
             System.out.println("Ainda não tem nenhum veiculo associado");

@@ -11,14 +11,17 @@ public class Carro extends Veiculo{
         this.tipoCarro = tipoCarro;
     }
 
+    public Carro() {
+    }
+
     public Carro(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco, TipoCarro tipoCarro, ArrayList<Modificacao> kitCorrida) {
         super(id, marca, modelo, potenciaCV, pesoKg, desgaste, preco);
         this.tipoCarro = tipoCarro;
         this.kitCorrida = kitCorrida;
     }
 
-    public void adicionarItensCorrida(ItemCorrida itemAtual){
-            kitCorrida.add((Modificacao) itemAtual);
+    public void adicionarItensCorrida(Modificacao modificacaoNova){
+            kitCorrida.add(modificacaoNova);
         }
 
 

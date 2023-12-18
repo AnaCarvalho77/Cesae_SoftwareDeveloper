@@ -5,23 +5,21 @@ import org.w3c.dom.ls.LSOutput;
 import java.util.ArrayList;
 
 public class Mota extends Veiculo{
-    ArrayList<Habilidade>habilidadesMota;
+    private ArrayList<Habilidade>habilidadesMota;
 
     public Mota(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco) {
         super(id, marca, modelo, potenciaCV, pesoKg, desgaste, preco);
     }
 
-    public Mota(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco, ArrayList<Habilidade> habilidadesMota) {
-        super(id, marca, modelo, potenciaCV, pesoKg, desgaste, preco);
-        this.habilidadesMota = habilidadesMota;
+    public Mota() {
     }
 
     public ArrayList<Habilidade> getHabilidadesMota() {
         return habilidadesMota;
     }
 
-    public void adicionarItensCorrida(ItemCorrida itemAtual){
-        habilidadesMota.add((Habilidade) itemAtual);
+    public void adicionarItensCorrida(Habilidade habilidadeNova){
+        habilidadesMota.add(habilidadeNova);
     }
 
     @Override

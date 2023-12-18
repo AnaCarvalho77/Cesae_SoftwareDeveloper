@@ -19,6 +19,9 @@ public abstract class Veiculo {
         this.preco = preco;
     }
 
+    public Veiculo() {
+    }
+
     public String getId() {
         return id;
     }

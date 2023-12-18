@@ -15,7 +15,8 @@ public class PilotoView {
     public static void menuPiloto() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         OficinaController oficinaControler = new OficinaController();
-        System.out.println("Qual o nome do piloto: ");
+        System.out.print("Qual o nome do piloto: ");
+        System.out.println();
         String nome = input.next();
         Piloto piloto1 = oficinaControler.criarPiloto(nome);
         oficinaControler.imprimirGaragem();
@@ -23,8 +24,9 @@ public class PilotoView {
         int opcao = input.nextInt();
        oficinaControler.venderVeiculo(piloto1,opcao);
         piloto1.imprimirVeiculoAtual();
+        System.out.println();
         oficinaControler.imprimirStock(piloto1);
-        System.out.print("Digite o numero da opcao desejada: ");
+
         opcao = input.nextInt();
         oficinaControler.venderItem(piloto1,opcao);
        piloto1.usarItem();
