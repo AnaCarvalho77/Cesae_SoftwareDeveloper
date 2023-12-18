@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static java.lang.Integer.parseInt;
+
 public class CSVVeiculosOficinaReader {
     private String filePath;
 
@@ -33,17 +35,19 @@ public class CSVVeiculosOficinaReader {
 
             String tipoVeiculo = linhaDividida[0];
 
-            String marca = linhaDividida[1];
-            String modelo = linhaDividida[2];
-            int potenciaCV = Integer.parseInt(linhaDividida[3]);
-            double pesoKg = Double.parseDouble(linhaDividida[4]);
-            int preco = Integer.parseInt(linhaDividida[5]);
+            String id = linhaDividida[1];
+            String marca = linhaDividida[2];
+            String modelo = linhaDividida[3];
+            int potenciaCV = parseInt(linhaDividida[4]);
+            double pesoKg = Double.parseDouble(linhaDividida[5]);
+            int desgaste = parseInt(linhaDividida[8]);
+            int preco = parseInt(linhaDividida[6]);
             if(tipoVeiculo.equals("Carro")){
-                TipoCarro tipoCarro = TipoCarro.valueOf(linhaDividida[6]);
-                Carro carroAtual = new Carro(marca,modelo,potenciaCV,pesoKg,preco,tipoCarro);
+                TipoCarro tipoCarro = TipoCarro.valueOf(linhaDividida[7]);
+                Carro carroAtual = new Carro(id,marca,modelo,potenciaCV,pesoKg,desgaste,preco,tipoCarro);
                 arrayGaragem.add(carroAtual);
             }else if (tipoVeiculo.equals("Mota")){
-                Mota motaAtual = new Mota(marca, modelo, potenciaCV, pesoKg, preco);
+                Mota motaAtual = new Mota(id,marca, modelo, potenciaCV, pesoKg,desgaste, preco);
                 arrayGaragem.add(motaAtual);
             }
 

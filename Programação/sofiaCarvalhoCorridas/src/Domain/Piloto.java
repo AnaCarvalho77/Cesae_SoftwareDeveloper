@@ -13,6 +13,10 @@ public class Piloto {
         this.vitorias = vitorias;
     }
 
+    public void setVeiculoAtual(Veiculo veiculoAtual) {
+        this.veiculoAtual = veiculoAtual;
+    }
+
     public int getFichasCorrida() {
         return fichasCorrida;
     }

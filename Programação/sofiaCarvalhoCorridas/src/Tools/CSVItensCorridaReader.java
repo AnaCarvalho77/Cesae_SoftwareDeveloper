@@ -32,27 +32,29 @@ public class CSVItensCorridaReader {
 
             String tipoItem = linhaDividida[0];
 
-            String nome = linhaDividida[1];
-            int preco = Integer.parseInt(linhaDividida[2]);
-            int diminuicaoDesgaste = Integer.parseInt(linhaDividida[3]);
-            double diminuicaoPeso = Double.parseDouble(linhaDividida[4]);
+
+            String id = linhaDividida[1];
+            String nome = linhaDividida[2];
+            int preco = Integer.parseInt(linhaDividida[3]);
+            int diminuicaoDesgaste = Integer.parseInt(linhaDividida[4]);
+            double diminuicaoPeso = Double.parseDouble(linhaDividida[5]);
 
             ArrayList<String> carrosPermitidos = new ArrayList<>();
 
-            String [] permitidos = linhaDividida[5].split(",");
+            String [] permitidos = linhaDividida[6].split(",");
             Collections.addAll(carrosPermitidos, permitidos);
 //            for(int i = 0; i < permitidos.length;i++){
 //                carrosPermitidos.add(permitidos[i]);
 //            }
 
-            int aumentoPotencia = Integer.parseInt(linhaDividida[6]);
+            int aumentoPotencia = Integer.parseInt(linhaDividida[7]);
 
 
             if(tipoItem.equals("Modificacao")){
-                Modificacao modificacaoAtual = new Modificacao(nome,preco,diminuicaoDesgaste,diminuicaoPeso,carrosPermitidos);
+                Modificacao modificacaoAtual = new Modificacao(tipoItem,id,nome,preco,diminuicaoDesgaste,diminuicaoPeso,carrosPermitidos);
                 arrayItensCorrida.add(modificacaoAtual);
             }else if (tipoItem.equals("Habilidade")){
-                Habilidade habilidadeAtual = new Habilidade(nome, preco,aumentoPotencia);
+                Habilidade habilidadeAtual = new Habilidade(tipoItem,id,nome, preco,aumentoPotencia);
                 arrayItensCorrida.add(habilidadeAtual);
             }
 
@@ -61,4 +63,5 @@ public class CSVItensCorridaReader {
         return arrayItensCorrida;
 
     }
+
 }
