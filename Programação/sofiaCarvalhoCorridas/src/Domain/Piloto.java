@@ -1,5 +1,7 @@
 package Domain;
 
+import java.util.ArrayList;
+
 public class Piloto {
     private String nome;
     private int fichasCorrida;
@@ -31,5 +33,34 @@ public class Piloto {
 
     public int getVitorias() {
         return vitorias;
+    }
+
+
+    public void imprimirVeiculoAtual(){
+        if(veiculoAtual!=null){
+            System.out.print("\n o veículo é: ");
+            veiculoAtual.mostrarDetalhes();
+        }else{
+            System.out.println("Ainda não tem nenhum veiculo associado");
+        }
+
+    }
+
+    public void usarItem(){
+        System.out.print("\n os itens do veículo são: ");
+        if(veiculoAtual instanceof Carro){
+            if( veiculoAtual!= null && ((Carro) veiculoAtual).getKitCorrida()!=null) {
+                System.out.println(((Carro) veiculoAtual).getKitCorrida());
+            }else {
+                System.out.println("Nao tem itens adicionados!");
+            }
+        }else if(veiculoAtual instanceof Mota) {
+            if (veiculoAtual != null && ((Mota) veiculoAtual).getHabilidadesMota() != null) {
+                System.out.println(((Mota) veiculoAtual).getHabilidadesMota());
+            } else {
+                System.out.println("Nao tem itens adicionados!");
+            }
+        }
+
     }
 }

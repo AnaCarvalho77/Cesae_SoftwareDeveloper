@@ -1,5 +1,7 @@
 package Domain;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 
 public class Mota extends Veiculo{
@@ -14,8 +16,17 @@ public class Mota extends Veiculo{
         this.habilidadesMota = habilidadesMota;
     }
 
+    public ArrayList<Habilidade> getHabilidadesMota() {
+        return habilidadesMota;
+    }
+
+    public void adicionarItensCorrida(ItemCorrida itemAtual){
+        habilidadesMota.add((Habilidade) itemAtual);
+    }
+
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
+        System.out.print("\t|" + this.habilidadesMota + "\n");
     }
 }

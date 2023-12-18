@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Carro extends Veiculo{
     private TipoCarro tipoCarro;
-    ArrayList<Modificacao>kitCorrida;
+    private ArrayList<Modificacao>kitCorrida;
 
     public Carro(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco, TipoCarro tipoCarro) {
         super(id, marca, modelo, potenciaCV, pesoKg, desgaste, preco);
@@ -17,9 +17,18 @@ public class Carro extends Veiculo{
         this.kitCorrida = kitCorrida;
     }
 
+    public void adicionarItensCorrida(ItemCorrida itemAtual){
+            kitCorrida.add((Modificacao) itemAtual);
+        }
+
+
+    public ArrayList<Modificacao> getKitCorrida() {
+        return kitCorrida;
+    }
+
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.print("\t| " + this.tipoCarro);
+        System.out.print("\t| " + this.tipoCarro + "\t|" + this.kitCorrida + "\n");
     }
 }
