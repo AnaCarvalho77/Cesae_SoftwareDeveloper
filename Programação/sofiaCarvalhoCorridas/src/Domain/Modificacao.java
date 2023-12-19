@@ -25,4 +25,5 @@ public class Modificacao extends ItemCorrida {
         super.mostrarDetalhes();
         System.out.print("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos+ "\n");
     }
+
 }

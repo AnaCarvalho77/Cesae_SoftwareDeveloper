@@ -9,6 +9,7 @@ public class Mota extends Veiculo{
 
     public Mota(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco) {
         super(id, marca, modelo, potenciaCV, pesoKg, desgaste, preco);
+        this.habilidadesMota = new ArrayList<>();
     }
 
     public Mota() {
@@ -22,9 +23,16 @@ public class Mota extends Veiculo{
         habilidadesMota.add(habilidadeNova);
     }
 
+
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
         System.out.print("\t|" + this.habilidadesMota + "\n");
+    }
+
+    public void mostrarHbilidadesMota(){
+        for(Habilidade itemAtual: habilidadesMota){
+            itemAtual.mostrarDetalhes();
+        }
     }
 }

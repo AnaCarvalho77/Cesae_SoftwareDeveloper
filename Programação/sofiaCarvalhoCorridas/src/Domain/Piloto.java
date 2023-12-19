@@ -50,16 +50,21 @@ public class Piloto {
     }
 
     public void usarItem(){
-        System.out.print("\n os itens do veículo são: ");
+        if(veiculoAtual == null){
+            System.out.println("Ainda não tem nenhum veiculo associado");
+            return;
+        }
+
+        System.out.println("os itens do veículo são: ");
         if(veiculoAtual instanceof Carro){
-            if( veiculoAtual!= null && ((Carro) veiculoAtual).getKitCorrida()!=null) {
-                System.out.println(((Carro) veiculoAtual).getKitCorrida());
+            if(((Carro) veiculoAtual).getKitCorrida()!=null) {
+                ((Carro) veiculoAtual).imprimirKitCorrida();
             }else {
                 System.out.println("Nao tem itens adicionados!");
             }
         }else if(veiculoAtual instanceof Mota) {
-            if (veiculoAtual != null && ((Mota) veiculoAtual).getHabilidadesMota() != null) {
-                System.out.println(((Mota) veiculoAtual).getHabilidadesMota());
+            if (((Mota) veiculoAtual).getHabilidadesMota() != null) {
+                ((Mota) veiculoAtual).mostrarHbilidadesMota();
             } else {
                 System.out.println("Nao tem itens adicionados!");
             }

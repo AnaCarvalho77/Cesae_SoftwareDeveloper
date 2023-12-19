@@ -9,9 +9,7 @@ public class Carro extends Veiculo{
     public Carro(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco, TipoCarro tipoCarro) {
         super(id, marca, modelo, potenciaCV, pesoKg, desgaste, preco);
         this.tipoCarro = tipoCarro;
-    }
-
-    public Carro() {
+        this.kitCorrida = new ArrayList<>();
     }
 
     public Carro(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco, TipoCarro tipoCarro, ArrayList<Modificacao> kitCorrida) {
@@ -29,9 +27,19 @@ public class Carro extends Veiculo{
         return kitCorrida;
     }
 
+    public void imprimirKitCorrida(){
+        for(Modificacao itemAtual: kitCorrida){
+            itemAtual.mostrarDetalhes();
+        }
+    }
+
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
         System.out.print("\t| " + this.tipoCarro + "\t|" + this.kitCorrida + "\n");
+    }
+
+    public TipoCarro getTipoCarro() {
+        return tipoCarro;
     }
 }
