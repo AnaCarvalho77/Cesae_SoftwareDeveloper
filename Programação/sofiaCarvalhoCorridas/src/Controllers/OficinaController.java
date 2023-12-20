@@ -11,7 +11,6 @@ import java.util.Random;
 public class OficinaController {
     private ArrayList<Veiculo> garagem;
     private ArrayList<ItemCorrida> stock;
-    private Veiculo veiculoInicial = null;
     private Veiculo veicloEscolhido = null;
     private ArrayList<Veiculo> montraVeiculos = new ArrayList<>(12);
     private ArrayList<ItemCorrida> montraItens = new ArrayList<>(6);
@@ -26,7 +25,6 @@ public class OficinaController {
     public void criarOficina() throws FileNotFoundException {
         VeiculosOficinaRepository garagemRepository = new VeiculosOficinaRepository("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/VeiculosCorridas.csv");
         this.garagem = garagemRepository.getGaragem();
-
         ItensCorridaRepository stockRepository = new ItensCorridaRepository("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/ItensCorrida.csv");
         this.stock = stockRepository.getStock();
     }
@@ -160,10 +158,7 @@ public class OficinaController {
 
     }
 
-    public Piloto criarPiloto(String nome, int fichas) {
-        Piloto piloto = new Piloto(nome, fichas, veiculoInicial, 0);
-        return piloto;
-    }
+
 
 
 }

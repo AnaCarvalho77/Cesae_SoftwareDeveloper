@@ -1,9 +1,6 @@
 package View;
 
-import Controllers.CampeonatoController;
-import Controllers.CorridaController;
-import Controllers.OficinaController;
-import Controllers.PistaController;
+import Controllers.*;
 import Domain.Piloto;
 import Domain.Pista;
 
@@ -19,8 +16,9 @@ public class PilotoView {
 
     public static void menuPiloto() throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
-        OficinaController oficinaControler = new OficinaController();
-        oficinaControler.criarOficina();
+        OficinaController oficinaController = new OficinaController();
+        oficinaController.criarOficina();
+        PilotoController pilotoController = new PilotoController();
         PistaController pistaController = new PistaController();
         ArrayList<Pista> pistasCampeonato = new ArrayList<>();
 
@@ -41,13 +39,13 @@ public class PilotoView {
 
             switch (opcao) {
                 case 1:
-                    piloto = oficinaControler.criarPiloto(nome, 10000);
+                    piloto = pilotoController.criarPiloto(nome, 10000);
                     break;
                 case 2:
-                    piloto = oficinaControler.criarPiloto(nome, 30000);
+                    piloto = pilotoController.criarPiloto(nome, 30000);
                     break;
                 case 3:
-                    piloto = oficinaControler.criarPiloto(nome, 60000);
+                    piloto = pilotoController.criarPiloto(nome, 60000);
                     break;
                 case 0:
                     System.out.println("A sair....");
@@ -59,13 +57,13 @@ public class PilotoView {
         } while (opcao < 0 || opcao > 3);
 
 
-        oficinaControler.imprimirGaragem();
+        oficinaController.imprimirGaragem();
         System.out.print("Digite o numero da opcao desejada: ");
         opcao = input.nextInt();
-        oficinaControler.venderVeiculo(piloto, opcao);
+        oficinaController.venderVeiculo(piloto, opcao);
         piloto.imprimirVeiculoAtual();
         pistasCampeonato = pistaController.pistasCampeonato(piloto);
-
+        opcao = 0;
         do{
             System.out.println("quer comprar itens?");
             System.out.println("1. sim");
@@ -73,9 +71,9 @@ public class PilotoView {
             opcao= input.nextInt();
             switch (opcao){
                 case 1:
-                    oficinaControler.imprimirStock(piloto);
+                    oficinaController.imprimirStock(piloto);
                     opcao = input.nextInt();
-                    oficinaControler.venderItem(piloto, opcao);
+                    oficinaController.venderItem(piloto, opcao);
                     System.out.println();
                     piloto.usarItem();
                     break;
@@ -87,14 +85,15 @@ public class PilotoView {
             }
         }while (opcao != 2);
 
+
+
         CampeonatoController campeonatoController = new CampeonatoController();
         campeonatoController.campeonato(pistasCampeonato, piloto);
 
         System.out.println();
         opcao = 0;
-        OficinaController oficinaController = new OficinaController();
         do{
-            System.out.println("Quer comprar outro veículo?");
+            System.out.println("Quer comprar um veículo?");
             System.out.println("1. Sim");
             System.out.println("2. Nao");
             System.out.print("\nDigite o número da opcao:");
