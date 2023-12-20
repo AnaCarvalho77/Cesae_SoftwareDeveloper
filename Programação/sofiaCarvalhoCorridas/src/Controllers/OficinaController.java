@@ -36,9 +36,9 @@ public class OficinaController {
         if (veiculoPiloto instanceof Carro) {
             for (ItemCorrida itemAtual : stock) {
                 if (itemAtual.getTipo().equals("Modificacao")) {
-                    if(((Carro) veiculoPiloto).getTipoCarro().equals("GT")){
-                        
-                    }
+//                    if(((Carro) veiculoPiloto).getTipoCarro().equals("GT")){
+//
+//                    }
                     stockCopia.add(itemAtual);
                 }
             }

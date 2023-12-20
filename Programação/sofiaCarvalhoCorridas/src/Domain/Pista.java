@@ -16,6 +16,7 @@ public class Pista {
         this.tempoRecordeSeg = tempoRecordeSeg;
         this.distanciaVoltaM = distanciaVoltaM;
         this.quantidadeVoltas = quantidadeVoltas;
+        this.momentosPista = new ArrayList<>();
     }
 
     public String getNome() {
