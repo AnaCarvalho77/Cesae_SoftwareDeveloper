@@ -24,7 +24,7 @@ public class Modificacao extends ItemCorrida {
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.print("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos+ "\n");
+        System.out.print("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos);
     }
 
     public int getDiminuicaoDesgaste() {

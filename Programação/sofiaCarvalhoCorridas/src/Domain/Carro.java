@@ -36,7 +36,9 @@ public class Carro extends Veiculo{
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.print("\t| " + this.tipoCarro + "\t|" + this.kitCorrida + "\n");
+        System.out.print("\t| " + this.tipoCarro + "\t|");
+        imprimirKitCorrida();
+        System.out.println();
     }
 
     public TipoCarro getTipoCarro() {

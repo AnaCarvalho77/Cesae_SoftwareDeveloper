@@ -6,7 +6,7 @@ public class Piloto {
     private String nome;
     private int fichasCorrida;
     private Veiculo veiculoAtual;
-    private int vitorias;
+    private int vitorias = 0;
 
     public Piloto(String nome, int fichasCorrida, Veiculo veiculoAtual, int vitorias) {
         this.nome = nome;
@@ -47,15 +47,16 @@ public class Piloto {
         if (veiculoAtual != null) {
             System.out.print("\no veículo é: ");
             veiculoAtual.mostrarDetalhes();
+            System.out.println();
         } else {
-            System.out.println("Ainda não tem nenhum veiculo associado");
+            System.out.println("Ainda não tem nenhum veiculo associado\n");
         }
 
     }
 
     public void usarItem() {
         if (veiculoAtual == null) {
-            System.out.println("Ainda não tem nenhum veiculo associado");
+            System.out.println("Ainda não tem nenhum veiculo associado\n");
             return;
         }
 
@@ -63,23 +64,25 @@ public class Piloto {
         if (veiculoAtual instanceof Carro) {
             if (((Carro) veiculoAtual).getKitCorrida() != null) {
                 ((Carro) veiculoAtual).imprimirKitCorrida();
+                System.out.println();
             } else {
-                System.out.println("Nao tem itens adicionados!");
+                System.out.println("Nao tem itens adicionados!\n");
             }
         } else if (veiculoAtual instanceof Mota) {
             if (((Mota) veiculoAtual).getHabilidadesMota() != null) {
                 ((Mota) veiculoAtual).mostrarHbilidadesMota();
+                System.out.println();
             } else {
-                System.out.println("Nao tem itens adicionados!");
+                System.out.println("Nao tem itens adicionados!\n");
             }
         }
     }
 
     public void mostrarDetalhes() {
         System.out.println("Fichas de corrida: " + this.fichasCorrida);
-        System.out.println("Veiculo atual: ");
+        System.out.print("Veiculo atual: ");
         this.veiculoAtual.mostrarDetalhes();
-        System.out.println("Quantidade Vitórias: " + this.fichasCorrida);
+        System.out.println("Quantidade Vitórias: " + this.vitorias);
     }
 
 }

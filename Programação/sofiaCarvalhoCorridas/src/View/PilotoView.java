@@ -62,6 +62,7 @@ public class PilotoView {
         opcao = input.nextInt();
         oficinaController.venderVeiculo(piloto, opcao);
         piloto.imprimirVeiculoAtual();
+        System.out.println();
         pistasCampeonato = pistaController.pistasCampeonato(piloto);
         opcao = 0;
         do{
@@ -96,7 +97,7 @@ public class PilotoView {
             System.out.println("Quer comprar um veículo?");
             System.out.println("1. Sim");
             System.out.println("2. Nao");
-            System.out.print("\nDigite o número da opcao:");
+            System.out.print("Digite o número da opcao:");
             opcao = input.nextInt();
 
             switch (opcao){
@@ -108,7 +109,7 @@ public class PilotoView {
                         System.out.println("Quer comprar itens?");
                         System.out.println("1. Sim");
                         System.out.println("2. Nao");
-                        System.out.print("\nDigite o número da opcao:");
+                        System.out.print("Digite o número da opcao:");
                         opcao = input.nextInt();
                         switch (opcao) {
                             case 1:
@@ -142,18 +143,18 @@ public class PilotoView {
                             case 2:
                                 break;
                             default:
-                                System.out.println("opcao não contemplada!");
+                                System.out.println("opcao não contemplada!\n");
                                 break;
                         }
                     }while(opcao < 1 || opcao > 2);
                     break;
                 default:
-                    System.out.println("opcao não contemplada!");
+                    System.out.println("opcao não contemplada!\n");
                     break;
             }
         }while (opcao != 2);
         pistasCampeonato = pistaController.pistasCampeonato(piloto);
-        System.out.println("********* Dados Atuais *******");
+        System.out.println("\n********* Dados Atuais *******");
         piloto.mostrarDetalhes();
 
         do {
@@ -164,12 +165,134 @@ public class PilotoView {
 
             switch (opcao) {
                 case 1:
+                    opcao = 0;
+                    do{
+                        System.out.println("Quer comprar um veículo?");
+                        System.out.println("1. Sim");
+                        System.out.println("2. Nao");
+                        System.out.print("Digite o número da opcao:");
+                        opcao = input.nextInt();
+
+                        switch (opcao){
+                            case 1:
+                                oficinaController.imprimirGaragem();
+                                opcao= input.nextInt();
+                                oficinaController.venderVeiculo(piloto,opcao);
+                                do {
+                                    System.out.println("Quer comprar itens?");
+                                    System.out.println("1. Sim");
+                                    System.out.println("2. Nao");
+                                    System.out.print("Digite o número da opcao:");
+                                    opcao = input.nextInt();
+                                    switch (opcao) {
+                                        case 1:
+                                            oficinaController.imprimirStock(piloto);
+                                            opcao = input.nextInt();
+                                            oficinaController.venderItem(piloto, opcao);
+                                            break;
+                                        case 2:
+
+                                            break;
+                                        default:
+                                            System.out.println("opcao não contemplada!");
+                                            break;
+                                    }
+                                }while(opcao < 1 || opcao > 2);
+                                break;
+                            case 2:
+                                opcao = 0;
+                                do {
+                                    System.out.println("Quer adicionar itens ao seu veiculo?");
+                                    System.out.println("1. Sim");
+                                    System.out.println("2. Nao");
+                                    System.out.print("\nDigite o número da opcao:");
+                                    opcao = input.nextInt();
+                                    switch (opcao) {
+                                        case 1:
+                                            oficinaController.imprimirStock(piloto);
+                                            opcao = input.nextInt();
+                                            oficinaController.venderItem(piloto, opcao);
+                                            break;
+                                        case 2:
+                                            break;
+                                        default:
+                                            System.out.println("opcao não contemplada!\n");
+                                            break;
+                                    }
+                                }while(opcao < 1 || opcao > 2);
+                                break;
+                            default:
+                                System.out.println("opcao não contemplada!\n");
+                                break;
+                        }
+                    }while (opcao != 2);
                     campeonatoController.campeonato(pistasCampeonato, piloto);
 
-                    System.out.println("********* Dados Atuais *******");
+                    System.out.println("\n********* Dados Atuais *******");
                     piloto.mostrarDetalhes();
                     break;
                 case 2:
+                    opcao = 0;
+                    do{
+                        System.out.println("Quer comprar um veículo?");
+                        System.out.println("1. Sim");
+                        System.out.println("2. Nao");
+                        System.out.print("Digite o número da opcao:");
+                        opcao = input.nextInt();
+
+                        switch (opcao){
+                            case 1:
+                                oficinaController.imprimirGaragem();
+                                opcao= input.nextInt();
+                                oficinaController.venderVeiculo(piloto,opcao);
+                                do {
+                                    System.out.println("Quer comprar itens?");
+                                    System.out.println("1. Sim");
+                                    System.out.println("2. Nao");
+                                    System.out.print("Digite o número da opcao:");
+                                    opcao = input.nextInt();
+                                    switch (opcao) {
+                                        case 1:
+                                            oficinaController.imprimirStock(piloto);
+                                            opcao = input.nextInt();
+                                            oficinaController.venderItem(piloto, opcao);
+                                            break;
+                                        case 2:
+
+                                            break;
+                                        default:
+                                            System.out.println("opcao não contemplada!");
+                                            break;
+                                    }
+                                }while(opcao < 1 || opcao > 2);
+                                break;
+                            case 2:
+                                opcao = 0;
+                                do {
+                                    System.out.println("Quer adicionar itens ao seu veiculo?");
+                                    System.out.println("1. Sim");
+                                    System.out.println("2. Nao");
+                                    System.out.print("\nDigite o número da opcao:");
+                                    opcao = input.nextInt();
+                                    switch (opcao) {
+                                        case 1:
+                                            oficinaController.imprimirStock(piloto);
+                                            opcao = input.nextInt();
+                                            oficinaController.venderItem(piloto, opcao);
+                                            break;
+                                        case 2:
+                                            break;
+                                        default:
+                                            System.out.println("opcao não contemplada!\n");
+                                            break;
+                                    }
+                                }while(opcao < 1 || opcao > 2);
+                                break;
+                            default:
+                                System.out.println("opcao não contemplada!\n");
+                                break;
+                        }
+                    }while (opcao != 2);
                     Pista pistaFinal = pistaController.pistaFinalCampeonato(piloto);
                     CorridaController corridaController = new CorridaController();
                     corridaController.corrida(pistaFinal,piloto);
