@@ -5,12 +5,13 @@ import java.util.ArrayList;
 public class Modificacao extends ItemCorrida {
     private int diminuicaoDesgaste;
     private double diminuicaoPeso;
-    ArrayList<String>carrosPermitidos;
+    private ArrayList<String>carrosPermitidos;
 
     public Modificacao(String tipo, String id, String nome, int precoFichasCorrida, int diminuicaoDesgaste, double diminuicaoPeso) {
         super(tipo, id, nome, precoFichasCorrida);
         this.diminuicaoDesgaste = diminuicaoDesgaste;
         this.diminuicaoPeso = diminuicaoPeso;
+        this.carrosPermitidos = new ArrayList<>();
     }
 
     public Modificacao(String tipo, String id, String nome, int precoFichasCorrida, int diminuicaoDesgaste, double diminuicaoPeso, ArrayList<String> carrosPermitidos) {
@@ -26,4 +27,15 @@ public class Modificacao extends ItemCorrida {
         System.out.print("\t| " + this.diminuicaoDesgaste + "\t| " + this.diminuicaoPeso + "\t| " + this.carrosPermitidos+ "\n");
     }
 
+    public int getDiminuicaoDesgaste() {
+        return diminuicaoDesgaste;
+    }
+
+    public double getDiminuicaoPeso() {
+        return diminuicaoPeso;
+    }
+
+    public ArrayList<String> getCarrosPermitidos() {
+        return carrosPermitidos;
+    }
 }

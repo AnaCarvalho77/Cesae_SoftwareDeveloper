@@ -12,7 +12,7 @@ Modificacao;010;Jantes Autenticas;800;3;0.5;GT;0
 Modificacao;011;Volante RodaBem;300;2;0.1;F1;0
 Modificacao;012;Peneus LevantaAlcatrao;900;3;1;Rally;0
 Modificacao;013;Jantes Aerodinamicas;600;2;0.4;Rally;0
-Modificacao:014;Tinta Especial;1500;5;1;GT,F1,Rally;0
+Modificacao;014;Tinta Especial;1500;5;1;GT,F1,Rally;0
 Habilidade;007;Kit Potencia 200CV;1000;0;0;0;200
 Habilidade;008;Kit Potencia 100CV;500;0;0;0;100
 Habilidade;009;Kit Potencia 300CV;1500;0;0;0;300

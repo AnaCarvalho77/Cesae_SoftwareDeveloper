@@ -50,6 +50,10 @@ public abstract class Veiculo {
         return preco;
     }
 
+    public void setDesgaste(int desgaste) {
+        this.desgaste = desgaste;
+    }
+
     public void mostrarDetalhes(){
         System.out.print(this.id + "\t| " + this.marca + "\t| " + this.modelo + "\t| " + this.potenciaCV + "\t| " + this.pesoKg + "\t| " + this.preco);
     }

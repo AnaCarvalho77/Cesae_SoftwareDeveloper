@@ -3,7 +3,6 @@ package Controllers;
 import Domain.*;
 import Repository.ItensCorridaRepository;
 import Repository.VeiculosOficinaRepository;
-import Tools.CSVVeiculosOficinaReader;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -14,11 +13,17 @@ public class OficinaController {
     private ArrayList<ItemCorrida> stock;
     private Veiculo veiculoInicial = null;
     private Veiculo veicloEscolhido = null;
-    ArrayList<Veiculo> montraVeiculos = new ArrayList<>(12);
-    ArrayList<ItemCorrida> montraItens = new ArrayList<>(6);
+    private ArrayList<Veiculo> montraVeiculos = new ArrayList<>(12);
+    private ArrayList<ItemCorrida> montraItens = new ArrayList<>(6);
+    private ArrayList<String> carrosPermitidos = new ArrayList<String>();
 
 
-    public OficinaController() throws FileNotFoundException {
+
+
+    public OficinaController(){
+
+    }
+    public void criarOficina() throws FileNotFoundException {
         VeiculosOficinaRepository garagemRepository = new VeiculosOficinaRepository("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/VeiculosCorridas.csv");
         this.garagem = garagemRepository.getGaragem();
 
@@ -28,20 +33,32 @@ public class OficinaController {
 
 
     public void imprimirStock(Piloto pilotoAtual) {
-
         Random random = new Random();
         Veiculo veiculoPiloto = pilotoAtual.getVeiculoAtual();
         ArrayList<ItemCorrida> stockCopia = new ArrayList<>();
+        ArrayList<ItemCorrida> stockModificacao = new ArrayList<>();
 
         if (veiculoPiloto instanceof Carro) {
+            TipoCarro tipoCarroPiloto = ((Carro) veiculoPiloto).getTipoCarro();
+
             for (ItemCorrida itemAtual : stock) {
-                if (itemAtual.getTipo().equals("Modificacao")) {
-//                    if(((Carro) veiculoPiloto).getTipoCarro().equals("GT")){
-//
-//                    }
-                    stockCopia.add(itemAtual);
+                if (itemAtual instanceof Modificacao) {
+                    carrosPermitidos = ((Modificacao) itemAtual).getCarrosPermitidos();
+                    for (String modificacaoAtual : carrosPermitidos) {
+                        if (tipoCarroPiloto.equals(TipoCarro.GT)) {
+                            if (modificacaoAtual.equals("GT"))
+                                stockCopia.add(itemAtual);
+                        } else if (tipoCarroPiloto.equals(TipoCarro.Rally)) {
+                            if (modificacaoAtual.equals("Rally"))
+                                stockCopia.add(itemAtual);
+                        } else if (tipoCarroPiloto.equals(TipoCarro.F1)) {
+                            if (modificacaoAtual.equals("F1"))
+                                stockCopia.add(itemAtual);
+                        }
+                    }
                 }
             }
+
         } else if (veiculoPiloto instanceof Mota) {
             for (ItemCorrida itemAtual : stock) {
                 if (itemAtual.getTipo().equals("Habilidade")) {
@@ -49,6 +66,25 @@ public class OficinaController {
                 }
             }
         }
+
+//            for (ItemCorrida itemAtual : stock) {
+//                if (itemAtual instanceof Modificacao) {
+//                    if (tipoCarroPiloto.equals("GT")) {
+//                        if (((Modificacao) itemAtual).getCarrosPermitidos().equals("GT")) {
+//                            stockCopia.add(itemAtual);
+//                        }
+//                    } else if (tipoCarroPiloto.equals("Rally")) {
+//                        if (((Modificacao) itemAtual).getCarrosPermitidos().equals("Rally")) {
+//                            stockCopia.add(itemAtual);
+//                        }
+//                    } else if (tipoCarroPiloto.equals("F1")) {
+//                        if (((Modificacao) itemAtual).getCarrosPermitidos().equals("F1")) {
+//                            stockCopia.add(itemAtual);
+//                        }
+//                    }
+//                }
+//            }
+
 
         int numeroMenu = 1;
         for (int i = 0; i < 6; i++) {
@@ -96,11 +132,11 @@ public class OficinaController {
             if (veiculoPiloto instanceof Carro && itemEscolhido instanceof Modificacao) {
                 ((Carro) veiculoPiloto).adicionarItensCorrida((Modificacao) itemEscolhido);
                 pilotoAtual.setFichasCorrida(fichasPiloto - fichasItem);
-                montraItens.remove(itemEscolhido);
+//                montraItens.remove(itemEscolhido);  não vou remover porque vou assumir que nos itens há varias quantidades para serem repostas
             } else if (veiculoPiloto instanceof Mota && itemEscolhido instanceof Habilidade) {
                 ((Mota) veiculoPiloto).adicionarItensCorrida((Habilidade) itemEscolhido);
                 pilotoAtual.setFichasCorrida(fichasPiloto - fichasItem);
-                montraItens.remove(itemEscolhido);
+//                montraItens.remove(itemEscolhido); não vou remover porque vou assumir que nos itens há varias quantidades para serem repostas
             }
         } else {
             System.out.println("Não tem fichas suficientes para adicionar este Item!");
@@ -124,10 +160,9 @@ public class OficinaController {
 
     }
 
-
-    public Piloto criarPiloto(String nome) {
-        Piloto piloto1 = new Piloto(nome, 150000, veiculoInicial, 0);
-        return piloto1;
+    public Piloto criarPiloto(String nome, int fichas) {
+        Piloto piloto = new Piloto(nome, fichas, veiculoInicial, 0);
+        return piloto;
     }
 
 

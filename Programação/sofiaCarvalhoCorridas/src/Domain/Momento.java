@@ -10,4 +10,16 @@ public class Momento {
         this.atrasoPeso = atrasoPeso;
         this.atrasoPotencia = atrasoPotencia;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getAtrasoPeso() {
+        return atrasoPeso;
+    }
+
+    public double getAtrasoPotencia() {
+        return atrasoPotencia;
+    }
 }

@@ -39,36 +39,47 @@ public class Piloto {
         this.fichasCorrida = fichasCorrida;
     }
 
-    public void imprimirVeiculoAtual(){
-        if(veiculoAtual!=null){
+    public void setVitorias(int vitorias) {
+        this.vitorias = vitorias;
+    }
+
+    public void imprimirVeiculoAtual() {
+        if (veiculoAtual != null) {
             System.out.print("\no veículo é: ");
             veiculoAtual.mostrarDetalhes();
-        }else{
+        } else {
             System.out.println("Ainda não tem nenhum veiculo associado");
         }
 
     }
 
-    public void usarItem(){
-        if(veiculoAtual == null){
+    public void usarItem() {
+        if (veiculoAtual == null) {
             System.out.println("Ainda não tem nenhum veiculo associado");
             return;
         }
 
         System.out.println("os itens do veículo são: ");
-        if(veiculoAtual instanceof Carro){
-            if(((Carro) veiculoAtual).getKitCorrida()!=null) {
+        if (veiculoAtual instanceof Carro) {
+            if (((Carro) veiculoAtual).getKitCorrida() != null) {
                 ((Carro) veiculoAtual).imprimirKitCorrida();
-            }else {
+            } else {
                 System.out.println("Nao tem itens adicionados!");
             }
-        }else if(veiculoAtual instanceof Mota) {
+        } else if (veiculoAtual instanceof Mota) {
             if (((Mota) veiculoAtual).getHabilidadesMota() != null) {
                 ((Mota) veiculoAtual).mostrarHbilidadesMota();
             } else {
                 System.out.println("Nao tem itens adicionados!");
             }
         }
-
     }
+
+    public void mostrarDetalhes() {
+        System.out.println("Fichas de corrida: " + this.fichasCorrida);
+        System.out.println("Veiculo atual: ");
+        this.veiculoAtual.mostrarDetalhes();
+        System.out.println("Quantidade Vitórias: " + this.fichasCorrida);
+    }
+
 }
