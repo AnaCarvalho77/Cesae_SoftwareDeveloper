@@ -39,7 +39,7 @@ public class OficinaController {
         if (veiculoPiloto instanceof Carro) {
             TipoCarro tipoCarroPiloto = ((Carro) veiculoPiloto).getTipoCarro();
 
-            for (ItemCorrida itemAtual : stock) { // confuso ??
+            for (ItemCorrida itemAtual : stock) {
                 if (itemAtual instanceof Modificacao) {
                     carrosPermitidos = ((Modificacao) itemAtual).getCarrosPermitidos(); // não esta bem
                     for (String modificacaoAtual : carrosPermitidos) {
@@ -92,18 +92,21 @@ public class OficinaController {
 
         montraVeiculos = new ArrayList<>(12); //problema
 
-        int numeroMenu = 1;
+
         for (int i = 0; i < 12; i++) {
             int index = random.nextInt(0, garagemCopia.size());
             Veiculo veiculo = garagemCopia.get(index);
             montraVeiculos.add(veiculo);
             garagemCopia.remove(index);
         }
+        int numeroMenu = 1;
         for (Veiculo veiculoMontra : montraVeiculos) {
             System.out.print(numeroMenu + ": ");
             numeroMenu++;
             veiculoMontra.mostrarDetalhes();
         }
+        System.out.println("0 : Afinal não quero comprar. Sair do menu comprar!");
+        System.out.print("\n Digite número opção: ");
     }
 
     public void venderItem(Piloto pilotoAtual, int opcaoUtilizador) {
@@ -117,10 +120,17 @@ public class OficinaController {
             if (veiculoPiloto instanceof Carro && itemEscolhido instanceof Modificacao) {
                 ((Carro) veiculoPiloto).adicionarItensCorrida((Modificacao) itemEscolhido);
                 pilotoAtual.setFichasCorrida(fichasPiloto - fichasItem);
+                if(veiculoPiloto.getDesgaste() - ((Modificacao) itemEscolhido).getDiminuicaoDesgaste() > 0){
+                    veiculoPiloto.setDesgaste(veiculoPiloto.getDesgaste() - ((Modificacao) itemEscolhido).getDiminuicaoDesgaste());
+                    }
+                if(veiculoPiloto.getPesoKg() - ((Modificacao) itemEscolhido).getDiminuicaoPeso() > 0){
+                    veiculoPiloto.setPesoKg(veiculoPiloto.getPesoKg() - ((Modificacao) itemEscolhido).getDiminuicaoPeso());
+                }
 //                montraItens.remove(itemEscolhido);  não vou remover porque quero sempre 6 e tenho só a aparecer o da categoria do veiculo rapido ficava sem 6.
             } else if (veiculoPiloto instanceof Mota && itemEscolhido instanceof Habilidade) {
                 ((Mota) veiculoPiloto).adicionarItensCorrida((Habilidade) itemEscolhido);
                 pilotoAtual.setFichasCorrida(fichasPiloto - fichasItem);
+                veiculoPiloto.setPotenciaCV(veiculoPiloto.getPotenciaCV() + ((Habilidade) itemEscolhido).getAumentoPotencia());
 //                montraItens.remove(itemEscolhido);  não vou remover porque quero sempre 6 e tenho só a aparecer o da categoria do veiculo rapido ficava sem 6.
             }
         } else {
@@ -129,23 +139,76 @@ public class OficinaController {
 
     }
 
-    public void venderVeiculo(Piloto pilotoAtual, int opcaoUtilizador) {
-        int posicaoVeiculo = opcaoUtilizador - 1;
-        Veiculo veiculoEscolhido = montraVeiculos.get(posicaoVeiculo);
-        int fichasPiloto = pilotoAtual.getFichasCorrida();
-        int fichasVeiculo = veiculoEscolhido.getPreco();
+    public boolean menuVenderVeiculo(Piloto piloto, String opcao){
+            switch (opcao) {
+                case "0":
+                    break;
+                case "1":
+                    venderVeiculo(piloto, 1);
+                    break;
+                case "2":
+                    venderVeiculo(piloto, 2);
+                    break;
+                case "3":
+                    venderVeiculo(piloto, 3);
+                    break;
+                case "4":
+                    venderVeiculo(piloto, 4);
+                    break;
+                case "5":
+                    venderVeiculo(piloto, 5);
+                    break;
+                case "6":
+                    venderVeiculo(piloto, 6);
+                    break;
+                case "7":
+                    venderVeiculo(piloto, 7);
+                    break;
+                case "8":
+                    venderVeiculo(piloto, 8);
+                    break;
+                case "9":
+                    venderVeiculo(piloto, 9);
+                    break;
+                case "10":
+                    venderVeiculo(piloto, 10);
+                    break;
+                case "11":
+                    venderVeiculo(piloto, 11);
+                    break;
+                case "12":
+                    venderVeiculo(piloto, 12);
+                    break;
+                default:
+                    System.out.println("Opção não contemplada");
+                    return false;
+            }
+            return true;
+   }
 
-        if (fichasPiloto >= fichasVeiculo) {
-            pilotoAtual.setVeiculoAtual(veiculoEscolhido);
-            pilotoAtual.setFichasCorrida(fichasPiloto - fichasVeiculo);
+    public void venderVeiculo(Piloto pilotoAtual, int opcaoUtilizador) {
+            int posicaoVeiculo = opcaoUtilizador - 1;
+            Veiculo veiculoEscolhido = montraVeiculos.get(posicaoVeiculo);
+            int fichasPiloto = pilotoAtual.getFichasCorrida();
+            int fichasVeiculo = veiculoEscolhido.getPreco();
+            Veiculo veiculoRemovido = pilotoAtual.getVeiculoAtual();
+
+            if (fichasPiloto >= fichasVeiculo) {
+
+                pilotoAtual.setVeiculoAtual(veiculoEscolhido);
+                pilotoAtual.setFichasCorrida(fichasPiloto - fichasVeiculo);
+
 //            montraVeiculos.remove(veiculoEscolhido);não vou remover porque quero sempre 12 e rapidamente ficava sem 12 carros, teria de ter uma garagem grande.
-        } else {
-            System.out.println("Não tem fichas suficientes para comprar este Veículo.");
+
+                // uma vez que não estou a eliminar os veiculos nem os itens da garagem, quando mudo o veiculo tenho de no veiculo a ser substituido limoar o arraylist de itens
+                if(veiculoRemovido instanceof Carro){
+                    ((Carro) veiculoRemovido).setKitCorrida(new ArrayList<>());
+                }else if( veiculoRemovido instanceof Mota){
+                    ((Mota) veiculoRemovido).setHabilidadesMota(new ArrayList<>());
+                }
+            } else {
+                System.out.println("Não tem fichas suficientes para comprar este Veículo.");
+            }
         }
 
     }
-
-
-
-
-}

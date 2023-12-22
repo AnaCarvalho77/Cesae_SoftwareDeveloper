@@ -21,6 +21,7 @@ public class Modificacao extends ItemCorrida {
         this.carrosPermitidos = carrosPermitidos;
     }
 
+
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
