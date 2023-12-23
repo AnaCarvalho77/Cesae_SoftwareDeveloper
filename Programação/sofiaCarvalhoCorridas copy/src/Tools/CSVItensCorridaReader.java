@@ -51,7 +51,7 @@ public class CSVItensCorridaReader {
 
 
             if(tipoItem.equals("Modificacao")){
-                Modificacao modificacaoAtual = new Modificacao(tipoItem,id,nome,preco,diminuicaoDesgaste,diminuicaoPeso,carrosPermitidos);
+                Modificacao modificacaoAtual = new Modificacao(tipoItem,id,nome,preco,diminuicaoDesgaste,diminuicaoPeso);
                 arrayItensCorrida.add(modificacaoAtual);
             }else if (tipoItem.equals("Habilidade")){
                 Habilidade habilidadeAtual = new Habilidade(tipoItem,id,nome, preco,aumentoPotencia);

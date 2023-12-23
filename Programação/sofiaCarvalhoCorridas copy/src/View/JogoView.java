@@ -115,13 +115,12 @@ public class JogoView {
 
             switch (opcao) {
                 case 1:
-                    veiculosView.menuVeiculos(piloto, oficinaController);
                     pistasCampeonato = pistaController.pistasCampeonato(piloto);//invoquei outra vez o método para retornar as pistas do campeonato porque pode ser um veiculo diferente e tenho pistas para cada tipo de veiculo
                     campeonatoController.campeonato(pistasCampeonato, piloto);//iniciar o novo campeonato
+                    veiculosView.menuVeiculos(piloto, oficinaController);
                     break;
                 case 2:
-                    veiculosView.menuVeiculos(piloto, oficinaController);//opção de compra de veiculo
-                    Pista pistaFinal = pistaController.pistaFinalCampeonato(piloto);//criar instancia de Pista para receber o retorno de uma pista do metodo pistaFinalCampeonato
+                    Pista pistaFinal = pistaController.pistaFinalCampeonato();//criar instancia de Pista para receber o retorno de uma pista do metodo pistaFinalCampeonato
                     corridaController.corrida(pistaFinal, piloto);//iniciar corrida final
                     break;
                 case 0:
@@ -132,7 +131,7 @@ public class JogoView {
             }
 
 
-        } while (opcao != 2 || opcao != 0);
+        } while (opcao != 2 && opcao != 0);
 
 
     }

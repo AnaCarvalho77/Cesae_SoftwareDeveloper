@@ -9,6 +9,16 @@ public abstract class Veiculo {
     private int desgaste;
     private int preco;
 
+    /**
+     * Método construtor da classe Veiculo com os seguintes parametros:
+     * @param id (string) id do veiculo
+     * @param marca (string) marca do veiculo
+     * @param modelo (string) modelo do veiculo
+     * @param potenciaCV (int) potencia do veiculo
+     * @param pesoKg (double) peso do veiculo em kg
+     * @param desgaste (int) valor desgaste do veiculo
+     * @param preco (int) preço do veiculo
+     */
     public Veiculo(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco) {
         this.id = id;
         this.marca = marca;
@@ -19,20 +29,6 @@ public abstract class Veiculo {
         this.preco = preco;
     }
 
-    public Veiculo() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
 
     public int getPotenciaCV() {
         return potenciaCV;
@@ -63,6 +59,6 @@ public abstract class Veiculo {
     }
 
     public void mostrarDetalhes(){
-        System.out.print("Referência : " + this.id + "\t| Marca: " + this.marca + "\t| Modelo: " + this.modelo + "\t| POtência: " + this.potenciaCV + "\t| PesoKg: " + this.pesoKg + "\t| Preço: " + this.preco);
+        System.out.print("Referência : " + this.id + "\t| Marca: " + this.marca + "\t| Modelo: " + this.modelo + "\t| POtência: " + this.potenciaCV + "\t| PesoKg: " + this.pesoKg + "\t| Desgaste: " + this.desgaste + "\t| Preço: " + this.preco);
     }
 }

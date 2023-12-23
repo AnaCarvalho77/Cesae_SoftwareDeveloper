@@ -26,6 +26,8 @@ public class VeiculosView {
         //Declaração de variaveis
         int opcaoMenuVeiculo;
         int opcaoMontraVeiculos;
+
+        //menu para comprar veiculos
         do {
             System.out.println();
             System.out.println("Quer comprar um veículo?");
@@ -34,7 +36,6 @@ public class VeiculosView {
             System.out.print("Digite o número da opcao:");
             opcaoMenuVeiculo = input.nextInt();
 
-
             switch (opcaoMenuVeiculo) {
                 case 1:
                     do {
@@ -42,19 +43,22 @@ public class VeiculosView {
                         System.out.println("******* Montra de Veículos *******");
                         oficinaController.imprimirGaragem();
                         opcaoMontraVeiculos = input.nextInt();
-                        if (opcaoMontraVeiculos >= 0 && opcaoMontraVeiculos <= 12) {
+                        if (opcaoMontraVeiculos > 0 && opcaoMontraVeiculos <= 12) {
                             oficinaController.venderVeiculo(piloto, opcaoMontraVeiculos);
-                        } else {
-                            System.out.println("numero opção não contemplado");
+                            piloto.mostrarDetalhes();
+                            itemView.menuItem(piloto, oficinaController);//mostrar menu de compra de itens
+                        } else if(opcaoMontraVeiculos == 0){
+                            piloto.mostrarDetalhes();
+                            itemView.menuItem(piloto, oficinaController);
+                            return;// para não voltar a questionar se quer comprar um veículo
+                        }else{
+                             System.out.println("numero opção não contemplado");
                         }
                     } while (opcaoMontraVeiculos < 0 || opcaoMontraVeiculos > 12);
-
-                    piloto.imprimirVeiculoAtual();
-                    itemView.menuItem(piloto, oficinaController);
                     break;
 
                 case 2:
-                    itemView.menuItem(piloto, oficinaController);
+                    itemView.menuItem(piloto, oficinaController);//mostrar menu de opcao de compra de itens
                     break;
 
                 default:
