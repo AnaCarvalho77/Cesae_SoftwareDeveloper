@@ -6,34 +6,62 @@ import Domain.Piloto;
 import java.util.Scanner;
 
 public class ItemView {
+    /**
+     * Metodo construtor vazio da classe de Menu de Venda de Itens
+     */
     public ItemView() {
     }
 
-    public void menuItem(Piloto piloto, OficinaController oficinaController){
+    /**
+     * Método para apresentar menu de venda de itens
+     *
+     * @param piloto            recebe um piloto como parametro para verificar qual o veiculo do piloto, para so serem apresentados itens comppativeis com o veiculo
+     * @param oficinaController
+     */
+    public void menuItem(Piloto piloto, OficinaController oficinaController) {
+        //Instanciar scanner
         Scanner input = new Scanner(System.in);
-        int opcao = 0;
 
-        do{
+        //Declaração de variaveis
+        int opcaoMenuItem;
+        int opcaoMontra;
+
+        // menu de compra de itens
+        do {
+            System.out.println();
             System.out.println("quer comprar itens?");
             System.out.println("1. sim");
             System.out.println("2. nao");
-            opcao= input.nextInt();
-            switch (opcao){
+            System.out.println("0. Sair");
+            opcaoMenuItem = input.nextInt();
+
+
+            switch (opcaoMenuItem) {
                 case 1:
-                    oficinaController.imprimirStock(piloto);
-                    opcao = input.nextInt();
-                    oficinaController.venderItem(piloto, opcao);
-                    opcao = 0;
+                    do {
+                        System.out.println();
+                        System.out.println("******** Montra de Itens ********");
+                        oficinaController.imprimirStock(piloto);//apresentação da montra de itens compativeis com o veiculo do piloto
+                        opcaoMontra = input.nextInt();
+                        if (opcaoMontra > 0 && opcaoMontra <= 6) {
+                            oficinaController.venderItem(piloto, opcaoMontra);//compra do item e operações inerentes
+                        } else {
+                            System.out.println("Número opcao não contemplado!!");
+                        }
+
+                    } while (opcaoMontra < 0 || opcaoMontra > 6);
                     System.out.println();
-                    piloto.mostrarDetalhes();
+                    piloto.mostrarDetalhes();//imprimir detalhes do piloto(fichas, veiculo, itens e vitorias)
                     break;
                 case 2:
-                    piloto.mostrarDetalhes();
+                    piloto.mostrarDetalhes();//imprimir detalhes do piloto(fichas, veiculo, itens e vitorias)
+                    break;
+                case 0:
                     break;
                 default:
                     System.out.println("opcao não contemplada");
                     break;
             }
-        }while (opcao != 2);
+        } while (opcaoMenuItem != 0 && opcaoMenuItem != 2);
     }
 }

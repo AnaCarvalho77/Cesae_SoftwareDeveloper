@@ -22,10 +22,10 @@ public class OficinaController {
     public OficinaController(){
 
     }
-    public void criarOficina() throws FileNotFoundException {
-        VeiculosOficinaRepository garagemRepository = new VeiculosOficinaRepository("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/VeiculosCorridas.csv");
+    public void criarOficina(String caminhoVeiculos, String caminhoItens) throws FileNotFoundException {
+        VeiculosOficinaRepository garagemRepository = new VeiculosOficinaRepository(caminhoVeiculos);
         this.garagem = garagemRepository.getGaragem();
-        ItensCorridaRepository stockRepository = new ItensCorridaRepository("/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/ItensCorrida.csv");
+        ItensCorridaRepository stockRepository = new ItensCorridaRepository(caminhoItens);
         this.stock = stockRepository.getStock();
     }
 
@@ -76,11 +76,11 @@ public class OficinaController {
             stockCopia.remove(index);
         }
         for (ItemCorrida itemMontra : montraItens) {
-            System.out.print(numeroMenu + ": ");
+            System.out.print(numeroMenu + ". ");
             numeroMenu++;
             itemMontra.mostrarDetalhes();
         }
-
+        System.out.println("0. Afinal não quero comprar. Sair do menu de compra de Itens!");
 
         System.out.print("\nDigite o numero da opcao desejada: ");
     }
@@ -139,52 +139,6 @@ public class OficinaController {
 
     }
 
-    public boolean menuVenderVeiculo(Piloto piloto, String opcao){
-            switch (opcao) {
-                case "0":
-                    break;
-                case "1":
-                    venderVeiculo(piloto, 1);
-                    break;
-                case "2":
-                    venderVeiculo(piloto, 2);
-                    break;
-                case "3":
-                    venderVeiculo(piloto, 3);
-                    break;
-                case "4":
-                    venderVeiculo(piloto, 4);
-                    break;
-                case "5":
-                    venderVeiculo(piloto, 5);
-                    break;
-                case "6":
-                    venderVeiculo(piloto, 6);
-                    break;
-                case "7":
-                    venderVeiculo(piloto, 7);
-                    break;
-                case "8":
-                    venderVeiculo(piloto, 8);
-                    break;
-                case "9":
-                    venderVeiculo(piloto, 9);
-                    break;
-                case "10":
-                    venderVeiculo(piloto, 10);
-                    break;
-                case "11":
-                    venderVeiculo(piloto, 11);
-                    break;
-                case "12":
-                    venderVeiculo(piloto, 12);
-                    break;
-                default:
-                    System.out.println("Opção não contemplada");
-                    return false;
-            }
-            return true;
-   }
 
     public void venderVeiculo(Piloto pilotoAtual, int opcaoUtilizador) {
             int posicaoVeiculo = opcaoUtilizador - 1;

@@ -15,7 +15,7 @@ public class Habilidade extends ItemCorrida {
     @Override
     public void mostrarDetalhes() {
         super.mostrarDetalhes();
-        System.out.println("\t| aumento potência: " + this.aumentoPotencia + "\n");
+        System.out.print("\t| aumento potência: " + this.aumentoPotencia +"\n");
     }
 
 }

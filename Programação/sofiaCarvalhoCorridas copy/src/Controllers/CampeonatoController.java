@@ -18,6 +18,7 @@ public class CampeonatoController {
             System.out.print("\n" + pistaAtual.getNome() + ": ");
             corridaController.corrida(pistaAtual, piloto);
         }
+        piloto.mostrarDetalhes();
     }
 
 }

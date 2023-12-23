@@ -46,20 +46,19 @@ public class Piloto {
     public void imprimirVeiculoAtual() {
         if (veiculoAtual != null) {
             veiculoAtual.mostrarDetalhes();
-            System.out.println();
         } else {
-            System.out.println("Ainda não tem nenhum veiculo associado\n");
+            System.out.println("Ainda não tem nenhum veiculo associado");
         }
 
     }
 
     public void usarItem() {
         if (veiculoAtual == null) {
-            System.out.println("Ainda não tem nenhum veiculo associado");
+            System.out.println("---Não tem Itens porque ainda não tem veículo");
             return;
         }
 
-        System.out.println("---itens do veículo");
+        System.out.println("---itens do veículo---");
         if (veiculoAtual instanceof Carro) {
             if (((Carro) veiculoAtual).getKitCorrida() != null) {
                 ((Carro) veiculoAtual).imprimirKitCorrida();
@@ -77,13 +76,12 @@ public class Piloto {
     }
 
     public void mostrarDetalhes() {
-        System.out.println("\n********* Dados Atuais *******");
-        System.out.println("----Fichas de corrida: " + this.fichasCorrida);
+        System.out.println("\n********* Dados Atuais *********");
+        System.out.println("---Fichas de corrida: " + this.fichasCorrida);
         System.out.print("---Veiculo atual: ");
         imprimirVeiculoAtual();
         usarItem();
         System.out.println("---Quantidade Vitórias: " + this.vitorias);
-        System.out.println();
         System.out.println("*************************************");
     }
 
