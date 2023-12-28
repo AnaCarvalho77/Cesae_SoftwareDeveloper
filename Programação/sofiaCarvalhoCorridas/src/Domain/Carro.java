@@ -2,8 +2,17 @@ package Domain;
 
 import java.util.ArrayList;
 
+/**
+ * subclasse Carro da superclasse veiculo para carros
+ */
 public class Carro extends Veiculo{
+    /**
+     * variável tipoCarro que guarda um tipo de carro da enumeração TipoCarro
+     */
     private TipoCarro tipoCarro;
+    /**
+     * Arraylist de modificações que o carro tem
+     */
     private ArrayList<Modificacao>kitCorrida;
 
     /**

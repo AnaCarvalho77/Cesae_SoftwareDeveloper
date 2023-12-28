@@ -1,8 +1,20 @@
 package Domain;
 
+/**
+ * classe Momento para os momentos existentes nas pistas de corrida
+ */
 public class Momento {
+    /**
+     * variável do tipo string para guardar o nome do momento
+     */
     private String nome;
+    /**
+     * variável do tipo double para armazenar o valor de atraso peso provocado pelo momento
+     */
     private double atrasoPeso;
+    /**
+     * variável do tipo double para guardar o valor de atraso potência provocado pelo momento
+     */
     private double atrasoPotencia;
 
     /**

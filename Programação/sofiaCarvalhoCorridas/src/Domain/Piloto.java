@@ -2,10 +2,25 @@ package Domain;
 
 import java.util.ArrayList;
 
+/**
+ * classe Piloto ppara pilotos
+ */
 public class Piloto {
+    /**
+     * variável do tipo string para guardar o nome do piloto escolhido pelo utilizador
+     */
     private String nome;
+    /**
+     * variável do tipo inteiro para guardar o numero de fichas de corrida que o piloto tem
+     */
     private int fichasCorrida;
+    /**
+     * variável do tipo Veiculo para guardar a viatura atua do piloto
+     */
     private Veiculo veiculoAtual;
+    /**
+     * variável do tipo inteiro para guardar a quantidade de vitórias do piloto, iniciada a zero
+     */
     private int vitorias = 0;
 
     /**

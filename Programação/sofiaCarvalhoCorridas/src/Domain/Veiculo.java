@@ -1,12 +1,36 @@
 package Domain;
 
+/**
+ * superclasse abstrata Veiculo para veiculos
+ */
 public abstract class Veiculo {
+    /**
+     * variável do tipo string para guardar o id do veiculo
+     */
     private String id;
+    /**
+     * variável do tipo string para guadar a marca do veiculo
+     */
     private String marca;
+    /**
+     *  variável do tipo string para guardar o modelo do veiculo
+     */
     private String modelo;
+    /**
+     * variável do tipo inteiro para guardar a potência em cavalos do veiculo
+     */
     private int potenciaCV;
+    /**
+     * variável do tipo double para guadar o peso em kg do veiculo
+     */
     private double pesoKg;
+    /**
+     * variavel do tipo inteiro para guardar o valor de desgaste do veiculo
+     */
     private int desgaste;
+    /**
+     * variável do tipo inteiro para guardar o preço em fichas de corrida do veiculo
+     */
     private int preco;
 
     /**

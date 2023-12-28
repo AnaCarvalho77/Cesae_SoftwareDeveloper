@@ -6,6 +6,9 @@ import Domain.Pista;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * classe CampeonatoController contém o métodos para iniciar um campeoato com pistas adequados para a viatura do piloto
+ */
 public class CampeonatoController {
     /**
      * Metodo construtor vazio da classe campeonato controller
@@ -15,7 +18,7 @@ public class CampeonatoController {
 
     /**
      * Método para executar um campeonato
-     * @param pistasCampeonato recebe um arraylist de pista do campeonato
+     * @param pistasCampeonato recebe um arraylist de pistas para o campeonato
      * @param piloto para saber informações do veiculo do piloto como os dados do veiculo para calculo da corrida e atualização de variaveis
      */
     public void campeonato(ArrayList<Pista> pistasCampeonato, Piloto piloto){

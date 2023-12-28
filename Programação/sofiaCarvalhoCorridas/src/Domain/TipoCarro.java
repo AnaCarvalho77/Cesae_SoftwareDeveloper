@@ -1,8 +1,12 @@
 package Domain;
 
 /**
- * Enum de tipos de carro
+ * Enumeração de tipos de carro
  */
 public enum TipoCarro {
+
+    /**
+     * tipos de carros
+      */
     F1,Rally,GT
 }

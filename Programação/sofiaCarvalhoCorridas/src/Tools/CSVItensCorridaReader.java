@@ -8,7 +8,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
+/**
+ * class CSVItensCorridaReader com ferramentas para ler e tratar dados do ficheiro CSV com informação de Itens de corrida
+ */
 public class CSVItensCorridaReader {
+    /**
+     * variável do tipo string para o caminho do ficheiro CSV
+     */
     private String filePath;
 
     /**
@@ -22,7 +28,7 @@ public class CSVItensCorridaReader {
     /**
      * Método para ler o ficheiro CSV com informação dos itens para oraganizá-la para o repositório de itens
      * @return retorna um arraylist de itens de corrida
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException exceção
      */
     public ArrayList<ItemCorrida> readCSVToRepository() throws FileNotFoundException {
 

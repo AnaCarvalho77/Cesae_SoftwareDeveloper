@@ -2,9 +2,21 @@ package Domain;
 
 import java.util.ArrayList;
 
+/**
+ * sublcasse Modificacao da superclasse ItemCorrida para itens de corrida para carros
+ */
 public class Modificacao extends ItemCorrida {
+    /**
+     * variável dp tipo inteiro para guardar o valor da diminuição no desgaste do carro provocado pela modificação
+     */
     private int diminuicaoDesgaste;
+    /**
+     * variável do tipo double que guarda o valor da diminuição no peso do carro provocado pela modificação
+     */
     private double diminuicaoPeso;
+    /**
+     * arraylist de strings que contém o tipo de carros que é permitido aquela modificação
+     */
     private ArrayList<String>carrosPermitidos;
 
     /**

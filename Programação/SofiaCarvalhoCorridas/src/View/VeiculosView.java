@@ -5,6 +5,9 @@ import Domain.Piloto;
 
 import java.util.Scanner;
 
+/**
+ * classe VeciculosView para o menu de compra de veiculos
+ */
 public class VeiculosView {
     /**
      * Método construtor vazio da classe do menu de veiculos
@@ -16,7 +19,7 @@ public class VeiculosView {
      * Metodo para apresentar o menu de veiculos
      *
      * @param piloto            parametro para passar como paramentro na opção de compra de itens quando não quer comprar veiculo
-     * @param oficinaController
+     * @param oficinaController objeto de OficinaController passado como parâmetro para não ter de instanciar novamente a classe
      */
     public static void menuVeiculos(Piloto piloto, OficinaController oficinaController) {
         //Instanciar o scanner

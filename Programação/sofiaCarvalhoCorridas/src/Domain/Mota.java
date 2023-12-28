@@ -4,7 +4,13 @@ import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 
+/**
+ * subclasse Mota da superclasse abstrata Veiculo para motas
+ */
 public class Mota extends Veiculo {
+    /**
+     * arraylist de habilidades (itens de corrida) que a mota tem
+     */
     private ArrayList<Habilidade> habilidadesMota;
 
     /**

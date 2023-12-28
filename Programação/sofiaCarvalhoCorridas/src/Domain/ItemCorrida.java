@@ -1,9 +1,24 @@
 package Domain;
 
+/**
+ * superclasse abstrata ItemCorrida para itens de corrida que podem ser modicicações para carros ou habilidades para motas
+ */
 public abstract class ItemCorrida {
+    /**
+     * variável do tipo string para guardar o tipo de item de corrida (modificacao ou habilidade)
+     */
     private String tipo;
+    /**
+     * variável do tipo string que guarda o id do item
+     */
     private String id;
+    /**
+     * variável do tipo string que guarda o nome do item
+     */
     private String nome;
+    /**
+     * variável do tipo inteiro que guarda o preço em fichas de corrida do item
+     */
     private int precoFichasCorrida;
 
     /**

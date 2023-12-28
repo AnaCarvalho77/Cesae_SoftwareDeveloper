@@ -9,14 +9,30 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * classe OficinaController para controlar a oficina
+ */
 public class OficinaController {
+    /**
+     * arraylist de veiculos para receber repositóriode veiculos
+     */
     private ArrayList<Veiculo> garagem;
+    /**
+     * arraylist de itens de corrida para receber repositório de itens de corrida
+     */
     private ArrayList<ItemCorrida> stock;
+    /**
+     * arraylist de veiculos para veiculos a mostrar ao piloto para comprar
+     */
     private ArrayList<Veiculo> montraVeiculos;
+    /**
+     * arraylist de itens de corrida para itens de corrida a mostrar ao piloto para comprar
+     */
     private ArrayList<ItemCorrida> montraItens;
+    /**
+     * arraylist de carros permitidos para armazenar os carros permitidos dos itens
+     */
     private ArrayList<String> carrosPermitidos = new ArrayList<String>();
-
-    private Veiculo veicloEscolhido = null;
 
 
     /**
@@ -30,15 +46,17 @@ public class OficinaController {
      * Método para criar uma oficina com uma garagem de veiculos e de itens
      * @param caminhoVeiculos caminho para o ficheiro CSV com informação dos veiculos passado por parametro
      * @param caminhoItens canminho para o ficheiro CSV com a infornação dos itens passado por parametro
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException exceção
      */
     public void criarOficina(String caminhoVeiculos, String caminhoItens) throws FileNotFoundException {
+
         //Instanciar um objeto do repositório de veiculos
         VeiculosOficinaRepository garagemRepository = new VeiculosOficinaRepository(caminhoVeiculos);
         this.garagem = garagemRepository.getGaragem();
         //Instanciar um obejto do repositório de itens
         ItensCorridaRepository stockRepository = new ItensCorridaRepository(caminhoItens);
         this.stock = stockRepository.getStock();
+        Oficina oficina = new Oficina(garagem,stock);
     }
 
     /**

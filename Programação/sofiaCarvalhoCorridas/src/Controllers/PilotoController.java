@@ -3,8 +3,13 @@ package Controllers;
 import Domain.Piloto;
 import Domain.Veiculo;
 
+/**
+ * classe PilotoController para criar piloto
+ */
 public class PilotoController {
-    //Declaração de variável da classe que é um veiculo inicial a null do piloto
+    /**
+     * Declaração de variável da classe que é um veiculo inicial a null do piloto
+     */
     private Veiculo veiculoInicial = null;
 
     /**

@@ -6,6 +6,9 @@ import Domain.Piloto;
 
 import java.util.Scanner;
 
+/**
+ * classe ItemView para o menu de compra de itens de corrida
+ */
 public class ItemView {
     /**
      * Metodo construtor vazio da classe de Menu de Venda de Itens
@@ -17,7 +20,7 @@ public class ItemView {
      * Método para apresentar menu de venda de itens
      *
      * @param piloto            recebe um piloto como parametro para verificar qual o veiculo do piloto, para so serem apresentados itens comppativeis com o veiculo
-     * @param oficinaController
+     * @param oficinaController objeto da classe OficinaController passado como parâmetro para não ter de instanciar a classe novamente
      */
     public static void menuItem(Piloto piloto, OficinaController oficinaController) {
         //Instanciar scanner
@@ -46,8 +49,10 @@ public class ItemView {
                         opcaoMontra = input.nextInt();
                         if (opcaoMontra > 0 && opcaoMontra <= 6) {
                             oficinaController.venderItem(piloto, opcaoMontra);//compra do item e operações inerentes
-                        } else {
+                        } else if (opcaoMontra < 0 || opcaoMontra > 6) {
                             System.out.println("Número opcao não contemplado!!");
+                        } else if(opcaoMontra == 0){
+                            break;
                         }
 
                     } while (opcaoMontra < 0 || opcaoMontra > 6);

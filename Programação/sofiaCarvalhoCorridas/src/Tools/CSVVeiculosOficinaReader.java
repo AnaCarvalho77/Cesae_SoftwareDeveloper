@@ -9,7 +9,13 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * classe CSVVeiculosOficinaReader com ferramentas para ler e tratar dados do ficheiro CSV com veiculos
+ */
 public class CSVVeiculosOficinaReader {
+    /**
+     * variável do tipo string para o caminho do ficheiro CSV
+     */
     private String filePath;
 
     /**
@@ -23,7 +29,7 @@ public class CSVVeiculosOficinaReader {
     /**
      * Método paea ler e tratar a informação contida no ficheiro CSV
      * @return retorna um arraylist de veiculos
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException exceção
      */
     public ArrayList<Veiculo> readCSVToRepository() throws FileNotFoundException {
 

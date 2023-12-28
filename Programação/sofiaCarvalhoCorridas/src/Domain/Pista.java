@@ -2,12 +2,33 @@ package Domain;
 
 import java.util.ArrayList;
 
+/**
+ * classe pista para pistas de corrida
+ */
 public class Pista {
+    /**
+     * variável do tipo string para guardar o nome da pista de corrida
+     */
     private String nome;
+    /**
+     * variável do tipo double para guardar o tempo da pista de corrida
+     */
     private double tempo;
+    /**
+     * variável do tipo double para guardar o tempo recorde em segundos da pista de corrida
+     */
     private double tempoRecordeSeg;
+    /**
+     * variável do tipo double para guardar o distância em metros da pista de corrida
+     */
     private double distanciaVoltaM;
+    /**
+     * variável do tipo inteiro para guardar a quantidades de voltas da pista de corrida
+     */
     private int quantidadeVoltas;
+    /**
+     * arraylist de momentos para guaradr os momentos da pista de corrida
+     */
     private ArrayList<Momento>momentosPista;
 
     /**

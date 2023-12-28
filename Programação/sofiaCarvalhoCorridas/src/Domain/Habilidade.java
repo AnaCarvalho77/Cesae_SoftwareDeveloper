@@ -1,6 +1,12 @@
 package Domain;
 
+/**
+ * sublcasse Habilidade da superclasse ItemCorrida para itens de corrida para motas
+ */
 public class Habilidade extends ItemCorrida {
+    /**
+     * variável do tipo inteiro que guarda o valor do  aumento de potencia na mota provocado pela habilidade
+     */
     private int aumentoPotencia;
 
     /**

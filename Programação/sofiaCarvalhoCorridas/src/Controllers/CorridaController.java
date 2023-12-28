@@ -7,6 +7,9 @@ import Domain.Veiculo;
 
 import java.util.ArrayList;
 
+/**
+ * classe CorridaController para fazer uma corrida com uma pista
+ */
 public class CorridaController {
     /**
      * Metodo construtor vazio da classe CorridaController
@@ -18,7 +21,7 @@ public class CorridaController {
      * Método para fazer uma corrida numa pista, que calcula o tempo da corrida para o carro atual do piloto e atualiza dados do veiculo do piloto após corrida
      * @param pistaCorrida pista onde vai ser feita a corrida
      * @param pilotoAtual recebe um piloto como parametro para saber qual o veiculo atual do piloto
-     * @return
+     * @return (double) com o tempo total das voltas na pista
      */
     public double corrida(Pista pistaCorrida, Piloto pilotoAtual){
         //Declaração de variáveis

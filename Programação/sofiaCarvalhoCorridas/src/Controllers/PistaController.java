@@ -4,14 +4,35 @@ import Domain.*;
 
 import java.util.ArrayList;
 
+/**
+ * classe Pistacontroller para criar pista de corrida
+ */
 public class PistaController {
 
-    //Instanciar objectos da Classe momento
+
+    /**
+     * Instanciar objecto da Classe Momento para criar momento
+     */
     Momento curvaU = new Momento("curva U", 0.1, 0.2);
+    /**
+     * Instanciar objecto da Classe Momento para criar momento
+     */
     Momento curvaS = new Momento("curva S", 0.3, 0.4);
+    /**
+     * Instanciar objecto da Classe Momento para criar momento
+     */
     Momento gravilhaPista = new Momento("gravilha pista", 0.2, 0.3);
+    /**
+     * Instanciar objecto da Classe Momento para criar momento
+     */
     Momento borrachaPista = new Momento("borracha pista", 0.4, 0.5);
+    /**
+     * Instanciar objecto da Classe Momento para criar momento
+     */
     Momento lamaPista = new Momento("lama pista", 0.2, 0.4);
+    /**
+     * Instanciar objecto da Classe Momento para criar momento
+     */
     Momento animalPista = new Momento("animal pista", 0.5, 0.6);
 
     /**

@@ -10,12 +10,20 @@ import java.util.Scanner;
 
 import static View.ItemView.menuItem;
 
+/**
+ * classe JogoView para o menu do jogo
+ */
 public class JogoView {
+    /**
+     * Construtor vazio da classe JogoView
+     */
+    public JogoView() {
+    }
 
     /**
      * Método para apresentar o Menu do Jogador
      *
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException exceção
      */
     public static void menuPiloto() throws FileNotFoundException {
         //Instanciar o scanner
