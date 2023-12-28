@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static View.ItemView.menuItem;
+
 public class JogoView {
 
     /**
@@ -25,8 +27,6 @@ public class JogoView {
 
         //Criar instâncias de Classes
         OficinaController oficinaController = new OficinaController();
-        ItemView itemView = new ItemView();
-        VeiculosView veiculosView = new VeiculosView();
         PistaController pistaController = new PistaController();
         PilotoController pilotoController = new PilotoController();
         CampeonatoController campeonatoController = new CampeonatoController();
@@ -95,14 +95,14 @@ public class JogoView {
         piloto.mostrarDetalhes();//imprimir informações do piloto (fichas, veiculos, itens e vitorias)
         System.out.println();
 
-        itemView.menuItem(piloto, oficinaController);//opção de compra de itens
+        menuItem(piloto, oficinaController);//opção de compra de itens
 
         System.out.println();
         System.out.println("********* Vamos iniciar o Campeonato *********");
         pistasCampeonato = pistaController.pistasCampeonato(piloto);//Arraylist que vai receber as pistas do campeonato retornadas pelo metodo pistasCampeonato da classe PistaController
         campeonatoController.campeonato(pistasCampeonato, piloto);//iniciar campeonato através do metodo campeonato da classe CampeonatoController
 
-        veiculosView.menuVeiculos(piloto, oficinaController);//opção de compra de veiculo
+        VeiculosView.menuVeiculos(piloto, oficinaController);//opção de compra de veiculo
 
         //menu para questionar se quer fazer mais corridas para ganhar moedas e comprar veiculos melhores ou se quer ir para a corrida final
         do {
@@ -117,7 +117,7 @@ public class JogoView {
                 case 1:
                     pistasCampeonato = pistaController.pistasCampeonato(piloto);//invoquei outra vez o método para retornar as pistas do campeonato porque pode ser um veiculo diferente e tenho pistas para cada tipo de veiculo
                     campeonatoController.campeonato(pistasCampeonato, piloto);//iniciar o novo campeonato
-                    veiculosView.menuVeiculos(piloto, oficinaController);
+                    VeiculosView.menuVeiculos(piloto, oficinaController);
                     break;
                 case 2:
                     Pista pistaFinal = pistaController.pistaFinalCampeonato();//criar instancia de Pista para receber o retorno de uma pista do metodo pistaFinalCampeonato

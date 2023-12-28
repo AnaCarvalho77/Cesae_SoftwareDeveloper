@@ -19,6 +19,7 @@ public class CampeonatoController {
      * @param piloto para saber informações do veiculo do piloto como os dados do veiculo para calculo da corrida e atualização de variaveis
      */
     public void campeonato(ArrayList<Pista> pistasCampeonato, Piloto piloto){
+        System.out.println();
         Scanner input = new Scanner(System.in);
         CorridaController corridaController = new CorridaController();
         OficinaController oficinaController = new OficinaController();

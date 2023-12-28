@@ -54,7 +54,7 @@ public class OficinaController {
             TipoCarro tipoCarroPiloto = ((Carro) veiculoPiloto).getTipoCarro();
 
             for (ItemCorrida itemAtual : stock) {
-                if (itemAtual instanceof Modificacao) {//Se é um carro temos de mostrar itens do tipo "modificação" permitidos pra o tipo de carro do piloto
+                if (itemAtual instanceof Modificacao) {//Se é um carro temos de mostrar itens do tipo "modificação" permitidos para o tipo de carro do piloto
                     carrosPermitidos = ((Modificacao) itemAtual).getCarrosPermitidos();
                     for (String modificacaoAtual : carrosPermitidos) {
                         if (tipoCarroPiloto.equals(TipoCarro.GT)) {

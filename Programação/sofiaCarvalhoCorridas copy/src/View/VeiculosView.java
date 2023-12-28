@@ -18,7 +18,7 @@ public class VeiculosView {
      * @param piloto            parametro para passar como paramentro na opção de compra de itens quando não quer comprar veiculo
      * @param oficinaController
      */
-    public void menuVeiculos(Piloto piloto, OficinaController oficinaController) {
+    public static void menuVeiculos(Piloto piloto, OficinaController oficinaController) {
         //Instanciar o scanner
         Scanner input = new Scanner(System.in);
         //Instanciar a classe ItemView

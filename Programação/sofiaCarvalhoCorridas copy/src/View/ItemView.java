@@ -1,6 +1,7 @@
 package View;
 
 import Controllers.OficinaController;
+import Controllers.PilotoController;
 import Domain.Piloto;
 
 import java.util.Scanner;
@@ -18,7 +19,7 @@ public class ItemView {
      * @param piloto            recebe um piloto como parametro para verificar qual o veiculo do piloto, para so serem apresentados itens comppativeis com o veiculo
      * @param oficinaController
      */
-    public void menuItem(Piloto piloto, OficinaController oficinaController) {
+    public static void menuItem(Piloto piloto, OficinaController oficinaController) {
         //Instanciar scanner
         Scanner input = new Scanner(System.in);
 
