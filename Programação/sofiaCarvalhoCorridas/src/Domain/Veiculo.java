@@ -9,6 +9,16 @@ public abstract class Veiculo {
     private int desgaste;
     private int preco;
 
+    /**
+     * Método construtor da classe Veiculo com os seguintes parametros:
+     * @param id (string) id do veiculo
+     * @param marca (string) marca do veiculo
+     * @param modelo (string) modelo do veiculo
+     * @param potenciaCV (int) potencia do veiculo
+     * @param pesoKg (double) peso do veiculo em kg
+     * @param desgaste (int) valor desgaste do veiculo
+     * @param preco (int) preço do veiculo
+     */
     public Veiculo(String id, String marca, String modelo, int potenciaCV, double pesoKg, int desgaste, int preco) {
         this.id = id;
         this.marca = marca;
@@ -19,42 +29,66 @@ public abstract class Veiculo {
         this.preco = preco;
     }
 
-    public Veiculo() {
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
+    /**
+     * Método para obter o valor da potencia em cavalos
+     * @return (int) o valor da variável Potência CV
+     */
     public int getPotenciaCV() {
         return potenciaCV;
     }
 
+    /**
+     * Método para obter o valor do peso em kilogramas
+     * @return (double) valor da variável PesoKg
+     */
     public double getPesoKg() {
         return pesoKg;
     }
 
+    /**
+     * Método para obter o valor do desgaste
+     * @return( double) valor da variável desgaste
+     */
     public int getDesgaste() {
         return desgaste;
     }
 
+    /**
+     * Método para obter o preço (quantidade de fichas)
+     * @return (int) valor da variável preco
+     */
     public int getPreco() {
         return preco;
     }
 
+    /**
+     * Método para alterar o valor da variável desgaste
+     * @param desgaste recebe o novo valor de desgaste
+     */
     public void setDesgaste(int desgaste) {
         this.desgaste = desgaste;
     }
 
+    /**
+     * Método para alterar a variável pesoKg
+     * @param pesoKg recebe o novo peso em kg como parametro
+     */
+    public void setPesoKg(double pesoKg) {
+        this.pesoKg = pesoKg;
+    }
+
+    /**
+     * Método para alterar a variável potenciaCV
+     * @param potenciaCV recebe o novo valor de potencia em cavalos como parametro
+     */
+    public void setPotenciaCV(int potenciaCV) {
+        this.potenciaCV = potenciaCV;
+    }
+
+    /**
+     * Método para imprimir os detalhes de um veiculo
+     */
     public void mostrarDetalhes(){
-        System.out.print(this.id + "\t| " + this.marca + "\t| " + this.modelo + "\t| " + this.potenciaCV + "\t| " + this.pesoKg + "\t| " + this.preco);
+        System.out.print("Referência : " + this.id + "\t| Marca: " + this.marca + "\t| Modelo: " + this.modelo + "\t| POtência: " + this.potenciaCV + "\t| PesoKg: " + this.pesoKg + "\t| Desgaste: " + this.desgaste + "\t| Preço: " + this.preco);
     }
 }

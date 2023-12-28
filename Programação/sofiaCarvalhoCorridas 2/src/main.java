@@ -1,12 +1,11 @@
 
-import View.JogoView;
+import View.PilotoView;
 
 import java.io.FileNotFoundException;
 
 public class main {
     public static void main(String[] args) throws FileNotFoundException {
-        JogoView.menuPiloto();
+        PilotoView.menuPiloto();
 
     }
-
 }
