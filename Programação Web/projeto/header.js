@@ -3,7 +3,7 @@ class Myheader extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
         <div id="header">
-          <a href="https://www.facebook.com/Ibertrio"> <img src="/imagens/facebook.png" alt="icon facebook"></a>
+          <a href="https://www.facebook.com/Ibertrio" target="_blank"> <img src="/imagens/facebook.png" alt="icon facebook"></a>
         </div>
         `
     }
