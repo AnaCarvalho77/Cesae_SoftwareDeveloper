@@ -5,9 +5,9 @@
   --cor4: whitesmoke;
 }
 
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
   margin-bottom: 1%;
 
 }
@@ -64,7 +64,7 @@ body{
   text-decoration: none;
 }
 
- #active {
+#active {
   background-color: var(--cor4);
   font-weight: bold;
 }
@@ -165,8 +165,9 @@ body{
   position: fixed;
 
 }
+
 /* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
-.tituloForm{
+.tituloForm {
   text-align: center;
   font-size: 25px;
   font-weight: bold;
@@ -175,7 +176,7 @@ body{
   margin-bottom: 1%;
 }
 
-.formulario{
- margin-left: 50px;
- margin-top: 50px;
+.formulario {
+  margin-left: 50px;
+  margin-top: 50px;
 }
