@@ -1,95 +1,181 @@
-header{
-    /* position: fixed; */
-    width: 100%;
-    /* z-index: 2; */
+:root {
+  --cor1: rgb(234, 231, 231);
+  --cor2: rgb(72, 122, 179);
+  --cor3: rgb(5, 5, 188);
+  --cor4: whitesmoke;
 }
 
-.navbar-brand img{
-    width: 100%;
+body{
+  margin:0;
+  padding:0;
+  margin-bottom: 1%;
+
 }
 
-.container-fluid{
-  margin-left: 200px;
+#template-areas {
+  display: grid;
+  grid-template-areas:
+    'sidebar content'
+    'sidebar content'
+    'sidebar content';
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+}
+
+/* formatação do cabeçalho */
+#header {
+  background-color: var(--cor1);
+  position: fixed;
+  text-align: left;
+  width: 20%;
+  top: 0;
+}
+
+#header a img {
+  background-color: var(--cor1);
+  width: 10%;
+}
+
+#header {
+  background-color: var(--cor1);
 }
 
 
-/* The side navigation menu */
-
-.sidebar {
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color:white;
-    position: fixed;
-    min-height: 100%;
-    overflow: auto;
-    /* z-index: 1; */
-    text-align: center;
-  }
-  
-  /* Sidebar links */
-  .sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
-  }
-  
-  Active/current link
-  .sidebar a.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  /* Links on mouse-over */
-  .sidebar a:hover:not(.active) {
-   font-weight: bold;    
-  }
+/* formatação da sidebar */
+#sidebar {
+  width: 20%;
+  grid-area: sidebar;
+  background-color: var(--cor1);
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  height: 100vh;
 
 
-  .sidebar img{
-    width: 100%;
-  }
-  
+}
 
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  .content {
-    margin-left: 300px;
-    padding: 1px 16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
+#sidebar a {
+  display: block;
+  color: black;
+  padding: 5%;
+  text-decoration: none;
+}
+
+ #active {
+  background-color: var(--cor4);
+  font-weight: bold;
+}
+
+/* Links on mouse-over */
+#sidebar a:hover:not(.active) {
+  font-weight: bold;
+}
+
+#sidebar img {
+  width: 100%;
+  background-color: var(--cor1);
+}
+
+#logo img {
+  margin-top: 10%;
+  padding: 5%;
+  width: 100%;
+  background-color: var(--cor1);
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
   }
-  .content li{
-    list-style-type: none;
+
+  .sidenav a {
+    font-size: 18px;
   }
-  .content-biografia{
-    margin-left: 300px;
-  }
-  
-  
-  /* On screens that are less than 700px wide, make the sidebar into a topbar */
-  /* @media screen and (max-width: 700px) {
-    .sidebar {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
-  } */
-  
-  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
-  /* @media screen and (max-width: 400px) {
-    .sidebar a {
-      text-align: center;
-      float: none;
-    }
-  } 
-    */
+}
 
 
-    /* Rodapé */
-    .footer {
-      text-align: center;
-    }
-  
+/* formatação do conteúdo */
+#content {
+  grid-area: content;
+}
+
+.introducao {
+  margin-top: 5px;
+  padding: 1px 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.introducao a {
+  text-decoration: none;
+  color: var(--cor2);
+}
+
+.introducao a:hover:not(.active) {
+  color: var(--cor3);
+}
+
+.introducao li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  max-height: 600px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides fade {
+  width: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade 2s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* formatação do footer */
+#footer {
+  text-align: center;
+  width: 20%;
+  bottom: 0;
+  position: fixed;
+
+}
+/* SEÇÃO ESPECÍFICA PARA A PÁGINA FORM */
+.tituloForm{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--cor1);
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+.formulario{
+ margin-left: 50px;
+ margin-top: 50px;
+}

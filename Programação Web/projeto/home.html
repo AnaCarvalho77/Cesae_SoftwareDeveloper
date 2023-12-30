@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style2.css">
+  <title>IBERTRIO</title>
+  <link rel="stylesheet" href="style.css">
   <script src="footer.js"></script>
   <script src="header.js"></script>
 
@@ -16,22 +16,28 @@
 <body>
   
   <div class="container" id="template-areas">
-    <!-- Header -->
-    <my-header></my-header>
-   
-
-    
     <!-- Sidebar -->
     <div id="sidebar">
-      <img src="/imagens/logo.png" alt="logotipo">
+      <!-- Header -->
+      <div id = "header">
+        <my-header></my-header>
+      </div>
       <p></p>
-      <a href="/home.html">Início</a>
+      <p></p>
+      <div id = "logo">
+        <img src="/imagens/logo.png" alt="logotipo">
+      </div>
+      <p></p>
+      <a href="/home.html" id="active">Início</a>
       <a href="/biografia.html">Biografia</a>
       <a href="/Vídeos.html">Vídeos</a>
-      <a href="/fotos.html">Fotos</a>
       <a href="/contato.html">Contato</a>
       <p></p>
       <p></p>
+       <!-- footer -->
+      <div id ="footer">
+        <my-footer></my-footer>
+      </div>
     </div>
     
     <!-- Conteúdo Página -->
@@ -82,21 +88,22 @@
         <p></p>
         <p></p>
         <p>
-          O Ibertrio é um trio clássico de violino, violoncelo e piano formado pelos músicos:
-        <ul>
-          <li><b><i>Nuno Meira</i></b></li>
-          <li><b><i>Américo Martins</i></b></li>
-          <li><b><i>Isolda Crespi</i></b></li>
-        </ul>
+          O <a href="biografia.html#ibertrio"><i><b>Ibertrio</b></i></a> é um trio clássico de violino, violoncelo e piano formado pelos músicos:
         </p>
+        <ul>
+          <a href="biografia.html#nunoMeira">
+            <li><b><i>Nuno Meira</i></b></li>
+          </a>
+          <a href="biografia.html#americoMartins">
+            <li><b><i>Américo Martins</i></b></li>
+          </a>
+          <a href="biografia.html#isoldaCrespi">
+            <li><b><i>Isolda Crespi</i></b></li>
+          </a>
+        </ul>
+        
       </div>
     </div>
-
-    <!-- footer -->
-    <footer>
-      <my-footer></my-footer>
-    </footer>
-
 
   </div>
 </body>

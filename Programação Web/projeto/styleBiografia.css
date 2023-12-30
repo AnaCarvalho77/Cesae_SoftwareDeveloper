@@ -1,137 +1,175 @@
+:root {
+  --cor1: rgb(234, 231, 231);
+  --cor2: rgb(72, 122, 179);
+  --cor3: rgb(5, 5, 188);
+  --cor4: whitesmoke;
+}
 
-#template-areas{
-    background-color: rgba(255, 255, 255, 0.77);
-    display: grid;
-    grid-template-areas:
-    'header header header header'
-    'sidebar content content content'
-    'footer footer footer footer';
-    grid-template-columns:20% 80% ;
-    grid-template-rows: 5% 90% 5%;
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+#template-areas {
+  display: grid;
+  grid-template-areas:
+    'sidebar content'
+    'sidebar content'
+    'sidebar content';
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
 }
 
 /* formatação do cabeçalho */
 #header {
-    grid-area: header;
-    position: fixed;
-    z-index: 1;
+  background-color: var(--cor1);
+  position: fixed;
+  text-align: left;
+  width: 20%;
+  top: 0;
 }
 
-#header a img{
-    width: 5%;
-    /* margin-left: 250px; */
-
+#header a img {
+  background-color: var(--cor1);
+  width: 10%;
 }
-a img{
-width: 5%;
+
+#header {
+  background-color: var(--cor1);
 }
 
 
 /* formatação da sidebar */
 #sidebar {
-    width: 200px;
-    grid-area: sidebar;
-    background-color:rgba(255, 255, 255, 0.405);
-    text-align: center;
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    position: fixed;
-    /* z-index: 1; */
-   margin-top: 100px;
-    left: 0;
+  width: 20%;
+  grid-area: sidebar;
+  background-color: var(--cor1);
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  height: 100%;
 
 
 }
 
-#sidebar a{
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
+#sidebar a {
+  display: block;
+  color: black;
+  padding: 5%;
+  text-decoration: none;
 }
- 
-Active/current link
-#sidebar a.active {
-  background-color: #04AA6D;
-  color: white;
+
+#active {
+  background-color: var(--cor4);
+  font-weight: bold;
 }
 
 /* Links on mouse-over */
 #sidebar a:hover:not(.active) {
- font-weight: bold;    
+  font-weight: bold;
 }
 
-#sidebar img{
+#sidebar img {
   width: 100%;
 }
 
+#logo img {
+  margin-top: 10%;
+  padding: 5%;
+  width: 100%;
+  background-color: var(--cor1);
+}
 
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
 }
 
 /* formatação do conteúdo */
 #content {
-    grid-area: content;
+  grid-area: content;
+  padding-bottom: 5%;
+  padding-top: 2%;
 }
-.introducao{
-    margin-top: 5px;
-    padding: 2px 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: justify;
-    margin-right: 40px;
+
+.introducao {
+  margin-top: 5px;
+  padding: 2px 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: justify;
+  margin-right: 40px;
 }
-.introducao li{
-    list-style-type: disc;
-    padding: 7px;
+
+.introducao p {
+  padding-left: 10%;
+  padding-right: 10%;
+  line-height: 150%;
 }
-.introducao h1{
-    margin-top: 100px;
+
+.introducao ul {
+  padding-left: 15%;
 }
-.introducao h2{
-    margin-top: 0px;
-    font-size: 30px;
-    font-weight: bold;
+
+.introducao li {
+  padding-left: 10%;
+  list-style-type: disc;
+  padding: 7px;
 }
-.introducao img{
-    margin-left: auto;
-    margin-right: auto;
+
+.introducao h1 {
+  background-color: var(--cor1);
+  padding-left: 10%;
+}
+
+.introducao h2 {
+  background-color: var(--cor1);
+  padding-left: 10%;
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.introducao img {
+  padding-bottom: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
-* {box-sizing:border-box}
-
-/* Slideshow container */
-.slideshow-container {
-  width: 100%;
-  max-height: 600px;
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-}
-.mySlides fade{
-  width: 100%;
-}
-/* Hide the images by default */
-.mySlides {
-  display: none;
+.texto {
+  padding-bottom: 15%;
 }
 
-/* Fading animation */
-.fade {
-  animation-name: fade 2s ease-in-out;
+.primeiraImagem img {
+  padding-top: 0;
+  padding-bottom: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+* {
+  box-sizing: border-box
 }
 
 /* formatação do footer */
-#footer{
-    grid-area: footer;
-    text-align: center;
-   
+#footer {
+  text-align: center;
+  width: 20%;
+  bottom: 0;
+  position: fixed;
+
 }

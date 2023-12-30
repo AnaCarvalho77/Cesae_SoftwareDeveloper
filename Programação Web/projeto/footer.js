@@ -2,7 +2,7 @@
 class Myfooter extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-        <hr>
+        
         <p>© Ibertrio</p>
         `
     }
