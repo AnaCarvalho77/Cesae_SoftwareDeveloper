@@ -30,8 +30,8 @@ public class JogoView {
         Scanner input = new Scanner(System.in);
 
         //Declaração de Variáveis Caminhos Ficheiros
-        String caminhoItens = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/ItensCorrida.csv";
-        String caminhoVeiculos = "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/sofiaCarvalhoCorridas/Ficheiros/VeiculosCorridas.csv";
+        String caminhoItens = "Ficheiros/ItensCorrida.csv";
+        String caminhoVeiculos = "Ficheiros/VeiculosCorridas.csv";
 
         //Criar instâncias de Classes
         OficinaController oficinaController = new OficinaController();
