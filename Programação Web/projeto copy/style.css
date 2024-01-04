@@ -1,0 +1,157 @@
+:root {
+  --cor1: rgb(234, 231, 231);
+  --cor2: rgb(72, 122, 179);
+  --cor3: rgb(5, 5, 188);
+  --cor4: whitesmoke;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+#template-areas {
+  display: grid;
+  grid-template-areas:
+    'sidebar content'
+    'sidebar content'
+    'sidebar content';
+  grid-template-columns: 20% 80%;
+  grid-template-rows: 100%;
+}
+
+/* formatação do cabeçalho */
+#header {
+  background-color: var(--cor1);
+  position: fixed;
+  text-align: left;
+  width: 20%;
+  top: 0;
+}
+
+#header a img {
+  background-color: var(--cor1);
+  width: 12%;
+}
+
+#header {
+  background-color: var(--cor1);
+}
+
+
+/* formatação da sidebar */
+#sidebar {
+  width: 20%;
+  grid-area: sidebar;
+  background-color: var(--cor1);
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  height: 100%;
+
+
+}
+
+#sidebar a {
+  display: block;
+  color: black;
+  padding: 5%;
+  text-decoration: none;
+}
+
+#active {
+  background-color: var(--cor4);
+  font-weight: bold;
+}
+
+/* Links on mouse-over */
+#sidebar a:hover:not(.active) {
+  font-weight: bold;
+}
+
+#sidebar img {
+  width: 100%;
+  background-color: var(--cor1);
+}
+
+#logo img {
+  margin-top: 10%;
+  padding: 5%;
+  width: 100%;
+  background-color: var(--cor1);
+}
+
+
+/* formatação do conteúdo */
+#content {
+  grid-area: content;
+}
+
+.introducao {
+  margin-top: 5px;
+  padding: 1px 16px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.introducao a {
+  text-decoration: none;
+  color: var(--cor2);
+}
+
+.introducao a:hover:not(.active) {
+  color: var(--cor3);
+}
+
+.introducao li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  max-height: 600px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+.mySlides fade {
+  width: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade 2s ease-in-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* formatação do footer */
+#footer {
+  text-align: center;
+  width: 20%;
+  bottom: 0;
+  position: fixed;
+  background-color: var(--cor1);
+
+}
