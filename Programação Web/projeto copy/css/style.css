@@ -5,10 +5,10 @@
   --cor4: whitesmoke;
 }
 
-body,
-html {
+body {
   margin: 0;
   padding: 0;
+
 }
 
 #template-areas {
@@ -68,7 +68,6 @@ html {
   font-weight: bold;
 }
 
-/* Links on mouse-over */
 #sidebar a:hover:not(.active) {
   font-weight: bold;
 }
@@ -85,25 +84,8 @@ html {
   background-color: var(--cor1);
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {
-    padding-top: 15px;
-  }
 
-  .sidenav a {
-    font-size: 18px;
-  }
-}
 
-/* formatação do conteúdo */
-#content {
-  grid-area: content;
-  padding-bottom: 10%;
-}
-
-.col {
-  padding: 2%;
-}
 
 /* formatação do footer */
 #footer {
@@ -111,5 +93,7 @@ html {
   width: 20%;
   bottom: 0;
   position: fixed;
+  background-color: var(--cor1);
 
 }
+

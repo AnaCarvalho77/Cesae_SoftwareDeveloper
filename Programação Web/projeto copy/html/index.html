@@ -5,9 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IBERTRIO</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="footer.js"></script>
-  <script src="header.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/styleIndex.css">
+  <script src="/javascript/footer.js"></script>
+  <script src="/javascript/header.js"></script>
+  <script src="/javascript/slideShow.js"></script>
 
 
 
@@ -19,7 +21,7 @@
   <div class="container" id="template-areas">
     <!-- Sidebar -->
     <div id="sidebar">
-      <!-- Header -->
+      <!-- Header script-->
       <div id="header">
         <my-header></my-header>
       </div>
@@ -29,13 +31,13 @@
         <img src="/imagens/logo.png" alt="logotipo">
       </div>
       <p></p>
-      <a href="/index.html" id="active">Início</a>
-      <a href="/biografia.html">Biografia</a>
-      <a href="/videos.html">Vídeos</a>
-      <a href="/contato.html">Contato</a>
+      <a href="/html/index.html" id="active">Início</a>
+      <a href="/html/biografia.html">Biografia</a>
+      <a href="/html/videos.html">Vídeos</a>
+      <a href="/html/contato.html">Contato</a>
       <p></p>
       <p></p>
-      <!-- footer -->
+      <!-- footer script-->
       <div id="footer">
         <my-footer></my-footer>
       </div>
@@ -61,24 +63,13 @@
 
         </div>
       </div>
+
+
       <!-- script para slideshow automático -->
-      <script>
-        let slideIndex = 0;
-        showSlides();
-
-
-        function showSlides() {
-          let i;
-          let slides = document.getElementsByClassName("mySlides");
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-          }
-          slideIndex++;
-          if (slideIndex > slides.length) { slideIndex = 1 }
-          slides[slideIndex - 1].style.display = "block";
-          setTimeout(showSlides, 8000); // Change image every 2 seconds
-        }
-      </script>
+      <!-- script retirado de w3schools -->
+       <div id="slideshow">
+        <my-slideshow></my-slideshow>
+      </div>
 
       <br>
 
@@ -89,17 +80,17 @@
         <p></p>
         <p></p>
         <p>
-          O <a href="biografia.html#ibertrio"><i><b>Ibertrio</b></i></a> é um trio clássico de violino, violoncelo e
+          O <a href="/html/biografia.html#ibertrio"><i><b>Ibertrio</b></i></a> é um trio clássico de violino, violoncelo e
           piano formado pelos músicos:
         </p>
         <ul>
-          <a href="biografia.html#nunoMeira">
+          <a href="/html/biografia.html#nunoMeira">
             <li><b><i>Nuno Meira</i></b></li>
           </a>
-          <a href="biografia.html#americoMartins">
+          <a href="/html/biografia.html#americoMartins">
             <li><b><i>Américo Martins</i></b></li>
           </a>
-          <a href="biografia.html#isoldaCrespi">
+          <a href="/html/biografia.html#isoldaCrespi">
             <li><b><i>Isolda Crespi</i></b></li>
           </a>
         </ul>
