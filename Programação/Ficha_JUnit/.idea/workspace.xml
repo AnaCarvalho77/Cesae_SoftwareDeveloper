@@ -36,18 +36,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2aXUbOLiOUr7jm72DdipphyuqMH" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,6 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/softdev/Desktop/Cesae_SoftwareDeveloper/Programação/FichaPratica_09",
     "onboarding.tips.debug.path": "/Users/anasofiacarvalho/Documents/GitHub/Cesae_SoftwareDeveloper/Programação/Ficha_JUnit/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -71,6 +72,8 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Ex_05" />
+      <recent name="Ex_04" />
       <recent name="org.example" />
     </key>
   </component>
@@ -181,9 +184,12 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Ficha_JUnit$Tests_in__Ficha_JUnit_test_.ic" NAME="Tests in 'Ficha_JUnit.test' Coverage Results" MODIFIED="1704467616970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Ficha_JUnit$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1704467236304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Ficha_JUnit$AnimalTest.ic" NAME="AnimalTest Coverage Results" MODIFIED="1704708342912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Ex_03.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/Ficha_JUnit$StringUtilsTest.ic" NAME="StringUtilsTest Coverage Results" MODIFIED="1704473131541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Ex_02.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/Ficha_JUnit$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1704467236304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
