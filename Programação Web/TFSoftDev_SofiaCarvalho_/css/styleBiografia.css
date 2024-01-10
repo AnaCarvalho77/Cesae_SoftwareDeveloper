@@ -1,0 +1,96 @@
+/* formatação do conteúdo */
+#content {
+  grid-area: content;
+  padding-bottom: 5%;
+  padding-top: 2%;
+}
+
+.introducao {
+  margin-top: 0.5%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: justify;
+  margin-right: 2%;
+}
+
+.introducao p {
+  padding-left: 2%;
+  padding-right: 10%;
+  line-height: 150%;
+}
+
+.introducao ul {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-left: 8%;
+}
+
+.introducao li {
+  list-style-type: disc;
+  padding: 0.5%;
+}
+
+.introducao h1 {
+  background-color: var(--cor1);
+  padding-left: 10%;
+}
+
+.introducao h2 {
+  background-color: var(--cor1);
+  padding-left: 10%;
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.introducao img {
+  padding-bottom: 2%;
+  padding-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.texto {
+  padding-bottom: 15%;
+}
+
+.primeiraImagem img {
+  padding-bottom: 2%;
+  padding-left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+* {
+  box-sizing: border-box
+}
+
+
+@media screen and (max-width: 1024px) {
+  #template-areas {
+    grid-template-areas:
+      'sidebar content'
+      'sidebar content'
+      'sidebar content';
+    grid-template-columns: 20% 80%;
+  }
+
+  #sidebar {
+    width: 20%;
+  }
+
+  #header,
+  #footer {
+    width: 20%;
+  }
+
+  #sidebar img,
+  #logo img,
+  .primeiraImagem img {
+    width: 100%;
+  }
+
+  .introducao img {
+    width: 100%;
+  }
+}

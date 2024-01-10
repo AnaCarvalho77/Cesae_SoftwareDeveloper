@@ -1,9 +1,0 @@
-/* formatação do conteúdo */
-#content {
-  grid-area: content;
-  padding-bottom: 10%;
-}
-
-.col {
-  padding: 2%;
-}
