@@ -15,13 +15,25 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('bemvindos');
+
 Route::get('/home', function () {
-    return view('welcome');
-});
+    return view('main.home');
+})-> name('home.index');
+
 Route::get('/ola', function () {
     return '<h1> Hello turma de Software </h1>';
 })->name('home.hello');
+
 Route::get('/hello/{nome}', function ($nome) {
     return '<h1> Hello turma de Software </h1>'.$nome;
+});
+
+
+Route::get('/addUser', function () {
+    return view('users.adicionarUtilizadores');
+})-> name('addUser');
+
+Route::fallback(function () {
+    return view ('main.fallBack');
 });
