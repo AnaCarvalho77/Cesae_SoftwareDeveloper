@@ -29,7 +29,10 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('home.index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('users.add') }}">Users</a>
+                        <a class="nav-link" href="{{ route('users.add') }}">Add Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('users.all') }}">All Users</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"

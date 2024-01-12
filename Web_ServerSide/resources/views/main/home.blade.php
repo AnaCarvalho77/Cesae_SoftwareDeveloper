@@ -10,6 +10,11 @@
         <li><a href="{{ route('users.all') }}">Todos os utilizadores</a></li>
         <li><a href="{{ route('users.add') }}">Adionar utilizador</a></li>
     </ul>
+    <h2>Dados Cesae</h2>
+
+    <p>Nome: {{ $infoCesae['name']}}</p>
+    <p>Morada: {{ $infoCesae['address']}}</p>
+    <p>Email: {{ $infoCesae['email']}}</p>
 @endsection
 
 @section('content2')
