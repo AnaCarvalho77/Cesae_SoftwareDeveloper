@@ -11,7 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('flights', function (Blueprint $table) {
+            $table->id();
+            $table->string('aeroporto');
+            $table->text('descricao')->nullable();
+            $table->integer('nr_voo');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('flights');
     }
 };
