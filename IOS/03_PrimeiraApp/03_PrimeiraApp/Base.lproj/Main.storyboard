@@ -28,16 +28,53 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1o-nW-tP3">
-                                <rect key="frame" x="172" y="427" width="75" height="35"/>
+                                <rect key="frame" x="176" y="432" width="71" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="change" buttonSize="small"/>
                                 <connections>
                                     <action selector="butaoClicado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4CF-qZ-IOa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXg-vh-1Mg">
+                                <rect key="frame" x="17" y="553" width="84" height="25"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <inset key="contentEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fox" buttonSize="mini"/>
+                                <connections>
+                                    <action selector="botaoFox:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eDd-Le-Qte"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nai-fX-ZdK">
+                                <rect key="frame" x="109" y="553" width="84" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Lion" buttonSize="mini"/>
+                                <connections>
+                                    <action selector="botaoLion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JDg-AL-mV3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIb-bb-VWZ">
+                                <rect key="frame" x="201" y="553" width="84" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Monkey" buttonSize="mini"/>
+                                <connections>
+                                    <action selector="botaoMonkey:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8b-RQ-Hf6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-AM-Ulo">
+                                <rect key="frame" x="293" y="553" width="84" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Pig" buttonSize="mini"/>
+                                <connections>
+                                    <action selector="botaoPig:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kFm-P1-hfN"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="1v2-PN-pIH"/>
                         <color key="backgroundColor" systemColor="tableSeparatorDarkColor"/>
                     </view>
                     <connections>
@@ -50,7 +87,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fox" width="1000" height="666"/>
+        <image name="fox" width="250" height="166.33332824707031"/>
         <systemColor name="tableSeparatorDarkColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
