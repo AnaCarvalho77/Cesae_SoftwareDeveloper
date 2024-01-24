@@ -1,4 +1,4 @@
-package com.example.ex_01_calculadoraconversao
+package com.example.ex_03_temperaturaraconversao
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

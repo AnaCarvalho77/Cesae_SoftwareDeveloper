@@ -1,0 +1,42 @@
+
+<h1> Olá o meu nome é {{meuNome}}</h1>
+
+<p>{{mensagem}}</p>
+
+<img src = "{{imagem}}" alt="">
+
+<hr>
+
+<h1> Olá o meu nome é {{obj.nome}}</h1>
+
+<p>{{mensagem}}</p>
+
+<img [src] = "imagem" alt="">
+<button (click)="alterarImagem()">Alterar imagem</button>
+<button (click)="alterarImagem2()">Alterar imagem 2</button>
+<button (click)="meuNome='Ana'">Alterar nome</button>
+
+<br><br>
+<p
+  [style.color]="pCorTexto"
+  [style.backgroundColor]="pCorFundo">
+  E também gosto de caminhar!
+</p>
+<button (click)="alterarCores()" [disabled]="!pAlterarCores" >Alterar cor texto/fundo</button>
+
+<button (click)="alterarAtivo()">Desativar</button>
+
+<hr>
+
+<h3>{{contador}}</h3>
+<button (click)="incrementar()">incrementar</button>
+<hr>
+<hr>
+
+
+
+
+
+
+
+
