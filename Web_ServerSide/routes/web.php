@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,9 +34,11 @@ Route::get('/hello/{nome}', function ($nome) {
 
 
 Route::get('/users/add', [UsersController::class,'addUsers'])-> name('users.add');
+Route::get('/users/all', [UsersController::class,'allUsers'])-> name('users.all');
+Route::get('/users/view/{id}', [UsersController::class,'viewUser'])->name('users.view');
 
-Route::get('/users/all', [UsersController::class,'allUsers']
-)-> name('users.all');
+
+Route::get('/tasks/all', [TasksController::class,'allTasks'])->name('tasks.all');
 
 Route::fallback(function () {
     return view ('main.fallBack');

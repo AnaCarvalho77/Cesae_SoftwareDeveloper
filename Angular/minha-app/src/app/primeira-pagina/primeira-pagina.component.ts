@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
+import { MeuComponenteComponent } from '../meu-componente/meu-componente.component';
+
 
 @Component({
   selector: 'app-primeira-pagina',
   standalone: true,
-  imports: [],
+  imports: [MeuComponenteComponent],
   templateUrl: './primeira-pagina.component.html',
   styleUrl: './primeira-pagina.component.scss'
 })
 export class PrimeiraPaginaComponent {
+  meuNomePai: string = "Carvalho";
 
+  contadorPai: number = 0;
+
+  atualizar(valor:number): void{
+      this.contadorPai = valor;
+
+}
 }

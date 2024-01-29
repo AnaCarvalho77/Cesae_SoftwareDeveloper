@@ -1,28 +1,12 @@
 <nav>
   <ul>
-    <li><a routerLink="/home" routerLinkActive="active">  Home Página</a></li>
     <li><a routerLink="/primeira" routerLinkActive="active">  Primeira Página</a></li>
     <li><a routerLink="/segunda" routerLinkActive="active">  Segunda Página</a></li>
   </ul>
 </nav>
 <router-outlet />
 
-<h1>ola mundo</h1>
 
-<app-meu-componente meu-nome = "Paulo" ></app-meu-componente>
-<br>
-<br><br><br><br><br>
-<app-meu-componente [meu-nome]="meuNomePai"></app-meu-componente>
-<br>
-<br><br><br><br><br>
-<app-meu-componente></app-meu-componente>
-<br>
-<br><br><br><br><br>
-<app-meu-componente (mudancaContador)="atualizar($event)"></app-meu-componente>
 
-<div style="background-color: beige;">
-  <p>Contador: {{contadorPai}}</p>
-
-</div>
 
 

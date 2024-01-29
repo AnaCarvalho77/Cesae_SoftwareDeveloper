@@ -1,2 +1,109 @@
-<p>segunda-aaa-pagina works!</p>
+<h2>Estruturas condicionais</h2>
+<hr>
 
+<div>
+
+  <h3>If</h3>
+  <div *ngIf="valor >= 0">
+    O valor é maior ou igual que 0.
+  </div>
+  <ng-template [ngIf]="valor >=0">
+    O valor é maior ou igual que 0.(2)
+  </ng-template>
+
+  @if(valor >= 0){
+  <div>O valor é maior ou igual que 0.(3)</div>
+  }
+
+  <hr>
+
+
+  <h3>Else</h3>
+  <div *ngIf="valor >= 0; else elseBlock">
+    O valor é maior ou igual que 0.
+  </div>
+  <ng-template #elseBlock>
+    O valor é menor que 0.
+  </ng-template>
+
+  <!-- ou -->
+  <ng-template [ngIf]="valor >=0" [ngIfElse]="elseBlock_2">
+    <div>O valor é maior ou igual que 0.(2)</div>
+  </ng-template>
+  <ng-template #elseBlock_2>
+    <div>O valor é menor que 0. (2)</div>
+  </ng-template>
+
+  <!-- versao 17.0 e acima -->
+  @if(valor >= 0){
+  <div>O valor é maior ou igual que 0.(3)</div>
+  }@else {
+  <div> O valor é menor que 0. (3)</div>
+  }
+
+  <hr>
+
+
+  <h3>Else if</h3>
+  <div *ngIf="valor > 0; else elseBlock_3">
+    O valor é maior que 0.
+  </div>
+  <ng-template #elseBlock_3>
+    <div *ngIf="valor === 0; else elseBlock_4">
+      O valor é igual a 0.
+    </div>
+    <ng-template #elseBlock_4>
+      O valor é menor que 0.
+    </ng-template>
+  </ng-template>
+
+  <!-- ou -->
+  <ng-template [ngIf]="valor >0" [ngIfElse]="elseBlock_5">
+    <div>O valor é maior que 0.(2)</div>
+  </ng-template>
+  <ng-template #elseBlock_5>
+    <ng-template [ngIf]="valor == 0" [ngIfElse]="elseBlock_6">
+      <div>O valor é igual a 0.(2)</div>
+    </ng-template>
+    <ng-template #elseBlock_6>
+      <div>O valor é menor que 0. (2)</div>
+    </ng-template>
+  </ng-template>
+
+  <!-- versao 17.0 e acima -->
+  @if(valor > 0){
+  <div>O valor é maior que 0.(3)</div>
+  }@else {
+  @if(valor === 0){
+  <div>O valor é igual a 0.(3)</div>
+  }@else {
+  <div> O valor é menor que 0. (3)</div>
+  }
+  }
+
+  <hr>
+  <div>
+    <h3>Usar um 'then'</h3>
+
+    <div *ngIf="valor >= 0; then thenBlock_7"></div>
+    <ng-template #thenBlock_7>
+      <div>O valor é maior ou igual que 0.</div>
+    </ng-template>
+
+    <div *ngIf="valor > 0; then thenBlock_2; else elseBlock_8"></div>
+    <ng-template #thenBlock_2>
+      <div>O valor é maior que 0.</div>
+    </ng-template>
+    <ng-template #elseBlock_8>
+      <div>O valor é menor ou igual que 0.</div>
+    </ng-template>
+  </div>
+  <hr />
+  <div>
+    <h3>Switch</h3>
+    <div [ngSwitch]="true">
+      <div *ngSwitchCase="valor > 0">O valor é maior que 0.</div>
+      <div *ngSwitchCase="valor === 0">O valor é igual 0.</div>
+      <div *ngSwitchDefault>O valor é menor que 0.</div>
+    </div>
+  </div>

@@ -28,6 +28,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     CONST TYPE_ADMIN=1;
+     CONST TYPE_TRAINER=2;
+     CONST TYPE_STUDENT=3;
+
+
     protected $hidden = [
         'password',
         'remember_token',

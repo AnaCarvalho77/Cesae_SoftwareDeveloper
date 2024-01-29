@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Models\User;
+// use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
@@ -10,6 +11,24 @@ class UsersController extends Controller
 
     public function addUsers()
     {
+        db::table('users')
+        ->updateOrInsert(
+            [
+                'email'=> 'gabriel@gmail.com'
+            ],
+            [
+            'name'=> 'Gabriel',
+            'password'=>'gabrielpass',
+            'updated_at'=>now(),
+            'created_at'=>now(),
+        ]);
+
+
+        $users = DB::table('users')->get();
+        $myUser = DB::table('users')->where('password', '123')->first();
+
+        dd($myUser);//ver os users antes de mandar as coisas para a view
+
         return view('users.adicionarUtilizadores');
     }
 
@@ -19,12 +38,14 @@ class UsersController extends Controller
         $helloAgain = 'cucu';
         $daysOfWeek = $this->getWeekDays();
         $infoPodeNomeDiferente = $this->info();
-        $contacts = $this->getContacts();
+        $users = $this->getUsers();
+
+
 
     //var_dump($infoPodeSerNomeDiferente);
     //dd($infoPodeSerNomeDiferente);
-       
-        return view('users.all_users', compact('hello', 'helloAgain', 'daysOfWeek','infoPodeNomeDiferente','contacts'));
+
+        return view('users.all_users', compact('hello', 'helloAgain', 'daysOfWeek','infoPodeNomeDiferente','users'));
     }
 
     private function getWeekDays(){
@@ -46,14 +67,40 @@ class UsersController extends Controller
         return $courseInfo;
     }
 
-    private function getContacts(){
+    private function getUsers(){
         //array associativo
-        $contacts = [
-            ['id' => 1,'name'=> 'Sara', 'phone'=>'985654455', 'email'=>'sara@gmail.com'],
-            ['id' => 2,'name'=> 'Bruno', 'phone'=>'985654455','email'=>'bruno@gmail.com'],
-            ['id' => 3,'name'=> 'Márcia', 'phone'=>'985654455','email'=>'marcia@gmail.com']
-        ];
-        return $contacts;
+        // $users = [
+        //     ['id' => 1,'name'=> 'Sara', 'phone'=>'985654455', 'email'=>'sara@gmail.com'],
+        //     ['id' => 2,'name'=> 'Bruno', 'phone'=>'985654455','email'=>'bruno@gmail.com'],
+        //     ['id' => 3,'name'=> 'Márcia', 'phone'=>'985654455','email'=>'marcia@gmail.com']
+        // ];
+
+        //onde não é nulo
+        // $users = DB::table('users')
+        // ->whereNotNull('updated_at')
+        // ->get();
+
+        //onde é nulo
+        // $users = DB::table('users')
+        // ->whereNull('updated_at')
+        // ->get();
+
+        $users = DB::table('users')
+        ->get();
+
+        //usando os modelos e não o DB
+        // $users = User::get();
+        // $adminType = User::TYPE_ADMIN;
+
+        return $users;
+    }
+
+    public function viewUser($id){
+        $myUser = DB::table('users')
+        ->where('id', $id)
+        ->first();
+
+        return view('users.usersView', compact ('myUser'));
     }
 
 
