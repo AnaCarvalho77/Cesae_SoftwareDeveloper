@@ -22,52 +22,72 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="bola" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-01-Foy">
-                                <rect key="frame" x="16" y="132" width="361" height="300"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" misplaced="YES" image="bola" translatesAutoresizingMaskIntoConstraints="NO" id="yBY-01-Foy">
+                                <rect key="frame" x="16" y="124" width="361" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="dcf-di-0Ic"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="último nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86N-QC-f12">
-                                <rect key="frame" x="220" y="513" width="131" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="último nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="86N-QC-f12">
+                                <rect key="frame" x="210" y="513" width="124" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Bx-iII">
-                                <rect key="frame" x="165" y="592" width="71" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="primeiro nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-nr-faY">
+                                <rect key="frame" x="49" y="513" width="121" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Bx-iII">
+                                <rect key="frame" x="49" y="606" width="285" height="55"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Go">
+                                <buttonConfiguration key="configuration" style="plain" title="Dizer Olá">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="helloButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bWd-Ma-sCk"/>
+                                    <action selector="helloButtonClicado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mms-Al-mCy"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="primeiro nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhZ-nr-faY">
-                                <rect key="frame" x="49" y="513" width="131" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Resultado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEh-T7-rHe">
+                                <rect key="frame" x="16" y="695" width="361" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H7B-ee-ac6" secondAttribute="trailing" constant="16" id="01m-hq-3U0"/>
+                            <constraint firstItem="86N-QC-f12" firstAttribute="leading" secondItem="jhZ-nr-faY" secondAttribute="trailing" constant="40" id="2ed-OY-Hsr"/>
                             <constraint firstItem="yBY-01-Foy" firstAttribute="top" secondItem="H7B-ee-ac6" secondAttribute="bottom" constant="16" id="46s-5L-cVX"/>
+                            <constraint firstItem="yBY-01-Foy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7jC-sG-SUq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pgq-Bx-iII" secondAttribute="trailing" constant="110" id="HQh-Nm-5xu"/>
                             <constraint firstItem="yBY-01-Foy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KyO-D1-5eT"/>
+                            <constraint firstItem="yBY-01-Foy" firstAttribute="top" secondItem="H7B-ee-ac6" secondAttribute="bottom" constant="16" id="OEY-OJ-bcS"/>
+                            <constraint firstItem="jhZ-nr-faY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="Qor-nT-9zQ"/>
+                            <constraint firstItem="86N-QC-f12" firstAttribute="top" secondItem="yBY-01-Foy" secondAttribute="bottom" constant="81" id="UGg-eN-1V9"/>
+                            <constraint firstItem="Pgq-Bx-iII" firstAttribute="top" secondItem="86N-QC-f12" secondAttribute="bottom" constant="59" id="b65-1J-lhr"/>
+                            <constraint firstItem="Pgq-Bx-iII" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="biu-bI-UJo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yBY-01-Foy" secondAttribute="trailing" constant="16" id="jnf-bW-5ZO"/>
                             <constraint firstItem="H7B-ee-ac6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="lEc-yL-moU"/>
+                            <constraint firstItem="jhZ-nr-faY" firstAttribute="top" secondItem="yBY-01-Foy" secondAttribute="bottom" constant="81" id="lbT-bX-Vcu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yBY-01-Foy" secondAttribute="trailing" constant="16" id="lpK-pO-91s"/>
+                            <constraint firstItem="jhZ-nr-faY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="mos-nM-ae7"/>
                             <constraint firstItem="H7B-ee-ac6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="mwZ-0a-gKA"/>
+                            <constraint firstItem="jhZ-nr-faY" firstAttribute="top" secondItem="yBY-01-Foy" secondAttribute="bottom" constant="81" id="sRl-rD-fMR"/>
+                            <constraint firstItem="jhZ-nr-faY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="52" id="xlS-tg-mJH"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstName" destination="jhZ-nr-faY" id="OIh-gy-Raw"/>
+                        <outlet property="helloButton" destination="Pgq-Bx-iII" id="4Wo-ML-m65"/>
                         <outlet property="lastName" destination="86N-QC-f12" id="p9m-Py-lWW"/>
+                        <outlet property="textResultado" destination="JEh-T7-rHe" id="0R0-g0-CMd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
