@@ -1,1 +1,58 @@
-<p>segunda-bbb-pagina works!</p>
+{{arr}}
+
+
+<ul>
+  <li *ngIf="arr == null"> nao </li>
+  <li *ngFor="let item of arr">
+    {{item}}
+  </li>
+</ul>
+
+<div>
+  <article *ngFor="let item of arr">
+    {{item}}
+  </article>
+</div>
+
+
+<ul>
+  <li *ngFor="let item of arr; index as i">
+    {{item}}({{i}})
+  </li>
+</ul>
+
+<ul>
+  <ng-template ngFor let-item [ngForOf]="arr" let-i="index">
+    <li>
+      {{item}}({{i}})
+    </li>
+  </ng-template>
+</ul>
+
+<ul>
+  <li *ngFor="let item of arr; index as i; first as ePrimeiro">
+    {{item}}({{i}})
+    <b *ngIf="ePrimeiro">Primeiro</b>
+  </li>
+</ul>
+<br>
+<br>
+
+<!-- versao 17.0 e acima -->
+<h3>afor versão 17.0 e acima</h3>
+<ul>
+  @for (item of arr; track $index) {
+    <li>
+      {{item}}({{$index}})
+    </li>
+  }
+  @empty {
+    <li>
+      Esta lista está vazia
+    </li>
+  }
+
+</ul>
+
+
+

@@ -1,0 +1,8 @@
+<h1>Lista de Animais</h1>
+<div>
+  <ul>
+    @for (animal of animais; track $index) {
+      <app-lista-animais-item [animal]="animal"></app-lista-animais-item>
+    }
+  </ul>
+</div>

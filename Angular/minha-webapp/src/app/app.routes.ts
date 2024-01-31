@@ -3,6 +3,8 @@ import { PrimeiraPaginaComponent } from './primeira-pagina/primeira-pagina.compo
 import { SegundaPaginaComponent } from './segunda-pagina/segunda-pagina.component';
 import { SegundaAaaPaginaComponent } from './segunda-aaa-pagina/segunda-aaa-pagina.component';
 import { SegundaBbbPaginaComponent } from './segunda-bbb-pagina/segunda-bbb-pagina.component';
+import { Component } from '@angular/core';
+import { NotpoComponent } from './notpo/notpo.component';
 
 export const routes: Routes = [
   {
@@ -27,4 +29,9 @@ export const routes: Routes = [
       },
     ],
   },
+
+  {path:'**',
+  title:'404 - Erro página não encontrada',
+  component:NotpoComponent
+    }
 ];

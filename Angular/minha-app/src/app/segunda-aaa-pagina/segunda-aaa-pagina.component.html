@@ -22,7 +22,7 @@
   <div *ngIf="valor >= 0; else elseBlock">
     O valor é maior ou igual que 0.
   </div>
-  <ng-template #elseBlock>
+ <ng-template #elseBlock>  <!-- igual a id="elseBlock" -->
     O valor é menor que 0.
   </ng-template>
 
@@ -107,3 +107,11 @@
       <div *ngSwitchDefault>O valor é menor que 0.</div>
     </div>
   </div>
+
+  <!-- versao 17.o -->
+  <!-- @switch (valor){@case(0)} {
+
+  } -->
+
+  <hr>
+  
