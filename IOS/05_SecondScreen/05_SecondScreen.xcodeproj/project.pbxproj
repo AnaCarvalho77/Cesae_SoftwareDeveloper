@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B159A1B2B6A4C7F005BC724 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B159A1A2B6A4C7F005BC724 /* SecondViewController.swift */; };
 		2B2CAD102B67D3220002299D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CAD0F2B67D3220002299D /* AppDelegate.swift */; };
 		2B2CAD122B67D3220002299D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CAD112B67D3220002299D /* SceneDelegate.swift */; };
 		2B2CAD142B67D3220002299D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2CAD132B67D3220002299D /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B159A1A2B6A4C7F005BC724 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2B2CAD0C2B67D3220002299D /* 05_SecondScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 05_SecondScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2CAD0F2B67D3220002299D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B2CAD112B67D3220002299D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				2B2CAD0F2B67D3220002299D /* AppDelegate.swift */,
 				2B2CAD112B67D3220002299D /* SceneDelegate.swift */,
 				2B2CAD132B67D3220002299D /* ViewController.swift */,
+				2B159A1A2B6A4C7F005BC724 /* SecondViewController.swift */,
 				2B2CAD152B67D3220002299D /* Main.storyboard */,
 				2B2CAD182B67D3250002299D /* Assets.xcassets */,
 				2B2CAD1A2B67D3250002299D /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B159A1B2B6A4C7F005BC724 /* SecondViewController.swift in Sources */,
 				2B2CAD142B67D3220002299D /* ViewController.swift in Sources */,
 				2B2CAD102B67D3220002299D /* AppDelegate.swift in Sources */,
 				2B2CAD122B67D3220002299D /* SceneDelegate.swift in Sources */,

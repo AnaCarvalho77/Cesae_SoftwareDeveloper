@@ -20,19 +20,15 @@ class MainActivity : AppCompatActivity() {
             val pass = "pass"
             var username: String = binding.editUsername.text.toString()
             var password: String = binding.editPassword.text.toString()
-            var limparUsername = binding.editUsername.text.clear()
-            var limparPassword = binding.editPassword.text.clear()
+            binding.editUsername.text.clear()
+            binding.editPassword.text.clear()
 
 
 
             if(username.equals(user) && password.equals(pass)){
                 Toast.makeText(applicationContext, "Login Válido", Toast.LENGTH_SHORT).show()
-                limparUsername
-                limparPassword
             }else{
                 Toast.makeText(applicationContext, "Login Inválido", Toast.LENGTH_SHORT).show()
-                limparUsername
-                limparPassword
             }
 
         }
