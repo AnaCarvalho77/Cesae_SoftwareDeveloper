@@ -3,7 +3,7 @@
    {{cidade.pais}}
    <small><i>
     (Pop.:
-    @if (cidade.populacao >= 2000000) {
+    @if (cidade!.populacao && cidade.populacao >= 2000000) {
       <b>{{cidade.populacao}}</b>
     }@else {
       {{cidade.populacao}}

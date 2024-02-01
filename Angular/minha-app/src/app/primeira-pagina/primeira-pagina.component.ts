@@ -18,4 +18,10 @@ export class PrimeiraPaginaComponent {
       this.contadorPai = valor;
 
 }
+
+changeMeuNomePai(){
+  this.meuNomePai = 'Gabriel Carvalho'
+}
+
+
 }

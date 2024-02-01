@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChange, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-meu-componente',
@@ -9,7 +9,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
 })
-export class MeuComponenteComponent {
+export class MeuComponenteComponent implements OnChanges {
   // @Input({required: true}) meuNome: string = "Sofia";
   // @Input({alias: "meu-nome"}) meuNome: string = "Sofia";
   @Input("meu-nome") meuNome: string = "Sofia";
@@ -31,47 +31,58 @@ export class MeuComponenteComponent {
   //   "https://sadanduseless.b-cdn.net/wp-content/uploads/2021/02/cat-taxidermy14.jpg"
   // ];
 
-  obj:{id:number, nome:string, fn?: Function} = {
+  obj: { id: number, nome: string, fn?: Function } = {
     id: 80,
     nome: "sofiaaa",
-    fn:() => {}
+    fn: () => { }
   };
 
-  pCorTexto: string ="#336699";
-  pCorFundo: string ="#99ccff";
+  pCorTexto: string = "#336699";
+  pCorFundo: string = "#99ccff";
   pAlterarCores: boolean = true;
 
-  alterarCores(): void{
-    let cor: string = this.pCorTexto;
-    this.pCorTexto = this.pCorFundo;
-    this.pCorFundo = cor;
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('MeuComponenteComponent.ngOnChanges()', changes);
+
+    if (changes['meuNome']) {
+      console.log('O meuNome foi alterado para ' + changes['meuNome'].currentValue);
+    }
+    if (changes['meuNome2']) {
+      //...
+    }
   }
 
-  alterarImagem(): void{
-    this.imagem = this.imagens[1];
-    this.obj.nome = '';
+    alterarCores(): void {
+      let cor: string = this.pCorTexto;
+      this.pCorTexto = this.pCorFundo;
+      this.pCorFundo = cor;
+    }
+
+    alterarImagem(): void {
+      this.imagem = this.imagens[1];
+      this.obj.nome = '';
+    }
+
+
+    alterarImagem2(): void {
+      this.imagem = this.imagens[2];
+    }
+
+    alterarAtivo(): void {
+      this.pAlterarCores = false;
+    }
+
+    incrementar(): void {
+      this.contador++;
+      this.mudancaContador.emit(this.contador);
+    }
+
+
+
+
+
+
+
+
+
   }
-
-
-  alterarImagem2(): void{
-    this.imagem = this.imagens[2];
-  }
-
-  alterarAtivo(): void{
-    this.pAlterarCores = false;
-  }
-
-  incrementar():void{
-    this.contador++;
-    this.mudancaContador.emit(this.contador);
-  }
-
-
-
-
-
-
-
-
-
-}
