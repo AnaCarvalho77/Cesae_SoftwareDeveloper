@@ -16,7 +16,7 @@
         </style>
     </head>
     <body class="antialiased">
-        <h2>Hello World</h2>
+        <h2>Hello World</h2> {{-- Rota bem vindos --}}
         <a href="{{route('home.hello')}}">Rota Hello</a>
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))

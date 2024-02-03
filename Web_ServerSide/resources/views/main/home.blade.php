@@ -10,6 +10,7 @@
         <li><a href="{{ route('users.all') }}">Todos os utilizadores</a></li>
         <li><a href="{{ route('users.add') }}">Adionar utilizador</a></li>
         <li><a href="{{ route('tasks.all') }}">Todas as tarefas</a></li>
+        <li><a href="{{ route('tasks.add') }}">Adicionar Tarefa</a></li>
     </ul>
     <h2>Dados Cesae</h2>
 

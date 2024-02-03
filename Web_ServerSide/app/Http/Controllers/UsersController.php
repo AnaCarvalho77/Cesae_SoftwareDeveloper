@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -11,7 +12,7 @@ class UsersController extends Controller
 
     public function addUsers()
     {
-        db::table('users')
+      /*   db::table('users')
         ->updateOrInsert(
             [
                 'email'=> 'gabriel@gmail.com'
@@ -25,12 +26,55 @@ class UsersController extends Controller
 
 
         $users = DB::table('users')->get();
-        $myUser = DB::table('users')->where('password', '123')->first();
+        $myUser = DB::table('users')->where('password', '123')->first(); */
 
-        dd($myUser);//ver os users antes de mandar as coisas para a view
+       /*  dd($myUser); *///ver os users antes de mandar as coisas para a view
 
         return view('users.adicionarUtilizadores');
     }
+
+
+    public function createUser(Request $request){
+
+           /*  if($request->id){
+
+            }else{
+
+            } */
+
+
+        $request->validate([
+            'email' => 'required|unique:users',
+            'name' => 'required|string|max:10',
+        ]);
+
+        User::insert([
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'password'=> Hash::make($request->password),
+        ]);
+        return redirect()->route('users.all')->with('message', 'Boa, utilizador adicionado com sucesso!');
+
+    }
+
+    public function updateUser(Request $request){
+        $request->validate([
+            'phone' => 'min:9|max:14',
+        ]);
+
+        User::where('id', $request->id)
+        ->update([
+            'name'=> $request->name,
+            'address'=>$request->address,
+            'phone'=>$request->phone,
+
+        ]);
+        return redirect()->route('users.all')->with('message', ' utilizador atualizado!');
+
+    }
+
+
+
 
     public function allUsers()
     {
@@ -102,6 +146,21 @@ class UsersController extends Controller
 
         return view('users.usersView', compact ('myUser'));
     }
+
+    public function deleteUser($id){
+        DB::table('tasks')
+        ->where('user_id',$id)
+        ->delete();
+
+        DB::table('users')
+        ->where('id',$id)
+        ->delete();
+
+        return back();
+    }
+
+
+
 
 
 }
