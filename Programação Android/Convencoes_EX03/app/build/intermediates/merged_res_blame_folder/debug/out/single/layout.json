@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "com.example.convencoes_ex03.app-mergeDebugResources-30:/layout/activity_splash_screen.xml",
+        "source": "com.example.convencoes_ex03.app-main-33:/layout/activity_splash_screen.xml"
+    },
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex03.app-mergeDebugResources-30:/layout/activity_splash_screen.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex03.app-main-33:/layout/activity_splash_screen.xml"
+    },
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex03.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex03.app-main-33:/layout/activity_main.xml"
+    }
+]

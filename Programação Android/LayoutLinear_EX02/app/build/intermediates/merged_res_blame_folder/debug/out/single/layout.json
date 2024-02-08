@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.layoutlinear_ex02.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.layoutlinear_ex02.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.layoutlinear_ex02.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.layoutlinear_ex02.app-main-33:/layout/activity_main.xml"
+    }
+]

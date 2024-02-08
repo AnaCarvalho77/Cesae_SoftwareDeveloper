@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
 import { ICidade } from '../models/cidade.model';
-import { CidadesService } from '../services/cidades.service';
+import { CidadesService } from '../services/cidades-ls.service';
 
 @Component({
   selector: 'app-minha-lista',
   standalone: true,
-  imports: [MinhaListaItemComponent],
+  imports: [MinhaListaItemComponent,RouterLink],
   templateUrl: './minha-lista.component.html',
   styleUrl: './minha-lista.component.scss'
 })
@@ -15,15 +16,26 @@ export class MinhaListaComponent {
 
   ];
 
-  constructor(private cidadesService:CidadesService) {
+  constructor(private cidadesService:CidadesService, private router: Router) {
     // ...
     console.log('MinhaListaComponent.constructor()');
 
     this.cidades = cidadesService.cidades;
   }
 
-  adicionarCidade(){
-    this.cidadesService.create({nome: 'Lisboa', pais: 'Portugal'});
+  /* adicionarCidade():void {
+    this.cidadesService.create({id: 0, nome: 'Lisboa', pais: 'Portugal'});
+  } */
+
+  irAdicionarCidade():void{
+    this.router.navigate(['/formulario-cidade-td']);
+   /*  this.router.navigateByUrl('/formulario-cidade-td'); */
+  }
+
+  limparDados():void{
+    this.cidadesService.limparDados();
+    this.cidades = this.cidadesService.cidades;
+
   }
 
   ngOnChange() {
@@ -41,7 +53,10 @@ para realizar operações de inicialização que dependem dos
 dados de entrada, como fazer requisições HTTP, atribuir
 valores a propriedades, etc…*/
     console.log('MinhaListaComponent.ngOnInit()');
+
+    this.cidadesService.readAll();
     this.cidades = this.cidadesService.cidades;
+
 
   }
 
@@ -87,6 +102,10 @@ ngOnDestroy() {
 destrua o componente ou diretiva. É usado para realizar
 operações de limpeza, como cancelar subscrições, desalocar
 recursos, remover event listeners, etc… */
+
+
+console.log('MinhaListaComponent.ngOnDestroy()');
+
 }
 
 

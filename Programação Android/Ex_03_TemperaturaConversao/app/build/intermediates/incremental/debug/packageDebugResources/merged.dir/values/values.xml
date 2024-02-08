@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Ex_01_CalculadoraConversao</string>
+    <style name="Base.Theme.Ex_01_CalculadoraConversao" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Ex_01_CalculadoraConversao" parent="Base.Theme.Ex_01_CalculadoraConversao"/>
+</resources>

@@ -1,0 +1,19 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button_conversor_dolar
+id button_conversor_peso
+id button_conversor_real
+id edit_valor_euros
+id text_nome_app
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.LinearLayout_EX03
+style Theme.LinearLayout_EX03
+xml backup_rules
+xml data_extraction_rules

@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.linearlayoutf.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.linearlayoutf.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.linearlayoutf.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.linearlayoutf.app-main-33:/layout/activity_main.xml"
+    }
+]

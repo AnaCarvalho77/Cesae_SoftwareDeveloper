@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex02.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex02.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex02.app-mergeDebugResources-30:/layout/activity_login_errado.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex02.app-main-33:/layout/activity_login_errado.xml"
+    },
+    {
+        "merged": "com.example.convencoes_ex02.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.convencoes_ex02.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex02.app-mergeDebugResources-30:/layout/activity_login_ok.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencoes_ex02.app-main-33:/layout/activity_login_ok.xml"
+    }
+]

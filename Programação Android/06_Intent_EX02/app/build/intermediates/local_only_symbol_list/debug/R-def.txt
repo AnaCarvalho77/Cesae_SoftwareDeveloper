@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id edit_numero1
+id edit_numero2
+id text_view_divisao
+id text_view_divisao_resultado
+id text_view_multiplicacao
+id text_view_multiplicacao_resultado
+id text_view_soma
+id text_view_soma_resultado
+id text_view_subtracao
+id text_view_subtracao_resultado
+layout activity_main
+layout activity_main2
+layout activity_main3
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme._06_Intent_EX02
+style Theme._06_Intent_EX02
+xml backup_rules
+xml data_extraction_rules

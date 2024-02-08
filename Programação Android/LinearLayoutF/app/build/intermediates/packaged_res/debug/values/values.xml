@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">LinearLayoutF</string>
+    <style name="Base.Theme.LinearLayoutF" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.LinearLayoutF" parent="Base.Theme.LinearLayoutF"/>
+</resources>

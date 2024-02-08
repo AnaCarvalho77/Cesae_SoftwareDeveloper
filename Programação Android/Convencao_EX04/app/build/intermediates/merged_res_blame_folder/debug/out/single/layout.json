@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.convencao_ex04.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "com.example.convencao_ex04.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencao_ex04.app-mergeDebugResources-30:/layout/activity_main.xml",
+        "source": "/Users/anasofiacarvalho/.gradle/daemon/8.2/com.example.convencao_ex04.app-main-33:/layout/activity_main.xml"
+    }
+]

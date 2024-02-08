@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "com.example.a16_room.app-mergeDebugResources-34:/layout/activity_main.xml",
+        "source": "com.example.a16_room.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.a16_room.app-mergeDebugResources-34:/layout/row_user.xml",
+        "source": "com.example.a16_room.app-main-37:/layout/row_user.xml"
+    }
+]
