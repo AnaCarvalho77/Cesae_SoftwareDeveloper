@@ -13,7 +13,7 @@
             @csrf {{-- Token para impedir o sql injection, não é necessário usar --}}
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Tarefa</label>
-                <input type="texto" value="{{old('name')}}" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Nome" required>
+                <input type="text" value="{{old('name')}}" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Nome" required>
                 @error('name')
                 <div class='alert alert-danger'>
                     Tarefa inválida
@@ -22,7 +22,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Descrição</label>
-                <input type="texto"  value="{{old('description')}}" name = "description" class="form-control" id="exampleFormControlInput1">
+                <input type="text"  value="{{old('description')}}" name = "description" class="form-control" id="exampleFormControlInput1">
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">User ID</label>
@@ -32,6 +32,9 @@
                         {{$user->name}}</option>
                     @endforeach
                 </select>
+            @error('userd_id')
+            <div class='alert alert-danger'> Não pode atribuir esta tarefa a este user</div>
+            @enderror
               </div>
               <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

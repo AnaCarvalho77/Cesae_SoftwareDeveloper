@@ -78,18 +78,38 @@ class UsersController extends Controller
 
     public function allUsers()
     {
-        $hello = 'Finalmente vamos para código';
+       /*  $hello = 'Finalmente vamos para código';
         $helloAgain = 'cucu';
         $daysOfWeek = $this->getWeekDays();
         $infoPodeNomeDiferente = $this->info();
-        $users = $this->getUsers();
+        $users = $this->getUsers(); */
 
 
 
     //var_dump($infoPodeSerNomeDiferente);
     //dd($infoPodeSerNomeDiferente);
 
-        return view('users.all_users', compact('hello', 'helloAgain', 'daysOfWeek','infoPodeNomeDiferente','users'));
+    //ternário
+    //$search ='';
+    //if(request()->('search)){
+    //  $search = request()->query('search');
+    // }else{
+    //   $search = null;
+    //}
+    $search = request()->query('search') ? request()->query('search'):null;
+  /*  dd(request()->query('search')); */
+
+    $users = DB::table('users');
+if($search){
+
+            $users->where('name', 'like',  "%{$search}%");
+            $users->orWhere('email', 'like',  "%{$search}%");
+}
+
+
+    $users = $users ->get();
+
+        return view('users.all_users', compact('users'));
     }
 
     private function getWeekDays(){

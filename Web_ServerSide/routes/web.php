@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\TasksController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,10 @@ Route::get('/tasks/view/{id}', [TasksController::class,'viewTask'])->name('tasks
 Route::get('/tasks/delete/{id}', [TasksController::class,'deleteTask'])->name('tasks.delete');
 Route::post('/tasks/create', [TasksController::class,'createTask'])->name('tasks.create');
 Route::post('/tasks/update', [TasksController::class,'updateTask'])->name('tasks.update');
+
+//rotas backoffice
+Route::get('/backoffice/dashboard', [DashboardController::class,'admin'])->name('backoffice.dasboard')->middleware('auth');
+
 
 
 //rota para voltar atras quando pagina não encontrada

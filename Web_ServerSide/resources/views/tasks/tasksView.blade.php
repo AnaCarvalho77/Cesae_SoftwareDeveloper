@@ -13,7 +13,7 @@
        <input type="hidden" name="id" value="{{$myTask->id}}" id="">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nome</label>
-            <input type="texto" value="{{$myTask->name}}" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Nome" required>
+            <input type="text" value="{{$myTask->name}}" name="name" class="form-control" id="exampleFormControlInput1" placeholder="Nome" required>
             @error('name')
             <div class='alert alert-danger'>
                 Tarefa inválida
@@ -22,7 +22,21 @@
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Descrição</label>
-            <input type="texto"  value="{{$myTask->description}}" name = "description" class="form-control" id="exampleFormControlInput1">
+            <input type="text"  value="{{$myTask->description}}" name = "description" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Prazo</label>
+            <input type="date"  value="{{$myTask->due_at}}" name = "due_at" class="form-control" id="exampleFormControlInput1">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">User ID</label>
+            <select name="user_id" id="">
+                <option value="">Selecionar um User</option>
+                @foreach ($users as $user)
+                <option @if ($user->id == $myTask->user_id) selected @endif value="{{$user->id}}">{{$user->name}}</option>
+
+                @endforeach
+            </select>
           </div>
           <button type="submit" class="btn btn-primary">Atualizar</button>
     </form>

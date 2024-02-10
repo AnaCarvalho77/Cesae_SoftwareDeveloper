@@ -4,7 +4,11 @@
     <h3>Olá, sou todas as tarefas</h3>
     <br>
     <br>
-
+    @if(session('message'))
+    <div class="alert alert-success">
+        {{session('message')}}
+    </div>
+    @endif
 
 
     <table class="table">

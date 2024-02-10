@@ -39,11 +39,13 @@ class TasksController extends Controller
     public function viewTask($id){
         $myTask = DB::table('tasks')
         ->where('tasks.id', $id)
-        ->join('users','tasks.user_id', '=', 'users.id')
+        ->leftjoin('users','tasks.user_id', '=', 'users.id')
         ->select('tasks.*','users.name as usname')
         ->first();
 
-        return view('tasks.tasksView', compact ('myTask'));
+        $users = DB::table('users')->get();
+
+        return view('tasks.tasksView', compact ('myTask','users'));
     }
 
     public function deleteTask($id){
@@ -58,6 +60,8 @@ class TasksController extends Controller
 
      $request->validate([
          'name' => 'required|string|max:20',
+         'description' => 'required|string|max:200',
+         'user_id' => 'required|integer|exists:users,id'
      ]);
 
      Task::insert([
@@ -65,22 +69,26 @@ class TasksController extends Controller
          'description'=> $request->description,
          'user_id'=> $request->user_id
      ]);
-     return redirect()->route('tasks.all')->with('message', 'Boa, tarefa adicionada com sucesso!');
+     return redirect()->route('tasks.all')->with('message', 'Tarefa adicionada com sucesso!');
 
  }
 
  public function updateTask(Request $request){
      $request->validate([
-         'phone' => 'min:9|max:14',
+        'name' => 'required|string|max:20',
+        'description' => 'required|string|max:200',
+        'user_id' => 'required|integer|exists:users,id'
      ]);
 
      Task::where('id', $request->id)
      ->update([
          'name'=> $request->name,
          'description'=>$request->description,
+         'user_id'=>$request->user_id,
+         'due_at'=>$request->due_at
 
      ]);
-     return redirect()->route('tasks.all')->with('message', ' tarefa atualizada!');
+     return redirect()->route('tasks.all')->with('message', ' Tarefa atualizada!');
 
  }
 
