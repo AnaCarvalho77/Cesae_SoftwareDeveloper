@@ -1,0 +1,23 @@
+<p>form-api works!</p>
+<form [formGroup]="form" (ngSubmit)="formSubmit()" >
+  <div>
+    <label for="nome">Nome: </label>
+    <input type="text" name="nome" id="nome" formControlName="nome">
+    <div>
+      @if(form.controls['name'].errors?.['required']){
+
+      }
+    </div>
+  </div>
+  <div>
+    <label for="pais">Pais: </label>
+    <input type="text" name="pais" id="nome" formControlName="pais">
+  </div>
+  <div>
+    <label for="populacao">População: </label>
+    <input type="number" name="populacao" id="populacao" formControlName="populacao">
+  </div>
+  <div>
+    <button type="submit" [disabled]="form.invalid">OK</button>
+  </div>
+</form>

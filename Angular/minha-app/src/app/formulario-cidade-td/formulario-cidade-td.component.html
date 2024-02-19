@@ -1,5 +1,5 @@
 <h1>Formulário Cidade</h1>
-
+<!--
 <div>
   <label for="nome">Nome Cidade:</label><br>
  <input type="text" id="nome" [(ngModel)]="minhaCidade.nome" name="cidade"/>
@@ -18,5 +18,30 @@
 </div>
 <div>
   <button type="button" (click)="formSubmit()">OK</button>
+</div> -->
+
+
+<form #form="ngForm" (ngSubmit)="formSubmit()">
+<!-- #form="ngForm" é igual id="" -->
+
+<div>
+  <label for="nome">Nome cidade: </label>
+  <input type="text" id="nome" [(ngModel)] = "minhaCidade.nome" name="nome" required>
+  <div *ngIf="form.controls['nome']?.invalid && form.controls['nome']?.touched">
+    <span *ngIf="form.controls['nome']?.errors?.['required']">O nome é obrigatório</span>
+  </div>
+</div><br>
+<div>
+  <label for="pais">Nome do país:</label><br>
+ <input type="text" id="pais" [(ngModel)] = "minhaCidade.pais" name="pais"/>
+</div><br>
+<div><br>
+  <label for="populacao">População:</label><br>
+ <input type="text" id="populacao" [(ngModel)]="minhaCidade.populacao" name="populacao"/>
+</div><br>
+<div>
+  <button type="submit" [disabled]="form.invalid">Ok</button>
 </div>
 
+
+</form>

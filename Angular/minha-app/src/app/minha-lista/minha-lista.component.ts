@@ -1,13 +1,15 @@
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { MinhaListaItemComponent } from '../minha-lista-item/minha-lista-item.component';
 import { ICidade } from '../models/cidade.model';
-import { CidadesService } from '../services/cidades-ls.service';
+import { CidadesService } from '../services/cidades-api.service';
 
 @Component({
   selector: 'app-minha-lista',
   standalone: true,
-  imports: [MinhaListaItemComponent,RouterLink],
+  imports: [MinhaListaItemComponent,RouterLink, HttpClientModule],
+  providers:[CidadesService],
   templateUrl: './minha-lista.component.html',
   styleUrl: './minha-lista.component.scss'
 })
@@ -47,6 +49,7 @@ export class MinhaListaComponent {
   }
 
   ngOnInit() {
+
     /*É executado uma vez depois que o Angular
 termina de inicializar as propriedades de entrada. É usado
 para realizar operações de inicialização que dependem dos
@@ -54,7 +57,10 @@ dados de entrada, como fazer requisições HTTP, atribuir
 valores a propriedades, etc…*/
     console.log('MinhaListaComponent.ngOnInit()');
 
-    this.cidadesService.readAll();
+
+    this.cidadesService.readAll().subscribe((cidades) => {
+      this.cidades = cidades
+    });
     this.cidades = this.cidadesService.cidades;
 
 

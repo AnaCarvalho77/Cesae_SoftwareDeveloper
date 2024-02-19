@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">worldskillsproject</string>
+    <string name="googlemaps"><a href="https://maps.app.goo.gl/hdcgH3jAwYPzhxtZ8">Rua de Xabregas, 52\n1949-003 Lisboa Portugal</a></string>
+    <string name="email_info"><a href="mailto:info@sp.worldskillsportugal.pt">info@sp.worldskillsportugal.pt</a></string>
+    <string name="email_secretariado"><a href="mailto:secretariado.wsp@sp.worldskillsportugal.pt">secretariado.wsp@sp.worldskillsportugal.pt</a></string>
+    <string name="email_suporte"><a href="mailto:suporte@sp.worldskillsportugal.pt">suporte@sp.worldskillsportugal.pt</a></string>
+</resources>

@@ -2,15 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function admin()
+    public function __construct(){
+        $this->middleware(['auth']);
+    }
+
+    public function index()
     {
 
-        $isAdmin = auth()->user()->user_type == 1;
-        return view('backoffice.dashboard', compact ('isAdmin'));
+        $message=null;
+
+        $isAdmin = Auth::user()->user_type == User::TYPE_ADMIN ? true : false;
+
+        if($isAdmin){
+            $message = 'Olá, és administrador';
+        }
+        return view('dashboard.home', compact ('message'));
     }
+
+
 
 }

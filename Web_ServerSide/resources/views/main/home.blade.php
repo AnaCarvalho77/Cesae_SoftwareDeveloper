@@ -17,7 +17,7 @@
         <li><a href="{{ route('users.add') }}">Adionar utilizador</a></li>
         <li><a href="{{ route('tasks.all') }}">Todas as tarefas</a></li>
         <li><a href="{{ route('tasks.add') }}">Adicionar Tarefa</a></li>
-        <li><a href="{{ route('backoffice.dasboard') }}">Ir para o BackOffice</a></li>
+        <li><a href="{{ route('dashboard.home') }}">Ir para o BackOffice</a></li>
     </ul>
     <h2>Dados Cesae</h2>
 

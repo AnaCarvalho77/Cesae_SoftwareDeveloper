@@ -51,7 +51,7 @@ Route::post('/tasks/create', [TasksController::class,'createTask'])->name('tasks
 Route::post('/tasks/update', [TasksController::class,'updateTask'])->name('tasks.update');
 
 //rotas backoffice
-Route::get('/backoffice/dashboard', [DashboardController::class,'admin'])->name('backoffice.dasboard')->middleware('auth');
+Route::get('dashboard/home', [DashboardController::class,'index'])->name('dashboard.home');
 
 
 

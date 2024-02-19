@@ -100,6 +100,10 @@ export class CidadesService {
 
   }
   delete(cidade: ICidade): void {
+    let index: number = this.cidades.findIndex((x:ICidade) => x.id === cidade.id);
+    this.cidades.splice(index,1);
+
+    localStorage.setItem('cidades', JSON.stringify(this.cidades));
 
   }
 }

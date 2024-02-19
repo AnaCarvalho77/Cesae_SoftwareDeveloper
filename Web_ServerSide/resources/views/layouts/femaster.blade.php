@@ -35,7 +35,7 @@
                         <a class="nav-link" href="{{ route('users.all') }}">All Users</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('backoffice.dasboard') }}">BackOffice</a>
+                        <a class="nav-link" href="{{ route('dashboard.home') }}">BackOffice</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
