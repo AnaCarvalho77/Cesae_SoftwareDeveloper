@@ -69,9 +69,9 @@ export class CidadesService {
       ); faz o mesmo do que está abaixo*/
 
       const maxID: ICidade = this.cidades.reduce(
-        (max, item)=> max.id > item.id ? max : item);
+        (max, item)=> (max.id || 0) > (item.id || 0) ? max : item);
 
-        novaCidade.id = maxID.id + 1;
+        novaCidade.id = maxID.id || 0 + 1;
 
       this.cidades.push(novaCidade);
       localStorage.setItem('cidades', JSON.stringify(this.cidades));

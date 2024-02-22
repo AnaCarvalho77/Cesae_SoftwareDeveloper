@@ -48,7 +48,7 @@ export class FormularioCidadeTdComponent {
     console.log('nome',this.minhaCidade.nome);
 
 
-    if(this.minhaCidade.id > 0 ){
+    if(this.minhaCidade.id ){
       this.cidadeService.updtade(this.minhaCidade);
     }else{
       this.cidadeService.create(this.minhaCidade);

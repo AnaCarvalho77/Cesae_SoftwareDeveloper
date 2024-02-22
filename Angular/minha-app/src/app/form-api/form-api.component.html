@@ -3,11 +3,13 @@
   <div>
     <label for="nome">Nome: </label>
     <input type="text" name="nome" id="nome" formControlName="nome">
+    @if(form.controls['nome'].invalid){
     <div>
-      @if(form.controls['name'].errors?.['required']){
-
+      @if (form.controls['nome'].errors) {
+        <span>Tem que inserir o nome</span>
       }
     </div>
+    }
   </div>
   <div>
     <label for="pais">Pais: </label>

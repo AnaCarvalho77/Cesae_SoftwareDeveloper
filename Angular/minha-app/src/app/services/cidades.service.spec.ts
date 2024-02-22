@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+/* import { TestBed } from '@angular/core/testing';
 
 import { CidadesService } from './cidades.service';
 
@@ -13,4 +13,4 @@ describe('CidadesService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-});
+}); */

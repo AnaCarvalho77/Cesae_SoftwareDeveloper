@@ -30,13 +30,20 @@ export class MinhaListaComponent {
   } */
 
   irAdicionarCidade():void{
-    this.router.navigate(['/formulario-cidade-td']);
+    this.router.navigate(['/form-api']);
    /*  this.router.navigateByUrl('/formulario-cidade-td'); */
   }
 
   limparDados():void{
     this.cidadesService.limparDados();
+    setTimeout(() => {
+    this.cidadesService.readAll().subscribe((cidades) => {
+      this.cidades = cidades
+    });
+  },2000);
     this.cidades = this.cidadesService.cidades;
+
+   /*  this.cidades = this.cidadesService.cidades; */
 
   }
 
@@ -61,7 +68,6 @@ valores a propriedades, etc…*/
     this.cidadesService.readAll().subscribe((cidades) => {
       this.cidades = cidades
     });
-    this.cidades = this.cidadesService.cidades;
 
 
   }

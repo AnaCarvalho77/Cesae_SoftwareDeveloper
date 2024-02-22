@@ -19,8 +19,16 @@ export class MinhaListaItemComponent {
   }
 
   del(){
-    this.cidadesService.delete(this.cidade);
-    console.log('aqui')
+    /* this.cidadesService.delete(this.cidade);
+    console.log('aqui') */
+    this.cidadesService.delete(this.cidade).subscribe({
+      next: (data) => {
+        //ok
+      },
+      error: (error) => {
+        alert('erro ao eliminar a cidade: ' + this.cidade.nome)
+      }
+    })
   }
 
 }
