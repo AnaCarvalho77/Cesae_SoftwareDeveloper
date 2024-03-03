@@ -1,4 +1,4 @@
-@extends('layouts.femaster')
+auth@extends('layouts.femaster')
 @section('content')
 <form method="POST" action="{{route('password.email')}}">
     @csrf

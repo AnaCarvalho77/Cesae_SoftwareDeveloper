@@ -2,14 +2,6 @@
 
 @section('content')
 <h1>Ver / Atualizar Dados {{$myUser->name}}</h1>
-    {{-- <h1>Cucu, ver um user</h1>
-    <br>
-    <h4>Nome: {{$myUser->name}}</h4>
-    <h4>Phone: {{$myUser->phone}}</h4>
-    <h4>Address: {{$myUser->address}}</h4>
-    <h4>Email: {{$myUser->email}}</h4>
-    <h4>Pasword: {{$myUser->password}}</h4>
-    <td><a href="{{route('users.view', $item->id)}}" class="btn btn-info">Ver</a></td> --}}
 
         <form method="POST" action="{{route('users.update')}}">
             @csrf {{-- Token para impedir o sql injection, não é necessário usar --}}
