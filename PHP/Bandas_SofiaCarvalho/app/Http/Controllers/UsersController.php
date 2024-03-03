@@ -20,11 +20,19 @@ class UsersController extends Controller
             'email' => 'required|unique:users',
             'name' => 'required|string|max:10',
         ]);
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto')->get();
+        } else {
+            return redirect()->back()->withInput()->withErrors(['foto' => 'Nenhum arquivo de imagem foi enviado.']);
+        }
+
 
         User::insert([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'foto' => $foto,
+
         ]);
         return redirect()->route('users.all')->with('message', 'Boa, utilizador adicionado com sucesso!');
 

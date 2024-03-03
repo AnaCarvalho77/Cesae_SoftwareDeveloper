@@ -8,7 +8,7 @@
         <br>
 
 
-        <form method="POST" action="{{ route('users.create') }}">
+        <form method="POST" action="{{ route('users.create') }}" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nome</label>
@@ -34,6 +34,10 @@
                 <label for="exampleFormControlInput1" class="form-label">Password</label>
                 <input type="password" value="" name ="password" class="form-control" id="exampleFormControlInput1"
                     placeholder="Password" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Foto</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

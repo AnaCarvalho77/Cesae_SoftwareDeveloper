@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+
 use App\Models\Album;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+
 
 class AlbunsController extends Controller
 {
     public function addAlbuns()
     {
 
-        $albuns = DB::table('albuns')->get();
+        $bandas = DB::table('bandas')->get();
 
-        return view('albuns.insert_albuns', compact('albuns'));
+        return view('albuns.insert_albuns', compact('bandas'));
     }
 
     public function allAlbuns()
@@ -65,12 +65,13 @@ class AlbunsController extends Controller
     {
 
         $request->validate([
-            'name' => 'required|string|max:20',
+            'nome' => 'required|string|max:20',
+            'banda_id' => 'required|integer|exists:bandas,id'
         ]);
 
         Album::insert([
             'nome' => $request->nome,
-            'imagem' => $request->foto,
+            'imagem' => $request->imagem,
             'data_lancamento' => $request->data_lancamento,
             'banda_id' => $request->banda_id
         ]);

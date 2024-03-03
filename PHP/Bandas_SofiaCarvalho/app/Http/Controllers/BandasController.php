@@ -67,18 +67,19 @@ class BandasController extends Controller
 
     public function createBanda(Request $request){
 
-     $request->validate([
-         'nome' => 'required|string|max:20',
-     ]);
 
-     Banda::insert([
-         'nome'=> $request->nome,
-         'foto'=> $request->foto,
-     ]);
-     return redirect()->route('bandas.all')->with('message', 'Banda adicionada com sucesso!');
+        $request->validate([
+            'nome' => 'required|string|max:20',
+        ]);
 
- }
 
+        Banda::insert([
+            'nome'=> $request->nome,
+            'foto'=> $request->foto,
+        ]);
+
+        return redirect()->route('bandas.all')->with('message', 'Banda adicionada com sucesso!');
+    }
  public function verUpdateBanda($id){
     $myBanda = DB::table('bandas')
     ->where('bandas.id', $id)

@@ -22,6 +22,15 @@
             <label for="exampleFormControlInput1" class="form-label">Telefone</label>
             <input type="text" value="{{ $myUser->phone }}" class="form-control" id="exampleFormControlInput1" readonly>
         </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Foto</label><br>
+            @if ($myUser->foto)
+                <img src="data:image/jpeg;base64,{{ base64_encode($myUser->foto) }}" alt="Foto do usuário">
+            @else
+                <p>Sem foto</p>
+            @endif
+        </div>
+
     </form>
 
     <a class= "btn btn-success" href="{{ route('users.all') }}">Voltar</a>

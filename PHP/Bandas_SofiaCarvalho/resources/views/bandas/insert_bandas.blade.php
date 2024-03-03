@@ -8,7 +8,7 @@
         <br>
 
 
-        <form method="POST" action="{{ route('bandas.create') }}">
+        <form method="POST" action="{{ route('bandas.create') }}" >
             @csrf
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nome</label>
@@ -22,7 +22,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Foto</label>
-                <input type="file" value="{{ old('foto') }}" name = "foto" class="form-control"
+                <input type="text" value="{{ old('foto') }}" name = "foto" class="form-control"
                     id="exampleFormControlInput1">
             </div>
 

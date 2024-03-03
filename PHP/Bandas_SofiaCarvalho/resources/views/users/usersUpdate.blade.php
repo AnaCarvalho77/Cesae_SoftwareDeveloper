@@ -45,8 +45,8 @@
                 </div>
             @enderror
         </div>
-
-        <button type="submit" class="btn btn-primary">Atualizar</button>
     </form>
     <a class= "btn btn-success" href="{{ route('users.all') }}">Voltar</a>
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+
 @endsection

@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'foto',
     ];
 
     /**
@@ -31,7 +32,7 @@ class User extends Authenticatable
 
      CONST TYPE_ADMIN=1;
      CONST TYPE_USER=2;
-    
+
     protected $hidden = [
         'password',
         'remember_token',

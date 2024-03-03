@@ -19,7 +19,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main/home');
 });
 
 Route::get('/home', [IndexController::class,'index'])->
